@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import logo1 from '@/assets/logos/logo-1.png';
+import logo2 from '@/assets/logos/logo-2.png';
+import dilon from '@/assets/logos/dilon.png';
+import arfa7 from '@/assets/logos/arfa7.png';
+import logo5 from '@/assets/logos/logo-5.png';
+import cashlend from '@/assets/logos/cashlend.png';
+import forkpoint from '@/assets/logos/forkpoint.png';
+import myfoot from '@/assets/logos/myfoot.png';
+import logo9 from '@/assets/logos/logo-9.png';
 
 interface PersonaOption {
   key: string;
@@ -40,7 +49,15 @@ const HeroSection = () => {
   const currentPersona = personaOptions.find(p => p.key === selectedPersona) || personaOptions[0];
   
   const trustLogos = [
-    'Client A', 'Client B', 'Client C'
+    { src: logo1, alt: 'Client logo' },
+    { src: logo2, alt: 'Client logo' },
+    { src: dilon, alt: 'Dilon' },
+    { src: arfa7, alt: 'Arfa7' },
+    { src: logo5, alt: 'Client logo' },
+    { src: cashlend, alt: 'Cashlend' },
+    { src: forkpoint, alt: 'Forkpoint' },
+    { src: myfoot, alt: 'MyFoot' },
+    { src: logo9, alt: 'Client logo' }
   ];
 
   return (
@@ -109,11 +126,14 @@ const HeroSection = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Trusted by B2B founders across EU & US
                 </p>
-                <div className="flex flex-wrap items-center gap-6 opacity-60">
+                <div className="flex flex-wrap items-center gap-8 opacity-70">
                   {trustLogos.map((logo, index) => (
-                    <div key={index} className="h-8 bg-muted rounded px-4 flex items-center text-sm font-medium">
-                      {logo}
-                    </div>
+                    <img 
+                      key={index} 
+                      src={logo.src} 
+                      alt={logo.alt}
+                      className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
                   ))}
                 </div>
               </div>
