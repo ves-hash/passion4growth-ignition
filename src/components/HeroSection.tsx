@@ -123,16 +123,16 @@ const HeroSection = () => {
 
               {/* Trust Bar */}
               <div className="mt-12 pt-8 border-t border-border">
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-6">
                   Trusted by B2B founders across EU & US
                 </p>
-                <div className="flex flex-wrap items-center gap-8 opacity-70">
+                <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
                   {trustLogos.map((logo, index) => (
                     <img 
                       key={index} 
                       src={logo.src} 
                       alt={logo.alt}
-                      className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-7 object-contain grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                     />
                   ))}
                 </div>
