@@ -123,20 +123,18 @@ const HeroSection = () => {
 
               {/* Trust Bar */}
               <div className="mt-12 pt-8 border-t border-border">
-                <p className="text-sm text-muted-foreground mb-6">
+                <p className="text-sm text-muted-foreground mb-6 text-center">
                   Trusted by B2B founders across EU & US
                 </p>
-                <div className="relative overflow-hidden">
-                  <div className="flex animate-scroll">
-                    {[...trustLogos, ...trustLogos].map((logo, index) => (
-                      <img 
-                        key={index} 
-                        src={logo.src} 
-                        alt={logo.alt}
-                        className="h-8 object-contain mx-8 flex-shrink-0"
-                      />
-                    ))}
-                  </div>
+                <div className="flex items-center justify-center gap-x-12 flex-wrap gap-y-6">
+                  {trustLogos.map((logo, index) => (
+                    <img 
+                      key={index} 
+                      src={logo.src} 
+                      alt={logo.alt}
+                      className="h-6 object-contain opacity-40 hover:opacity-100 transition-opacity duration-300"
+                    />
+                  ))}
                 </div>
               </div>
             </div>
