@@ -22,21 +22,23 @@ const TrustLogosSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-16" style={{ backgroundColor: '#fbf5f4' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <p className="text-sm text-muted-foreground mb-8 text-center">
             Trusted by B2B founders across EU & US
           </p>
-          <div className="flex items-center justify-center gap-x-12 flex-wrap gap-y-6">
-            {trustLogos.map((logo, index) => (
-              <img 
-                key={index} 
-                src={logo.src} 
-                alt={logo.alt}
-                className="h-6 object-contain opacity-40 hover:opacity-100 transition-opacity duration-300"
-              />
-            ))}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll gap-x-12">
+              {[...trustLogos, ...trustLogos].map((logo, index) => (
+                <img 
+                  key={index} 
+                  src={logo.src} 
+                  alt={logo.alt}
+                  className="h-6 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
