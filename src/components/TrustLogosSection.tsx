@@ -7,6 +7,9 @@ import cashlend from '@/assets/logos/cashlend.png';
 import forkpoint from '@/assets/logos/forkpoint.png';
 import myfoot from '@/assets/logos/myfoot.png';
 import logo9 from '@/assets/logos/logo-9.png';
+import newwave from '@/assets/logos/newwave.png';
+import hoploud from '@/assets/logos/hoploud.png';
+import hexagon from '@/assets/logos/hexagon.png';
 
 const TrustLogosSection = () => {
   const trustLogos = [
@@ -18,7 +21,10 @@ const TrustLogosSection = () => {
     { src: cashlend, alt: 'Cashlend' },
     { src: forkpoint, alt: 'Forkpoint' },
     { src: myfoot, alt: 'MyFoot' },
-    { src: logo9, alt: 'Client logo' }
+    { src: logo9, alt: 'Client logo' },
+    { src: newwave, alt: 'New Wave Digital' },
+    { src: hoploud, alt: 'Hoploud' },
+    { src: hexagon, alt: 'Client logo' }
   ];
 
   return (
@@ -35,7 +41,7 @@ const TrustLogosSection = () => {
                   key={index} 
                   src={logo.src} 
                   alt={logo.alt}
-                  className="h-6 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
+                  className="h-6 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 flex-shrink-0 grayscale brightness-0"
                 />
               ))}
             </div>

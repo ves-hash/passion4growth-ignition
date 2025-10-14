@@ -34,6 +34,13 @@ const HeroSection = () => {
       headline: 'Open High-Margin Accounts, Predictably',
       subheadline: 'Partner motions + BD systems that turn visibility into purchase orders.',
       proof: 'New market entries in weeks'
+    },
+    {
+      key: 'agency',
+      label: 'Agency',
+      headline: 'Scale Beyond Referrals: Predictable Client Acquisition for Agencies',
+      subheadline: 'GTM system + positioning + partnerships to build a steady client pipeline beyond referrals.',
+      proof: 'Structured outreach that converts'
     }
   ];
 

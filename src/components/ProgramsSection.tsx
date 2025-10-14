@@ -5,17 +5,6 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 const ProgramsSection = () => {
   const programs = [
     {
-      name: 'Done-For-You (BDaS)',
-      outcome: 'A predictable pipeline without adding headcount.',
-      bullets: [
-        'Full outbound motion + intent signals',
-        'CRM + KPIs + weekly optimization',
-        'Executive insights, not noise'
-      ],
-      priceNote: 'Optional: starting at €5k/mo',
-      cta: { label: 'See If We\'re a Fit', href: '#book-call' }
-    },
-    {
       name: 'Go-To-Market (GTM)',
       outcome: 'Enter, validate, and scale with partnerships.',
       bullets: [
@@ -23,7 +12,6 @@ const ProgramsSection = () => {
         'Offer packaging & pricing tests',
         'Co-selling partner acquisition'
       ],
-      priceNote: 'Optional: from €1.1k–€2.2k/mo tiers',
       cta: { label: 'Discuss GTM', href: '#book-call' }
     },
     {
@@ -34,8 +22,17 @@ const ProgramsSection = () => {
         'Signal-based outbound',
         'SQL visibility reporting'
       ],
-      priceNote: 'Launch cohort: €1k/mo (first 3 months) → €250/mo',
       cta: { label: 'Explore the Accelerator', href: '/services#accelerator' }
+    },
+    {
+      name: 'Business Development (BDaS)',
+      outcome: 'A predictable pipeline without adding headcount.',
+      bullets: [
+        'Full outbound motion + intent signals',
+        'CRM + KPIs + weekly optimization',
+        'Executive insights, not noise'
+      ],
+      cta: { label: 'See If We\'re a Fit', href: '#book-call' }
     }
   ];
 
@@ -44,7 +41,7 @@ const ProgramsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Choose Your Program
+            Choose Your Service
           </h2>
           <p className="text-xl text-muted-foreground">
             Pick the path that fits your stage. Same revenue engine under the hood.
@@ -74,9 +71,6 @@ const ProgramsSection = () => {
                 </ul>
 
                 <div className="pt-4 border-t border-border">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {program.priceNote}
-                  </p>
                   <Button 
                     variant="outline" 
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary" 
@@ -93,11 +87,6 @@ const ProgramsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-sm text-muted-foreground">
-            Prices are indicative; final scope on discovery.
-          </p>
-        </div>
       </div>
     </section>
   );
