@@ -7,8 +7,10 @@ import { cn } from '@/lib/utils';
 // Limits from outreach-deliverability; prices researched 2026-10 (approximate, USD).
 const DEFAULTS = {
   tamCompanies: 1200,
-  peoplePerCompany: 1.5,
-  contactShare: 70,
+  prospectsMin: 1,
+  prospectsMax: 3,
+  namedShare: 50,
+  officeShare: 90,
   sequenceSteps: 3,
   liveDomains: 6,
   spareDomains: 6,
@@ -106,21 +108,32 @@ const CalculatorView = () => {
   const emailPeopleMonth = v.sequenceSteps > 0 ? emailsMonth / v.sequenceSteps : 0;
   const linkedinMonth = v.linkedinProfiles * v.invitesPerWeek * (52 / 12);
 
-  // Market
-  const tamPeople = v.tamCompanies * v.peoplePerCompany;
-  const reachablePeople = tamPeople * (v.contactShare / 100);
-  const monthsToCover = emailPeopleMonth > 0 ? reachablePeople / emailPeopleMonth : Infinity;
+  // Market: companies with a named contact get 1-3 prospects; the rest go to the office-email play
+  // (for A accounts only after named_lookup = not_found, per prospect-tiering).
+  const lo = Math.max(1, Math.min(v.prospectsMin, v.prospectsMax));
+  const hi = Math.max(lo, v.prospectsMax);
+  const avg = (lo + hi) / 2;
+  const namedCompanies = v.tamCompanies * (v.namedShare / 100);
+  const officeCompanies = (v.tamCompanies - namedCompanies) * (v.officeShare / 100);
+  const unreachable = v.tamCompanies - namedCompanies - officeCompanies;
+  const reachableFor = (n: number) => namedCompanies * n + officeCompanies;
+  const reachablePeople = reachableFor(avg);
+  const months = (people: number) => (emailPeopleMonth > 0 ? people / emailPeopleMonth : Infinity);
+  const monthsToCover = months(reachablePeople);
+  const monthsLo = months(reachableFor(lo));
+  const monthsHi = months(reachableFor(hi));
   const peopleThisMonth = Math.min(emailPeopleMonth, reachablePeople);
+  const namedThisMonth = reachablePeople > 0 ? peopleThisMonth * ((namedCompanies * avg) / reachablePeople) : 0;
 
   // Costs
-  const prospeoCredits = peopleThisMonth * 1 + peopleThisMonth * (v.mobileShare / 100) * 10;
+  const prospeoCredits = namedThisMonth * 1 + namedThisMonth * (v.mobileShare / 100) * 10;
   const prospeoTier = PROSPEO_TIERS.find((t) => t.credits >= prospeoCredits) ?? PROSPEO_TIERS[PROSPEO_TIERS.length - 1];
   const share = Math.max(1, v.sharedClients);
   const lines = [
     { label: `Инбокси (${totalInboxes}: ${liveInboxes} активни + ${totalInboxes - liveInboxes} резервни)`, tool: 'Zapmail', cost: totalInboxes * p.inbox },
     { label: `Домейни (${v.liveDomains + v.spareDomains})`, tool: 'годишно, разделено на 12', cost: ((v.liveDomains + v.spareDomains) * p.domainYear) / 12 },
     { label: `LinkedIn изпращане (${v.linkedinProfiles} профил)`, tool: 'GetSales', cost: v.linkedinProfiles * p.getsalesProfile },
-    { label: `Данни: ~${fmt(prospeoCredits)} кредита`, tool: `Prospeo ${prospeoTier.name}`, cost: prospeoTier.price },
+    { label: `Данни за ~${fmt(namedThisMonth)} души: ~${fmt(prospeoCredits)} кредита`, tool: `Prospeo ${prospeoTier.name}`, cost: prospeoTier.price },
     { label: `Проверка на ~${fmt(peopleThisMonth)} имейла`, tool: 'MillionVerifier', cost: peopleThisMonth * p.verifyPerEmail },
     { label: `Имейл платформа, споделена между ${share} клиента`, tool: 'Smartlead Pro', cost: p.smartlead / share },
     { label: `Търсене на фирми, споделено между ${share} клиента`, tool: 'AI Ark', cost: p.aiArk / share },
@@ -167,17 +180,27 @@ const CalculatorView = () => {
             <h2 className="font-bold">Пазарът на клиента</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <Field id="calc-tam" label="Фирми в TAM" value={v.tamCompanies} onChange={set('tamCompanies')} step={100} />
-              <Field id="calc-ppc" label="Хора на фирма" value={v.peoplePerCompany} onChange={set('peoplePerCompany')} step={0.5} />
+              <Field id="calc-steps" label="Имейли в секвенцията" value={v.sequenceSteps} onChange={set('sequenceSteps')} min={1} />
+              <Field id="calc-pmin" label="Проспекти на фирма, от" value={v.prospectsMin} onChange={set('prospectsMin')} min={1} />
+              <Field id="calc-pmax" label="Проспекти на фирма, до" value={v.prospectsMax} onChange={set('prospectsMax')} min={1} />
               <Field
-                id="calc-contact"
-                label="С валиден контакт"
-                hint="Мери се на първия списък"
-                value={v.contactShare}
-                onChange={set('contactShare')}
+                id="calc-named"
+                label="Фирми с личен имейл"
+                hint="На поне един човек"
+                value={v.namedShare}
+                onChange={set('namedShare')}
                 step={5}
                 suffix="%"
               />
-              <Field id="calc-steps" label="Имейли в секвенцията" value={v.sequenceSteps} onChange={set('sequenceSteps')} min={1} />
+              <Field
+                id="calc-office"
+                label="От останалите: с офис имейл"
+                hint="office@, sales@ (1 на фирма)"
+                value={v.officeShare}
+                onChange={set('officeShare')}
+                step={5}
+                suffix="%"
+              />
             </div>
           </section>
 
@@ -280,7 +303,11 @@ const CalculatorView = () => {
             <Stat
               label="Покриване на пазара"
               value={Number.isFinite(monthsToCover) ? (monthsToCover < 1 ? '< 1 месец' : `${fmt(monthsToCover, 1)} мес.`) : '—'}
-              sub={`${fmt(reachablePeople)} от ${fmt(tamPeople)} души с контакт`}
+              sub={
+                Number.isFinite(monthsLo)
+                  ? `от ${fmt(monthsLo, 1)} до ${fmt(monthsHi, 1)} мес. при ${lo}–${hi} проспекта`
+                  : undefined
+              }
             />
           </div>
 
@@ -294,6 +321,39 @@ const CalculatorView = () => {
               ))}
             </ul>
           )}
+
+          <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="font-bold">Пазарът в адреси</h2>
+            <dl className="mt-3 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4">
+              <div>
+                <dt className="text-muted-foreground">С личен имейл</dt>
+                <dd className="font-semibold tabular-nums">{fmt(namedCompanies)} фирми</dd>
+                <dd className="text-xs text-muted-foreground tabular-nums">
+                  {fmt(namedCompanies * lo)}–{fmt(namedCompanies * hi)} души
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Само офис имейл</dt>
+                <dd className="font-semibold tabular-nums">{fmt(officeCompanies)} фирми</dd>
+                <dd className="text-xs text-muted-foreground">1 адрес на фирма</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Без имейл</dt>
+                <dd className="font-semibold tabular-nums">{fmt(unreachable)} фирми</dd>
+                <dd className="text-xs text-muted-foreground">LinkedIn или телефон</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Адреси общо</dt>
+                <dd className="font-semibold tabular-nums">
+                  {fmt(reachableFor(lo))}–{fmt(reachableFor(hi))}
+                </dd>
+                <dd className="text-xs text-muted-foreground tabular-nums">средно {fmt(reachablePeople)}</dd>
+              </div>
+            </dl>
+            <p className="mt-3 text-xs text-muted-foreground">
+              При A фирми офис имейл се ползва само след като търсенето на конкретен човек (Prospeo, после AI Ark) не е намерило никого.
+            </p>
+          </section>
 
           <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <h2 className="font-bold">Капацитет по имейл</h2>
