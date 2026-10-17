@@ -1,0 +1,13 @@
+{
+  "id": "P020",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I might take the free list of 15 companies just to see if they know my niche, but I would not let an agency send cold emails and LinkedIn messages to buyers in my name this month. In my business a buyer remembers who spammed him, and my reputation took twenty years to build.",
+  "objection": "Your only proof is one logistics client. I sell manufactured goods for export, and a buyer who agrees to a call because of a cold email is not the same as one I meet through a partner or at a fair. I doubt those meetings turn into orders, and I worry the outreach makes us look desperate.",
+  "would_change_my_mind": "A phone call with a manufacturer or exporter of my size who used the pilot and can tell me how many of those meetings became real quotes or orders.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

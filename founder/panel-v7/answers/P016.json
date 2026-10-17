@@ -1,0 +1,13 @@
+{
+  "id": "P016",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I do need new clients and this reads like plain words about what happens, not a deck: free list first, first 3 meetings free, and I only pay for real meetings. I'd do the free 15 companies and if the list looks like people I'd actually want to sell to, I'd let them run the pilot.",
+  "objection": "Cold emails from some Sofia agency to freight buyers in another country usually get ignored or annoy people. One client with 45 meetings is one story; I worry the meetings are polite calls with people who already have a forwarder and will never switch.",
+  "would_change_my_mind": "If the 15 free companies are names I already know or obviously wrong for us, I walk. A reference call with that logistics client would push me to sign faster.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}

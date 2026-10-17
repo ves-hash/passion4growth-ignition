@@ -1,0 +1,222 @@
+[
+ {
+  "id": "P001",
+  "name": "Iris",
+  "age": 31,
+  "segment": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+  "income": 61000,
+  "behaviour": "Growth-hungry, entering a new market",
+  "behaviour_how": "Has a concrete plan to grow into a new country or segment and needs a pipeline there.",
+  "objection": "Cold outreach could hurt our name or bring GDPR trouble",
+  "habit": "you get three or four cold LinkedIn pitches a week from agencies"
+ },
+ {
+  "id": "P002",
+  "name": "Kofi",
+  "age": 41,
+  "segment": "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+  "income": 49000,
+  "behaviour": "Burned by an agency or consultant before",
+  "behaviour_how": "Paid for strategy or lead generation that delivered slides or nothing; now wants proof before paying.",
+  "objection": "We could buy Apollo and hire a junior SDR for less",
+  "habit": "you exhibit at one or two trade fairs a year"
+ },
+ {
+  "id": "P003",
+  "name": "Caleb",
+  "age": 39,
+  "segment": "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+  "income": 45000,
+  "behaviour": "Numbers-first",
+  "behaviour_how": "Asks for cost per meeting, payback and what exactly is delivered before anything else.",
+  "objection": "Do they understand our niche?",
+  "habit": "your sales team is two or three people who mostly look after existing accounts"
+ },
+ {
+  "id": "P004",
+  "name": "Darius",
+  "age": 49,
+  "segment": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+  "income": 44000,
+  "behaviour": "Slow committee decider",
+  "behaviour_how": "Needs a partner or board to sign off on any new spend.",
+  "objection": "Revenue architecture sounds like a consulting buzzword; what do I actually get?",
+  "habit": "you get three or four cold LinkedIn pitches a week from agencies"
+ },
+ {
+  "id": "P005",
+  "name": "Nico",
+  "age": 38,
+  "segment": "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+  "income": 75000,
+  "behaviour": "Burned by an agency or consultant before",
+  "behaviour_how": "Paid for strategy or lead generation that delivered slides or nothing; now wants proof before paying.",
+  "objection": "We could buy Apollo and hire a junior SDR for less",
+  "habit": "you exhibit at one or two trade fairs a year"
+ },
+ {
+  "id": "P006",
+  "name": "Maeve",
+  "age": 42,
+  "segment": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+  "income": 105000,
+  "behaviour": "DIY tinkerer",
+  "behaviour_how": "Has tried Apollo, Lemlist, a freelancer or an in-house SDR and thinks it can be done cheaper.",
+  "objection": "My team has no time to work on this with you",
+  "habit": "last quarter two of your bigger customers cut their orders"
+ },
+ {
+  "id": "P007",
+  "name": "Amara",
+  "age": 33,
+  "segment": "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+  "income": 68000,
+  "behaviour": "Numbers-first",
+  "behaviour_how": "Asks for cost per meeting, payback and what exactly is delivered before anything else.",
+  "objection": "Cold outreach could hurt our name or bring GDPR trouble",
+  "habit": "your sales team is two or three people who mostly look after existing accounts"
+ },
+ {
+  "id": "P008",
+  "name": "Rafael",
+  "age": 37,
+  "segment": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+  "income": 59000,
+  "behaviour": "Relationship seller",
+  "behaviour_how": "Wins business through referrals, fairs and personal calls; doubts a system can replace that.",
+  "objection": "We could buy Apollo and hire a junior SDR for less",
+  "habit": "you exhibit at one or two trade fairs a year"
+ },
+ {
+  "id": "P009",
+  "name": "Eli",
+  "age": 32,
+  "segment": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+  "income": 45000,
+  "behaviour": "Slow committee decider",
+  "behaviour_how": "Needs a partner or board to sign off on any new spend.",
+  "objection": "We could buy Apollo and hire a junior SDR for less",
+  "habit": "you approve every spend over EUR 1,000 yourself"
+ },
+ {
+  "id": "P010",
+  "name": "Ada",
+  "age": 56,
+  "segment": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+  "income": 53000,
+  "behaviour": "Growth-hungry, entering a new market",
+  "behaviour_how": "Has a concrete plan to grow into a new country or segment and needs a pipeline there.",
+  "objection": "Cold outreach could hurt our name or bring GDPR trouble",
+  "habit": "you get three or four cold LinkedIn pitches a week from agencies"
+ },
+ {
+  "id": "P011",
+  "name": "Ruby",
+  "age": 56,
+  "segment": "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+  "income": 81000,
+  "behaviour": "Allergic to buzzwords",
+  "behaviour_how": "Ignores anything that sounds like consulting jargon; wants plain words about what happens.",
+  "objection": "Revenue architecture sounds like a consulting buzzword; what do I actually get?",
+  "habit": "you get three or four cold LinkedIn pitches a week from agencies"
+ },
+ {
+  "id": "P012",
+  "name": "Maya",
+  "age": 36,
+  "segment": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+  "income": 76000,
+  "behaviour": "DIY tinkerer",
+  "behaviour_how": "Has tried Apollo, Lemlist, a freelancer or an in-house SDR and thinks it can be done cheaper.",
+  "objection": "We could buy Apollo and hire a junior SDR for less",
+  "habit": "you exhibit at one or two trade fairs a year"
+ },
+ {
+  "id": "P013",
+  "name": "Theo",
+  "age": 41,
+  "segment": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+  "income": 65000,
+  "behaviour": "Relationship seller",
+  "behaviour_how": "Wins business through referrals, fairs and personal calls; doubts a system can replace that.",
+  "objection": "We could buy Apollo and hire a junior SDR for less",
+  "habit": "you have decided to enter a new country in the next 6 months"
+ },
+ {
+  "id": "P014",
+  "name": "Omar",
+  "age": 37,
+  "segment": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+  "income": 57000,
+  "behaviour": "Growth-hungry, entering a new market",
+  "behaviour_how": "Has a concrete plan to grow into a new country or segment and needs a pipeline there.",
+  "objection": "Cold outreach could hurt our name or bring GDPR trouble",
+  "habit": "you approve every spend over EUR 1,000 yourself"
+ },
+ {
+  "id": "P015",
+  "name": "Raj",
+  "age": 42,
+  "segment": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+  "income": 56000,
+  "behaviour": "Relationship seller",
+  "behaviour_how": "Wins business through referrals, fairs and personal calls; doubts a system can replace that.",
+  "objection": "My team has no time to work on this with you",
+  "habit": "you approve every spend over EUR 1,000 yourself"
+ },
+ {
+  "id": "P016",
+  "name": "Cole",
+  "age": 46,
+  "segment": "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+  "income": 59000,
+  "behaviour": "Allergic to buzzwords",
+  "behaviour_how": "Ignores anything that sounds like consulting jargon; wants plain words about what happens.",
+  "objection": "I need clients, not another strategy deck",
+  "habit": "you exhibit at one or two trade fairs a year"
+ },
+ {
+  "id": "P017",
+  "name": "Rohan",
+  "age": 49,
+  "segment": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+  "income": 31000,
+  "behaviour": "Burned by an agency or consultant before",
+  "behaviour_how": "Paid for strategy or lead generation that delivered slides or nothing; now wants proof before paying.",
+  "objection": "Do they understand our niche?",
+  "habit": "you approve every spend over EUR 1,000 yourself"
+ },
+ {
+  "id": "P018",
+  "name": "Finn",
+  "age": 53,
+  "segment": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+  "income": 63000,
+  "behaviour": "Burned by an agency or consultant before",
+  "behaviour_how": "Paid for strategy or lead generation that delivered slides or nothing; now wants proof before paying.",
+  "objection": "My team has no time to work on this with you",
+  "habit": "last quarter two of your bigger customers cut their orders"
+ },
+ {
+  "id": "P019",
+  "name": "Malik",
+  "age": 31,
+  "segment": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+  "income": 85000,
+  "behaviour": "Numbers-first",
+  "behaviour_how": "Asks for cost per meeting, payback and what exactly is delivered before anything else.",
+  "objection": "Cold outreach could hurt our name or bring GDPR trouble",
+  "habit": "you approve every spend over EUR 1,000 yourself"
+ },
+ {
+  "id": "P020",
+  "name": "Yusuf",
+  "age": 52,
+  "segment": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+  "income": 59000,
+  "behaviour": "Relationship seller",
+  "behaviour_how": "Wins business through referrals, fairs and personal calls; doubts a system can replace that.",
+  "objection": "Revenue architecture sounds like a consulting buzzword; what do I actually get?",
+  "habit": "you approve every spend over EUR 1,000 yourself"
+ }
+]

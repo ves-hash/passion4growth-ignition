@@ -1,0 +1,13 @@
+{
+  "id": "P019",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "price",
+  "reason": "The math works: three free meetings, a EUR 900 ceiling I can sign myself, and I approve the list and every first message, so my downside is capped. I'd take the free 15-company sample first and only start the pilot if those companies are ones my sales team would actually want.",
+  "objection": "Our name is on those emails. One badly worded cold message to a German or Polish buyer we want long term, or a GDPR complaint, costs more than EUR 900. And one logistics case study tells me nothing about manufacturers.",
+  "would_change_my_mind": "If the 15 sample companies were generic or ones we already know, or if they won't put the GDPR responsibility split and the 48-hour rejection rule in the contract, I walk away.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 500,
+  "price_too_expensive": 900
+}

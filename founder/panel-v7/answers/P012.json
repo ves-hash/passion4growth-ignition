@@ -1,0 +1,13 @@
+{
+  "id": "P012",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "I'd happily take the free 15-company list and the local-language message, then run it myself with Apollo and a junior SDR. I've done this kind of outreach before and EUR 300 a meeting looks steep when a whole month of a junior in Sofia costs about the same as a few meetings.",
+  "objection": "The only proof is one logistics client. I sell manufactured goods for export, and I doubt an agency can talk about my product well enough that the meetings turn into real quote requests, not just polite calls.",
+  "would_change_my_mind": "A named manufacturing or export client in my kind of market who got meetings that turned into quotes, plus seeing that the free 15 companies are ones I couldn't have found myself in an afternoon on Apollo.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 250,
+  "price_too_expensive": 450
+}
