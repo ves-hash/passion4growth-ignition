@@ -23,5 +23,6 @@
   "phone-channel-pipeline": "Use when collecting, validating and using phone numbers: Hermes intake, normalization, line-type checks for SMS, WhatsApp/Viber eligibility, call lists, and agent-run follow-up messaging after a reply.",
   "prospect-source-finder": "Use when the current stack finds too few relevant prospects: diagnose the gap, find where the ICP can be found, scout and test databases and tools, and prepare an approval packet.",
   "prospect-tiering": "Use when assigning every prospect a priority tier, contact profile and channel play (named work email, office email, LinkedIn, phone, follow-up messaging), and when re-tiering after signals or replies.",
-  "website-keyword-check": "Use when checking whether each company's own website mentions a specific keyword (certification, service, brand, country), to filter a list or create a sourced personalization line."
+  "website-keyword-check": "Use when checking whether each company's own website mentions a specific keyword (certification, service, brand, country), to filter a list or create a sourced personalization line.",
+  "reply-handling": "Use when handling replies to P4G outreach on any channel (email, LinkedIn, WhatsApp, Viber, SMS): intake and thread matching, classification into one label, stop and suppression actions, reply drafts, approval in Telegram, sending, follow-up timers, referrals, meeting handoff and reply metrics."
 }

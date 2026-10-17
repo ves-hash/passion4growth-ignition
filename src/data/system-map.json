@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18c",
+  "version": "2026-10-18d",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -710,16 +710,47 @@
       "parallel_with": [],
       "tools": [],
       "human_step": null
+    },
+    {
+      "id": "reply-handling",
+      "file": "skills/reply-handling/SKILL.md",
+      "status": "proposed",
+      "owner": "hermes+claude",
+      "phase": "replies",
+      "lane": "copy",
+      "inputs": [
+        "replies from Smartlead, GetSales, Twilio",
+        "account record and Entry Plan",
+        "approved offer and proof"
+      ],
+      "outputs": [
+        "label per reply",
+        "stops and suppression",
+        "reply draft",
+        "Telegram approval card",
+        "follow-up timers",
+        "meeting handoff to the client"
+      ],
+      "depends_on": [
+        "outreach-evaluation",
+        "outreach-sequence-copywriting",
+        "prospect-tiering",
+        "outreach-compliance-cee"
+      ],
+      "parallel_with": [
+        "phone-channel-pipeline"
+      ],
+      "tools": [
+        "Smartlead",
+        "GetSales",
+        "Twilio (WhatsApp, SMS)",
+        "Telegram",
+        "Calendars"
+      ],
+      "human_step": "approve every positive reply draft; read hostile replies and data requests"
     }
   ],
   "missing_skills": [
-    {
-      "id": "reply-handling",
-      "owner": "hermes",
-      "phase": "replies",
-      "priority": "high",
-      "why": "няма скил за класификация и чернови на отговори"
-    },
     {
       "id": "hermes-integration-spec",
       "owner": "hermes",

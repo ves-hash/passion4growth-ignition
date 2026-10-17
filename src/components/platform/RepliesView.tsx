@@ -35,7 +35,7 @@ const RepliesView = ({ handled, onHandle }: RepliesViewProps) => {
       <div className="flex items-start gap-2 rounded-xl border border-dashed border-foreground/30 bg-secondary/50 p-3 text-sm">
         <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
         <p>
-          Този екран зависи от скила <span className="font-mono text-xs">reply-handling</span>, който още липсва в системата (висок приоритет).
+          Работи по скила <span className="font-mono text-xs">reply-handling</span> (предложен, още не е записан в акаунта): един етикет на отговор, стоп на последователностите, чернова, одобрение, напомняния. Отговор с интерес получава отговор до 2 работни часа.
         </p>
       </div>
 
