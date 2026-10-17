@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "I've paid agencies for slides before, but here I pay nothing until meetings happen, the first three are free and the most I can lose is EUR 900. That's less than one month of a junior SDR plus Apollo, so I'll do the free 15-company list and start the pilot if the list is any good.",
+  "objection": "The 'qualified meeting' could be a polite call with someone who has no budget, and I'll be fighting over the 48-hour dispute window. The 45 meetings in 2 months has no name on it, and 45 meetings is not 45 shipments.",
+  "would_change_my_mind": "If the free list of 15 companies is generic, full of names I already know, or the messages read like machine translation, I walk away.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

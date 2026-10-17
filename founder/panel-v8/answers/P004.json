@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd probably take the free call and look at the 15 companies, but this is the fourth agency pitch this week and I'm not signing anything this month. My partner has to see that list first, and even at 900 euros nothing new gets spent here without him.",
+  "objection": "Everyone sends me a '45 meetings' story. I don't know who that logistics client is, and I'm worried the 'qualified' meetings will be people who take a call and never buy, and then I spend weeks arguing over which ones count.",
+  "would_change_my_mind": "If the free list of 15 has real buyers I don't already know, and I can call that logistics client myself to hear how many of the meetings became orders, I'd put the pilot to my partner.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

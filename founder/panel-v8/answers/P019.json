@@ -1,0 +1,13 @@
+{
+  "id": "P019",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "price",
+  "reason": "The free list of 15 companies costs me nothing, and the pilot is capped at EUR 900 with the first 3 meetings free, so it's under my own approval line and the downside is small. I'd run it in relationship mode so nothing goes out under our name unless I've approved it.",
+  "objection": "Our reputation with buyers in a new market. If anything goes out that looks like spam, or a GDPR complaint lands on us, that costs far more than EUR 900. And one logistics client getting 45 meetings tells me nothing about manufacturing buyers in my niche.",
+  "would_change_my_mind": "",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "I'd happily take the free 15 companies and the local-language message, but then I'd load them into Lemlist and Apollo myself. EUR 300 a meeting feels like paying for something I already half-know how to do, even if my last tries fizzled out.",
+  "objection": "EUR 300 per meeting when an Apollo seat costs me about a hundred a month, and the only proof is one logistics client, not a manufacturer selling abroad like us. And honestly I doubt it's really 3 hours; it's never 3 hours.",
+  "would_change_my_mind": "If my own campaign using their free list gets nothing in a month, or they show me a manufacturer or exporter of our size who got real buyer meetings in a new country and I can call them.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 250,
+  "price_too_expensive": 450
+}

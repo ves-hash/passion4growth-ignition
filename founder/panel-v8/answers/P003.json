@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to replace lost volume and my two or three salespeople only farm existing accounts, so I need new meetings. The free 15-company list costs me one call, and with 3 free meetings and a EUR 900 cap, one new freight lane pays for the whole pilot many times over.",
+  "objection": "Do they really understand freight and 3PL buyers, or will I get meetings with junior people who just want a rate quote to compare? And '45 meetings in 2 months' is one client with no name, I want to see who and how many turned into contracts.",
+  "would_change_my_mind": "If the 15 free target companies are generic or wrong for our lanes and services, I walk away and do not start the pilot.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}

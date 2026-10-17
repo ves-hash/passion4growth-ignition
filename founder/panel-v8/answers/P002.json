@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to replace lost volume, and this is the first agency offer where I pay for meetings, not slides. Three free meetings, bad ones marked free, EUR 900 cap: I'll do the free 15-company list and, if it looks like people I actually want, run the pilot.",
+  "objection": "One unnamed logistics client with 45 meetings is not proof. I've heard this before, so I expect a fight over what counts as a 'qualified' meeting, and I expect 'meetings' with juniors who will never send a tender. And Apollo plus a junior SDR would still be mine after 45 days.",
+  "would_change_my_mind": "If the 15 companies in the free list are names I already know or obvious ones from a directory, I walk away. A reference call with that logistics client would make me commit faster.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

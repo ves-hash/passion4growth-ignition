@@ -1,0 +1,13 @@
+{
+  "id": "P011",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "For once an agency says in plain words what I get: 15 named companies in five days, then I only pay for meetings with real buyers, and the first three are free. We have to replace lost volume anyway, so I'd do the free list and, if the names are right, start the pilot.",
+  "objection": "I get three or four of these pitches a week and they all promise meetings. 'A logistics client got 45 meetings in 2 months' with no name means nothing to me. And I worry they'll send my name in mass emails and make us look like spammers to people we'll need to work with for years.",
+  "would_change_my_mind": "If the 15 companies they show me are ones I already know or that obviously don't fit, I stop there. A named logistics reference I can phone myself would get me to sign the pilot without hesitating.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}
