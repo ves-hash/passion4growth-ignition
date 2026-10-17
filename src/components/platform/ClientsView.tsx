@@ -1,4 +1,5 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Plus } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { DEMO_CLIENTS } from '@/data/platform-demo';
 import { map } from '@/components/system/model';
 import PhaseStepper from './PhaseStepper';
@@ -6,13 +7,19 @@ import { blockedFor, waitingFor } from './tasks';
 
 interface ClientsViewProps {
   onOpenClient: (id: string) => void;
+  onNewClient: () => void;
 }
 
-const ClientsView = ({ onOpenClient }: ClientsViewProps) => (
+const ClientsView = ({ onOpenClient, onNewClient }: ClientsViewProps) => (
   <div className="space-y-6">
-    <div>
-      <h1 className="text-3xl font-bold sm:text-4xl">Клиенти</h1>
-      <p className="mt-2 text-muted-foreground">Всеки клиент минава през едни и същи 8 фази. Ромбовете са гейтовете с одобрение.</p>
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h1 className="text-3xl font-bold sm:text-4xl">Клиенти</h1>
+        <p className="mt-2 text-muted-foreground">Всеки клиент минава през едни и същи 8 фази. Ромбовете са гейтовете с одобрение.</p>
+      </div>
+      <Button variant="primary" onClick={onNewClient} className="shrink-0">
+        <Plus /> Нов клиент
+      </Button>
     </div>
     <ul className="grid gap-3 lg:grid-cols-2">
       {DEMO_CLIENTS.map((c) => {
@@ -28,7 +35,18 @@ const ClientsView = ({ onOpenClient }: ClientsViewProps) => (
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <p className="text-lg font-bold">{c.name}</p>
+                  <p className="flex flex-wrap items-center gap-2 text-lg font-bold">
+                    {c.name}
+                    <span
+                      className={
+                        c.mode === 'self'
+                          ? 'rounded-full border border-dashed border-foreground/30 px-2 py-px text-[11px] font-medium text-muted-foreground'
+                          : 'rounded-full bg-foreground px-2 py-px text-[11px] font-medium text-background'
+                      }
+                    >
+                      {c.mode === 'self' ? 'самообслужване' : 'управляваме ние'}
+                    </span>
+                  </p>
                   <p className="text-sm text-muted-foreground">
                     {c.niche} · {c.countries.join(', ')} · води {c.lead}
                   </p>

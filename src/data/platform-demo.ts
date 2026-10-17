@@ -48,6 +48,8 @@ export interface DemoClient {
   overrides: Record<string, { status: TaskStatus; note?: string }>;
   gateDone: Record<string, boolean[]>;
   metrics?: { label: string; value: string }[];
+  /** managed: P4G води всичко и записва одобренията; self: клиентът попълва портала сам. */
+  mode?: 'managed' | 'self';
 }
 
 export const DEMO_CLIENTS: DemoClient[] = [
@@ -80,6 +82,7 @@ export const DEMO_CLIENTS: DemoClient[] = [
     countries: ['BG', 'GR'],
     lead: 'Мария',
     phase: 'gate1',
+    mode: 'self',
     overrides: {
       'outreach-icp-onboarding': { status: 'waiting', note: 'Чака A1, A2 и одобрение на ICP' },
       'outreach-deliverability': { status: 'waiting', note: 'Купи домейни' },
@@ -347,4 +350,47 @@ export const DEMO_ICP_DRAFT = {
     'Фирми под 10 служители',
     'Всички държави извън България и Гърция',
   ],
+};
+
+/** Риск по държави за студен имейл, от правилата в system-map.json. */
+export const COUNTRY_RISK: Record<string, { name: string; risk: 'Low' | 'Medium' | 'High'; calls: string }> = {
+  BG: { name: 'България', risk: 'Low', calls: 'по правилата на държавата' },
+  SK: { name: 'Словакия', risk: 'Low', calls: 'по правилата на държавата' },
+  SI: { name: 'Словения', risk: 'Low', calls: 'по правилата на държавата' },
+  HU: { name: 'Унгария', risk: 'Low', calls: 'по правилата на държавата' },
+  RO: { name: 'Румъния', risk: 'Medium', calls: 'по правилата на държавата' },
+  HR: { name: 'Хърватия', risk: 'Medium', calls: 'по правилата на държавата' },
+  CZ: { name: 'Чехия', risk: 'Medium', calls: 'по правилата на държавата' },
+  GR: { name: 'Гърция', risk: 'Medium', calls: 'по правилата на държавата' },
+  PL: { name: 'Полша', risk: 'High', calls: 'без студени обаждания' },
+  DE: { name: 'Германия', risk: 'High', calls: 'само с документиран интерес' },
+  AT: { name: 'Австрия', risk: 'High', calls: 'без студени обаждания' },
+};
+
+/** Примерен нов клиент, когото екипът онбордва сам (managed). */
+export const MANAGED_DEMO = {
+  name: 'Демо · Метални конструкции',
+  website: 'https://metal-demo.example',
+  niche: 'Метални конструкции за складове',
+  countries: ['BG', 'RO'],
+  icp: [
+    'Логистични и складови фирми, които строят или разширяват складове',
+    'Инвеститори в индустриални паркове',
+    'Държави: България и Румъния',
+    'Купувач: собственик, оперативен директор, ръководител инвестиции',
+  ],
+  anti: [
+    'Частни лица и малки ремонти',
+    'Конкуренти: други производители на метални конструкции',
+    'Всички държави извън България и Румъния',
+  ],
+  kickoffAnswers: {
+    B1: 'Складове над 2 000 м² в България; Румъния е приоритет за 2027.',
+    B2: 'Само България и Румъния.',
+    B3: 'Собственик и оперативен директор; при големи обекти и ръководител инвестиции.',
+    B4: 'Обект за 150–600 хил. евро, цикъл 3–6 месеца.',
+    B5: 'До 8 срещи на месец.',
+    B6: 'Търговският директор, до 24 часа.',
+    B7: 'Губим от по-евтини вносни конструкции, когато срокът не е важен.',
+  } as Record<string, string>,
 };

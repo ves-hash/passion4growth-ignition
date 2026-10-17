@@ -5,6 +5,7 @@ import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { DEMO_REPLIES } from '@/data/platform-demo';
 import ClientView from '@/components/platform/ClientView';
+import NewClientWizard from '@/components/platform/NewClientWizard';
 import ClientsView from '@/components/platform/ClientsView';
 import RepliesView from '@/components/platform/RepliesView';
 import TodayView from '@/components/platform/TodayView';
@@ -161,8 +162,9 @@ const Platform = () => {
               onOpenReplies={() => go('replies')}
             />
           )}
-          {tab === 'clients' && !clientId && <ClientsView onOpenClient={(id) => go('clients', id)} />}
-          {tab === 'clients' && clientId && <ClientView key={clientId} clientId={clientId} onBack={() => go('clients')} />}
+          {tab === 'clients' && !clientId && <ClientsView onOpenClient={(id) => go('clients', id)} onNewClient={() => go('clients', 'new')} />}
+          {tab === 'clients' && clientId === 'new' && <NewClientWizard onCancel={() => go('clients')} onDone={(id) => go('clients', id)} />}
+          {tab === 'clients' && clientId && clientId !== 'new' && <ClientView key={clientId} clientId={clientId} onBack={() => go('clients')} />}
           {tab === 'replies' && (
             <RepliesView
               handled={handled}
