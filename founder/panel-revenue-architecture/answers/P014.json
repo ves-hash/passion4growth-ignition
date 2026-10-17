@@ -1,0 +1,13 @@
+{
+  "id": "P014",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "We do need pipeline in the new country next year, but EUR 3,500 up front plus EUR 1,800 a month is over EUR 25,000 in the first year. For that I can pay for Apollo and Lemlist and a junior SDR who speaks the language, and keep what we learn in-house.",
+  "objection": "We could buy Apollo and hire a junior SDR for less. You don't guarantee any meetings, so I'd be paying an agency to run tools I've already tried myself, and when we stop paying, the engine stops too.",
+  "would_change_my_mind": "A reference from a manufacturer or exporter like us who entered a new country with you, plus a pay-per-meeting or results-linked fee for the first months instead of the flat EUR 1,800.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

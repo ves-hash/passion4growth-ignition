@@ -1,0 +1,13 @@
+{
+  "id": "P011",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "We need new customers in the new country next year, so I see why this exists. But I would not sign anything this month: my partner has to approve it, and I do not yet trust an outside firm to send cold emails under our name.",
+  "objection": "Cold outreach going out under our name could annoy the people we want to sell to, or land us in GDPR trouble in a market we do not know yet. If that happens, it is our reputation that suffers, not the agency's.",
+  "would_change_my_mind": "Speaking with a past client in wholesale or distribution who used it in another CEE country, and seeing in writing exactly who checks the GDPR side and that I approve every message before it goes out, so I can show my partner it is safe.",
+  "price_too_cheap": 1000,
+  "price_cheap": 2000,
+  "price_expensive": 4500,
+  "price_too_expensive": 7000
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P017",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "Two of my bigger clients just cut their orders, and 3,500 up front plus 1,800 a month is a big chunk of what I take home in a year, with no meetings promised. I run an agency, so I can set up Apollo and a couple of domains myself, or get a junior to do it, for a lot less.",
+  "objection": "No meetings are guaranteed, so I could spend over 14,000 euros by month six and still be waiting. Words like 'revenue architecture' and 'engine' read like consulting fluff for things I already know how to do.",
+  "would_change_my_mind": "Pay per qualified meeting, or a guarantee that I get the sprint money back if no meetings come in 60 days, from a team that has done this for other small agencies.",
+  "price_too_cheap": 500,
+  "price_cheap": 1200,
+  "price_expensive": 2500,
+  "price_too_expensive": 4000
+}

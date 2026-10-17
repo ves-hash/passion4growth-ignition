@@ -1,0 +1,153 @@
+{
+ "business": "Passion4Growth: revenue architecture for B2B companies in CEE (positioning, ICP and offer, outreach and partnership engine, deal flow and KPIs), with the P4G outreach skill pack as the outreach engine",
+ "seed": 23,
+ "dealt": 20,
+ "answered": 20,
+ "skipped": [],
+ "buys": 2,
+ "passes": 18,
+ "buy_rate": 0.1,
+ "by_segment": [
+  [
+   "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+   5,
+   0.2
+  ],
+  [
+   "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+   6,
+   0.16666666666666666
+  ],
+  [
+   "Founder of a logistics, 3PL or B2B services firm",
+   4,
+   0.0
+  ],
+  [
+   "Founder of a SaaS or IT services company selling into CEE and DACH",
+   3,
+   0.0
+  ],
+  [
+   "Owner of a marketing or digital agency living on referrals",
+   2,
+   0.0
+  ]
+ ],
+ "by_behaviour": [
+  [
+   "Growth-hungry, entering a new market",
+   3,
+   0.6666666666666666
+  ],
+  [
+   "Numbers-first",
+   3,
+   0.0
+  ],
+  [
+   "DIY tinkerer",
+   2,
+   0.0
+  ],
+  [
+   "Relationship seller",
+   4,
+   0.0
+  ],
+  [
+   "Burned by an agency or consultant before",
+   4,
+   0.0
+  ],
+  [
+   "Slow committee decider",
+   2,
+   0.0
+  ],
+  [
+   "Allergic to buzzwords",
+   2,
+   0.0
+  ]
+ ],
+ "by_income": [
+  [
+   "$76,000 and up",
+   7,
+   0.14285714285714285
+  ],
+  [
+   "$61,000 to $76,000",
+   7,
+   0.14285714285714285
+  ],
+  [
+   "under $61,000",
+   6,
+   0.0
+  ]
+ ],
+ "why_not": [
+  [
+   "trust",
+   15,
+   [
+    "The 45 meetings for a logistics company catches my eye, and I do need something for next year's new country, but I already paid an agency once and got nothing. EUR 3,500 up front plus 1,800 a month with no meeting number guaranteed is the same promise I've heard before.",
+    "The 45-meetings logistics case gets my attention, but six weeks of profiles, positioning and setup before anything proven reaches my calendar sounds like the strategy deck I don't need. I'd take a call this month, not sign one."
+   ],
+   [
+    "P001",
+    "P002"
+   ]
+  ],
+  [
+   "price",
+   3,
+   [
+    "Two big customers just cut their orders, so 3,500 up front plus 1,800 a month with no guaranteed meetings is real money I can't throw at a maybe. I've run Apollo and Lemlist myself and I think I can get most of this done cheaper with a freelancer.",
+    "We do need pipeline in the new country next year, but EUR 3,500 up front plus EUR 1,800 a month is over EUR 25,000 in the first year. For that I can pay for Apollo and Lemlist and a junior SDR who speaks the language, and keep what we learn in-house."
+   ],
+   [
+    "P003",
+    "P014"
+   ]
+  ]
+ ],
+ "why_yes": [
+  [
+   "need",
+   2,
+   [
+    "Two big customers cut orders last quarter and I already have the new market picked, so I need a pipeline there now, not next year. EUR 3,500 for the sprint is a small, contained bet for a company our size, so I'd try the sprint and decide on the monthly retainer once I see real meetings.",
+    "I already have a plan to enter the new country and I don't know anyone there, so the fairs and my network won't carry it. EUR 3,500 to have the targeting, local-language outreach and legal rules set up in six weeks is cheaper than me fumbling for half a year, so I'd do the Sprint and decide on the monthly part after I see meetings."
+   ],
+   [
+    "P009",
+    "P019"
+   ]
+  ]
+ ],
+ "flip": [
+  "A call with that logistics client so I can check the 45 meetings myself, plus a refund or free months if the sprint brings fewer than an agreed number of qualified meetings.",
+  "Talking to that logistics client directly, plus a written cost-per-qualified-meeting target with part of the Run fee refunded if they miss it.",
+  "Payment tied to results, like a big part of the fee only after qualified meetings happen, plus a talk with that logistics client to check the 45 meetings for myself.",
+  "A reference call with a SaaS or IT services founder selling into DACH who used it without any complaints, plus my sign-off on every message before it goes out.",
+  "A reference from a manufacturer in my own sector that I can call myself and that confirms the meetings turned into real orders, plus a pilot where they do almost all the work and the price depends on qualified meetings.",
+  "A named SaaS or IT services reference in DACH that I can actually call, plus part of the sprint fee tied to the first qualified meetings (for example half refunded if no meetings come in by day 60).",
+  "Talking to another distributor my size here who got real repeat orders from it, not just meetings, or paying mainly when a meeting turns into a customer.",
+  "Part of the fee tied to results, like paying the Sprint balance only after the first qualified meetings, plus a reference I can call from a SaaS or IT services company selling into DACH.",
+  "A written estimate of meetings per month for a wholesaler entering my target country, with part of the Run fee tied to qualified meetings and a clear cap on my team's hours.",
+  "Speaking with a past client in wholesale or distribution who used it in another CEE country, and seeing in writing exactly who checks the GDPR side and that I approve every message before it goes out, so I can show my partner it is safe.",
+  "A pay-for-results or partial-refund setup tied to qualified meetings, or the Sprint split so I pay a small amount first and the rest only after the first campaign books real meetings, plus a reference call with an agency client I can actually phone.",
+  "A wholesaler or distributor in Bulgaria I can call who tells me how many real orders came from it, and paying part of the fee only when a meeting with an actual buyer happens.",
+  "A reference from a manufacturer or exporter like us who entered a new country with you, plus a pay-per-meeting or results-linked fee for the first months instead of the flat EUR 1,800.",
+  "A reference I can call myself at a manufacturer or exporter like us, plus some of the sprint fee tied to qualified meetings actually happening.",
+  "Talking directly to that logistics client about their 45 meetings, plus some payment tied to qualified meetings actually held, so I can show my partners the risk is shared.",
+  "Pay per qualified meeting, or a guarantee that I get the sprint money back if no meetings come in 60 days, from a team that has done this for other small agencies.",
+  "Talking to a past wholesale or distribution client I can phone myself, plus a small paid pilot in my target country where part of the fee depends on qualified meetings actually being booked.",
+  "A case study from a manufacturer or exporter like us entering a new country, with a reference I can call, plus a sample of the target account list and the local-language messaging for our segment before I sign."
+ ],
+ "purchases_first_month_per_buyer": 1.0,
+ "price_answers": 20
+}

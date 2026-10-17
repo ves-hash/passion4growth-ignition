@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "Two big customers just cut their orders, so 3,500 up front plus 1,800 a month with no guaranteed meetings is real money I can't throw at a maybe. I've run Apollo and Lemlist myself and I think I can get most of this done cheaper with a freelancer.",
+  "objection": "I'd be paying a lot for something with no promised result, and if the emails come across as spam or break GDPR, it's my company's name that gets hurt, not theirs.",
+  "would_change_my_mind": "Payment tied to results, like a big part of the fee only after qualified meetings happen, plus a talk with that logistics client to check the 45 meetings for myself.",
+  "price_too_cheap": 400,
+  "price_cheap": 1000,
+  "price_expensive": 2000,
+  "price_too_expensive": 3500
+}

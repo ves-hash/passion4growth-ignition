@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "Two big customers cut orders last quarter and I already have the new market picked, so I need a pipeline there now, not next year. EUR 3,500 for the sprint is a small, contained bet for a company our size, so I'd try the sprint and decide on the monthly retainer once I see real meetings.",
+  "objection": "Honestly, Apollo plus a junior SDR could cost about the same as the EUR 1,800 a month, and we'd own the know-how. The logistics case with 45 meetings doesn't tell me it works for a manufacturer selling into a new country, and with no guaranteed meetings I'm carrying all the risk on the retainer.",
+  "would_change_my_mind": "",
+  "price_too_cheap": 800,
+  "price_cheap": 2000,
+  "price_expensive": 5000,
+  "price_too_expensive": 9000
+}

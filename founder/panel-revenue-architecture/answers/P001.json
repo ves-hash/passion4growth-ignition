@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "The 45 meetings for a logistics company catches my eye, and I do need something for next year's new country, but I already paid an agency once and got nothing. EUR 3,500 up front plus 1,800 a month with no meeting number guaranteed is the same promise I've heard before.",
+  "objection": "No guaranteed meetings and no cost per meeting I can check. I pay 3,500 first and only find out in 30-60 days whether it works, and by then I'm already on 1,800 a month.",
+  "would_change_my_mind": "A call with that logistics client so I can check the 45 meetings myself, plus a refund or free months if the sprint brings fewer than an agreed number of qualified meetings.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P020",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "The timing is right, we have a real plan for a new country and need a pipeline there, and EUR 3,500 is not much for a company our size. But the only proof they show is a logistics client and a vague 'complex B2B niche', and I won't hand our market entry to people who haven't shown they know industrial buyers in our sector.",
+  "objection": "Do they understand our niche? Our buyers are procurement and technical people at manufacturers who buy on specs, certifications and reliability, not on a clever cold email. Bad outreach in a new country could burn our name there before we even exhibit at the fair.",
+  "would_change_my_mind": "A case study from a manufacturer or exporter like us entering a new country, with a reference I can call, plus a sample of the target account list and the local-language messaging for our segment before I sign.",
+  "price_too_cheap": 1000,
+  "price_cheap": 2500,
+  "price_expensive": 6000,
+  "price_too_expensive": 10000
+}

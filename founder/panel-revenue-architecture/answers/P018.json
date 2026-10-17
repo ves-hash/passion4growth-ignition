@@ -1,0 +1,13 @@
+{
+  "id": "P018",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I paid an agency for a strategy once and got a nice deck and zero customers, so I won't pay 3,500 up front for six weeks of profiles and positioning on a promise. The new country next year is a real need, but 'no number of meetings is guaranteed' tells me the risk is all on my side again.",
+  "objection": "Most of this sprint sounds like the slides I already paid for once. The 45 meetings came from a logistics company, not a distributor like me, and I can't call anyone to check it.",
+  "would_change_my_mind": "Talking to a past wholesale or distribution client I can phone myself, plus a small paid pilot in my target country where part of the fee depends on qualified meetings actually being booked.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

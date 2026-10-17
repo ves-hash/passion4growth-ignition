@@ -1,0 +1,13 @@
+{
+  "id": "P012",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "EUR 3,500 is roughly a month of what I take home, and I've already paid for 'strategy' that turned into slides and zero leads. No guaranteed meetings plus two anonymous case studies isn't enough proof for me to put that money down again.",
+  "objection": "I run an agency myself, so I know how easy it is to sell 'revenue architecture' and deliver a deck, a CRM template and a few cold emails. If the meetings don't come in 60 days, I've lost the money and I'm stuck paying EUR 1,800 a month to find out why.",
+  "would_change_my_mind": "A pay-for-results or partial-refund setup tied to qualified meetings, or the Sprint split so I pay a small amount first and the rest only after the first campaign books real meetings, plus a reference call with an agency client I can actually phone.",
+  "price_too_cheap": 400,
+  "price_cheap": 900,
+  "price_expensive": 2000,
+  "price_too_expensive": 3500
+}
