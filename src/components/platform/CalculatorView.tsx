@@ -24,7 +24,7 @@ const DEFAULTS = {
 };
 
 const PRICES = {
-  inbox: 3.3,
+  inbox: 3,
   domainYear: 12,
   getsalesProfile: 95,
   smartlead: 94,
@@ -130,7 +130,7 @@ const CalculatorView = () => {
   const prospeoTier = PROSPEO_TIERS.find((t) => t.credits >= prospeoCredits) ?? PROSPEO_TIERS[PROSPEO_TIERS.length - 1];
   const share = Math.max(1, v.sharedClients);
   const lines = [
-    { label: `Инбокси (${totalInboxes}: ${liveInboxes} активни + ${totalInboxes - liveInboxes} резервни)`, tool: 'Zapmail', cost: totalInboxes * p.inbox },
+    { label: `Инбокси (${totalInboxes}: ${liveInboxes} активни + ${totalInboxes - liveInboxes} резервни)`, tool: 'InboxKit, месечно (годишно $2.50); загряването е в Smartlead', cost: totalInboxes * p.inbox },
     { label: `Домейни (${v.liveDomains + v.spareDomains})`, tool: 'годишно, разделено на 12', cost: ((v.liveDomains + v.spareDomains) * p.domainYear) / 12 },
     { label: `LinkedIn изпращане (${v.linkedinProfiles} профил)`, tool: 'GetSales', cost: v.linkedinProfiles * p.getsalesProfile },
     { label: `Данни за ~${fmt(namedThisMonth)} души: ~${fmt(prospeoCredits)} кредита`, tool: `Prospeo ${prospeoTier.name}`, cost: prospeoTier.price },
@@ -269,7 +269,15 @@ const CalculatorView = () => {
             </button>
             {showPrices && (
               <div className="grid gap-4 border-t border-border p-5 sm:grid-cols-2">
-                <Field id="pr-inbox" label="Инбокс на месец" value={p.inbox} onChange={setPrice('inbox')} step={0.1} suffix="$" />
+                <Field
+                  id="pr-inbox"
+                  label="Инбокс на месец"
+                  hint="InboxKit $3 месечно, $2.50 годишно; Zapmail ~$3.25–3.90"
+                  value={p.inbox}
+                  onChange={setPrice('inbox')}
+                  step={0.1}
+                  suffix="$"
+                />
                 <Field id="pr-domain" label="Домейн на година" value={p.domainYear} onChange={setPrice('domainYear')} suffix="$" />
                 <Field id="pr-gs" label="GetSales на профил" value={p.getsalesProfile} onChange={setPrice('getsalesProfile')} suffix="$" />
                 <Field id="pr-sl" label="Smartlead Pro" value={p.smartlead} onChange={setPrice('smartlead')} suffix="$" />
@@ -351,7 +359,7 @@ const CalculatorView = () => {
               </div>
             </dl>
             <p className="mt-3 text-xs text-muted-foreground">
-              При A фирми офис имейл се ползва само след като търсенето на конкретен човек (Prospeo, после AI Ark) не е намерило никого.
+              Правила от prospect-tiering: най-много 2 души от една фирма паралелно (различни роли, с 3+ дни разлика), третият след края на първата секвенция; една фирма не получава имейли от два наши домейна в един ден; офис имейл никога паралелно с човек от същата фирма. При A фирми офис имейл се ползва само след като търсенето на конкретен човек (Prospeo, после AI Ark) не е намерило никого.
             </p>
           </section>
 
