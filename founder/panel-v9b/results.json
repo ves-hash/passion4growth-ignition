@@ -1,0 +1,175 @@
+{
+ "business": "Passion4Growth: New-Market Sprint for logistics, wholesale and manufacturing companies in CEE (meetings with buyers in a new country or segment), run on the P4G outreach skill pack",
+ "seed": 41,
+ "dealt": 20,
+ "answered": 10,
+ "skipped": [
+  [
+   "P011",
+   "missing"
+  ],
+  [
+   "P012",
+   "missing"
+  ],
+  [
+   "P013",
+   "missing"
+  ],
+  [
+   "P014",
+   "missing"
+  ],
+  [
+   "P015",
+   "missing"
+  ],
+  [
+   "P016",
+   "missing"
+  ],
+  [
+   "P017",
+   "missing"
+  ],
+  [
+   "P018",
+   "missing"
+  ],
+  [
+   "P019",
+   "missing"
+  ],
+  [
+   "P020",
+   "missing"
+  ]
+ ],
+ "buys": 4,
+ "passes": 6,
+ "buy_rate": 0.4,
+ "by_segment": [
+  [
+   "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+   4,
+   0.5
+  ],
+  [
+   "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+   5,
+   0.4
+  ],
+  [
+   "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+   1,
+   0.0
+  ]
+ ],
+ "by_behaviour": [
+  [
+   "Growth-hungry, entering a new market",
+   2,
+   1.0
+  ],
+  [
+   "Numbers-first",
+   2,
+   1.0
+  ],
+  [
+   "Burned by an agency or consultant before",
+   2,
+   0.0
+  ],
+  [
+   "Slow committee decider",
+   2,
+   0.0
+  ],
+  [
+   "DIY tinkerer",
+   1,
+   0.0
+  ],
+  [
+   "Relationship seller",
+   1,
+   0.0
+  ]
+ ],
+ "by_income": [
+  [
+   "$61,000 and up",
+   4,
+   0.5
+  ],
+  [
+   "$49,000 to $61,000",
+   3,
+   0.3333333333333333
+  ],
+  [
+   "under $49,000",
+   3,
+   0.3333333333333333
+  ]
+ ],
+ "why_not": [
+  [
+   "trust",
+   4,
+   [
+    "I'd take the free 15-company list, that costs me nothing but a call. But I paid an agency before on a nice guarantee and got slides, so I'm not paying EUR 1,600 this month to a small Sofia shop with one case study when Apollo and a junior SDR are sitting right there.",
+    "I'd take the free call and the 15 companies, since that costs me nothing, but I'm not paying EUR 1,600 off a pitch. The last agency also had a nice guarantee and a case study, and I got slides, so I'd rather put that money toward Apollo and a junior who sits in my office."
+   ],
+   [
+    "P002",
+    "P005"
+   ]
+  ],
+  [
+   "timing",
+   1,
+   [
+    "I would take the free 15-company list, because it costs me nothing and gives me something concrete to put in front of my partner. But paying EUR 1,600 has to go through my partner, and that will not happen inside a month for an agency that found me the same way the other three cold pitches a week do."
+   ],
+   [
+    "P004"
+   ]
+  ],
+  [
+   "habit",
+   1,
+   [
+    "I would happily take the free 15 companies and the local-language first message, but then I would put them into Lemlist and have my own person chase them. I've done Apollo and a freelancer before, and paying EUR 1,600 now and then EUR 300 a meeting for something I think we can run ourselves is a hard sell to me."
+   ],
+   [
+    "P006"
+   ]
+  ]
+ ],
+ "why_yes": [
+  [
+   "need",
+   4,
+   [
+    "I already decided to go into the new country and I have no pipeline there, so the free 15-company list costs me nothing to look at. If the list and the local-language message are actually good, EUR 1,600 with a money-back guarantee is less than one trade-fair stand, so I would run the pilot in relationship mode.",
+    "EUR 1,600 for at least 5 qualified meetings is about EUR 320 each, and one new freight account pays that back many times over, with my money back if they don't deliver. I'd only sign the pilot after the free 15-company list shows they actually know which shippers and forwarders in that market move volume like ours."
+   ],
+   [
+    "P001",
+    "P003"
+   ]
+  ]
+ ],
+ "flip": [
+  "A call with two or three logistics or 3PL owners in CEE who actually ran the pilot, and the free list showing real shippers in my target country that I haven't already met at a trade fair.",
+  "If the free list of 15 companies shows buyers I did not already know, and I can speak to a wholesaler or distributor client in my region who got real orders from it, my partner would sign off on the pilot.",
+  "If the 15 free targets include companies I didn't already know and would actually want, and I can talk to that logistics client myself, I'd sign the pilot.",
+  "If the free list of 15 includes companies I didn't know and couldn't have found myself in Apollo, plus a named reference from a manufacturer or exporter of our size who got real quote requests, not just meetings.",
+  "If the free list of 15 has names I recognise as real buyers I haven't reached yet, and I can speak to a wholesaler like me who got real orders, not just meetings, I'd do the pilot in relationship mode before my next trade fair.",
+  "If the free list of 15 has companies we didn't know about and that clearly fit, and I can call one or two of their wholesale or distribution clients in our region, I'd take the pilot to my partner."
+ ],
+ "purchases_first_month_per_buyer": 1.0,
+ "price_answers": 10
+}
