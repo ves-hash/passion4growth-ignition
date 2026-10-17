@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason": "I might take the free call and look at the 15 companies, since that costs me nothing, but signing a pilot with an agency that found me on LinkedIn is not something I do in a month. My partner will ask who else in wholesale they have done this for, and one logistics client with 45 meetings is not an answer.",
+  "reason_code": "trust",
+  "objection": "I get three or four of these pitches a week. 'Qualified meeting' sounds clean on paper, but I worry I end up arguing every week about whether a meeting counts, and at EUR 350 each, ten meetings is EUR 3,500 for talks that may never turn into an order.",
+  "would_change_my_mind": "A wholesaler or distributor like us, in the market we want to enter, who will talk to me on the phone and say the meetings turned into real orders.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

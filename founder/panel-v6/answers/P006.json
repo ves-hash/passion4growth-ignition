@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "I'd happily take the free 15-company list and the local-language message, then run it myself through Lemlist with a junior. EUR 350 a meeting feels like paying agency margin for something I've already half-built in-house.",
+  "objection": "I've paid Apollo, Lemlist and a freelancer before and got lukewarm meetings. EUR 350 for a meeting I could probably get myself for a fraction of that, and I don't believe my team really only spends 3 hours on it.",
+  "would_change_my_mind": "If the free list in Step 1 contains buyers I genuinely couldn't have found myself, plus a reference from a manufacturer or exporter like us (not logistics) who won real orders, not just meetings, I'd run the pilot.",
+  "price_too_cheap": 80,
+  "price_cheap": 150,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

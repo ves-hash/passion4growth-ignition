@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "timing",
+  "reason": "I'd take the free call and the 15-company list, that costs me nothing, but signing the pilot means taking it to my partner and that won't happen inside a month. Up to EUR 3,500 is over my own EUR 1,000 limit, and right now my gut says we could buy Apollo and hire a junior SDR for less and keep the person in-house.",
+  "objection": "One logistics client with 45 meetings isn't proof for a wholesaler like me. And what happens to my reputation in a new country if strangers in Sofia are emailing buyers in my name from domains I don't really control yet?",
+  "would_change_my_mind": "If the free list of 15 companies included two or three names my partner already knows are real buyers we have never reached, plus a reference from a wholesaler or distributor rather than a logistics firm, I would take it to the partner meeting and probably sign.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 350,
+  "price_too_expensive": 600
+}

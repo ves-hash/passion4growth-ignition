@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "I've paid for slides before, so the only reason I'd say yes is that I pay nothing until three real meetings have happened and I can mark the bad ones free. I'll take the free 15-company list, and if the companies are ones I didn't already know, I'll start the pilot, but I won't expect to pay anything in the first month.",
+  "objection": "EUR 350 a meeting adds up to EUR 3,500, which is close to what a junior SDR with Apollo costs me for a couple of months, and then the knowledge stays in my house. And 'a logistics client got 45 meetings' with no name and no reference I can call means nothing to me.",
+  "would_change_my_mind": "If the free list of 15 companies is generic or full of firms we already know, or they won't give me a logistics client I can phone, I walk away.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "Last time I paid a retainer up front and got slides. Here the first 3 meetings are free and I only pay for meetings that actually happen with buyers I approved, so the worst case is I lose a few hours. I would take the free 15-company list first, and if the targets look like real buyers I would run the pilot, starting before our next trade fair.",
+  "objection": "Their definition of a 'qualified meeting' and mine will drift apart. I am afraid of paying EUR 350 for polite intro calls with a logistics manager who has no budget and no reason to switch, plus some cold email that ruins our name in a market where everyone knows everyone. And one client with 45 meetings in 2 months is one story, not proof; I want to know how many of those meetings became quotes.",
+  "would_change_my_mind": "If the 15-company list is generic, meaning names I already know or could pull from Apollo in an afternoon, I walk away and hire the junior SDR instead.",
+  "price_too_cheap": 80,
+  "price_cheap": 180,
+  "price_expensive": 450,
+  "price_too_expensive": 750
+}

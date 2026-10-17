@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have decided to go into the new market and my network does not reach there, so I need a pipeline. A free list of 15 companies and three free meetings before I pay anything is cheap enough to try, but I would start the pilot carefully and watch every message.",
+  "objection": "Our name is the business. If some agency spams buyers in a new country from domains connected to us, or we get a GDPR complaint, that costs me more than any meeting brings. One logistics client with 45 meetings is not much proof for a wholesaler like me.",
+  "would_change_my_mind": "If the first messages read like generic spam, or they cannot show me who is legally responsible for the data, I walk away before the pilot starts.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

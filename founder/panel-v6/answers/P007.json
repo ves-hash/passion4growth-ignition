@@ -1,0 +1,13 @@
+{
+  "id": "P007",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I need new volume and I can't do it with my two or three account managers. Nothing up front, three free meetings and a refund-style 48-hour rule means the worst case is a few hours of my time, so I'd do the free 15-company list and sign the pilot if the list is sharp. EUR 350 a meeting is nothing next to one freight contract.",
+  "objection": "Outreach from lookalike domains in my company's name. In logistics everyone knows everyone, and one pushy or badly translated email to a big shipper hurts us for years. The GDPR pack is nice on paper, but if a complaint comes it's my name on it. And '45 meetings in 2 months' sounds like volume to me, not buyers who actually ask for a quote.",
+  "would_change_my_mind": "If the 15-company list is generic, names companies we already know, or the sample first message reads like spam, I walk away and don't sign the pilot.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 550,
+  "price_too_expensive": 900
+}

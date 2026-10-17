@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "My customers buy from me because they know me and shake my hand at the fair, not because a stranger's email landed in their inbox. I might take the free list of 15 companies to see what you know, but I would not sign a pilot this month; at EUR 350 a meeting I can get a junior on the phone with Apollo for about the same money and keep it in-house.",
+  "objection": "Your proof is one logistics client. In wholesale, a cold meeting with a buyer who has never heard of us usually ends in a price request and nothing else, so I doubt these meetings turn into orders, and I don't want an agency's cold emails going out with my name on them in a market where reputation is everything.",
+  "would_change_my_mind": "A free list where most of the 15 companies are ones I don't already know and that really fit, plus a phone call with a wholesale or distribution owner like me who got actual orders, not just meetings, from you.",
+  "price_too_cheap": 80,
+  "price_cheap": 150,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

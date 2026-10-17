@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason": "The maths works for me: nothing up front, three meetings free, and at EUR 350 one new freight contract pays for the whole pilot many times over. I'd take the free 15-company list first, and if those are real shippers in our lanes I'd sign the pilot. My two sales guys are only looking after existing accounts, so nobody else is going to open the new country.",
+  "reason_code": "price",
+  "objection": "One logistics client with 45 meetings in 2 months tells me nothing about cost per meeting that turns into a quote. I need to see they know the difference between a forwarder, a 3PL and a shipper, otherwise I get 'meetings' with people who already have a provider and just wanted a free call.",
+  "would_change_my_mind": "If the 15 free targets come back generic, like companies that don't ship in our volumes or lanes, I walk away. If they're spot on, I'd sign faster.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 500,
+  "price_too_expensive": 850
+}
