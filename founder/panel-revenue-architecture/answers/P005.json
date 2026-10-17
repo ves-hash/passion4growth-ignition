@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "Our customers come from fairs and from me picking up the phone. I've had cold emails from agencies myself and I delete them, so I don't believe a buyer in Germany will book a meeting with us because a warmed-up domain wrote to them.",
+  "objection": "My two or three people are busy looking after our existing accounts. Who sits in those six weeks of workshops, and who follows up when the meetings come? On top of that, they guarantee nothing, so I could pay 3,500 plus 1,800 a month and get just another monthly report explaining why the numbers aren't there.",
+  "would_change_my_mind": "A reference from a manufacturer in my own sector that I can call myself and that confirms the meetings turned into real orders, plus a pilot where they do almost all the work and the price depends on qualified meetings.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

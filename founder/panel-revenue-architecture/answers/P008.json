@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I already paid an agency for strategy that ended as slides and zero pipeline, and with two big customers cutting orders I can't put EUR 3,500 plus EUR 1,800 a month on another promise with no guaranteed meetings. For that money I could get Apollo and a junior SDR and at least own the result.",
+  "objection": "No number of meetings is guaranteed, so I'd be paying up front for the sprint and only find out after 30-60 days whether it works. The logistics case doesn't tell me anything about SaaS selling into DACH.",
+  "would_change_my_mind": "Part of the fee tied to results, like paying the Sprint balance only after the first qualified meetings, plus a reference I can call from a SaaS or IT services company selling into DACH.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

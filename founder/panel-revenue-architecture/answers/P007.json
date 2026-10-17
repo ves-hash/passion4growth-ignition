@@ -1,0 +1,13 @@
+{
+  "id": "P007",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "Losing two big customers hurts, but my business runs on people knowing me and picking up the phone. I don't see a stranger's cold emails from new domains doing that, and six weeks of profiles, positioning and CRM sounds like the strategy deck I don't need.",
+  "objection": "They promise no meetings, and in wholesale a meeting isn't an order anyway. I'd pay 3,500 plus 1,800 a month and maybe end up with calls from people who just want a price list, while my name goes out to people who don't know me.",
+  "would_change_my_mind": "Talking to another distributor my size here who got real repeat orders from it, not just meetings, or paying mainly when a meeting turns into a customer.",
+  "price_too_cheap": 500,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}
