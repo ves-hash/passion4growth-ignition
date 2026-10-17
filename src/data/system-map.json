@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18b",
+  "version": "2026-10-18c",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -361,7 +361,7 @@
     {
       "id": "apify-actors",
       "file": "skills/apify-actors/SKILL.md",
-      "status": "proposed",
+      "status": "saved",
       "owner": "claude+hermes",
       "phase": "phase1",
       "lane": "lists",
@@ -383,7 +383,7 @@
     {
       "id": "prospect-source-finder",
       "file": "skills/prospect-source-finder/SKILL.md",
-      "status": "proposed",
+      "status": "saved",
       "owner": "claude",
       "phase": "phase1",
       "lane": "lists",
@@ -407,7 +407,7 @@
     {
       "id": "lead-data-hygiene",
       "file": "skills/lead-data-hygiene/SKILL.md",
-      "status": "proposed",
+      "status": "saved",
       "owner": "hermes",
       "phase": "phase1",
       "lane": "data",
@@ -433,7 +433,7 @@
     {
       "id": "account-intelligence",
       "file": "skills/account-intelligence/SKILL.md",
-      "status": "proposed",
+      "status": "saved",
       "owner": "claude+hermes",
       "phase": "phase1to2",
       "lane": "data",
