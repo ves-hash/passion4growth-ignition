@@ -1,0 +1,6 @@
+Passion4Growth (Sofia) gets B2B companies in CEE meetings with buyers in a new country or segment, beyond referrals and trade fairs.
+Before you pay anything: after one 30-minute call, within 5 working days we send you 15 real target companies in your niche and market and the first message we would send them, in the local language. If it does not look right, you walk away.
+The 60-day New-Market Sprint: we set up the targeting, the offer and the outreach (email from separate warmed-up domains, LinkedIn and phone, each country's legal rules checked). You approve the target list and every first message; a person approves every reply. Your time: about 3 hours in total. Before every meeting you get a one-page brief on the company and the person.
+Price: EUR 3,000. EUR 1,500 at the start; the other EUR 1,500 is due only after the 5th qualified meeting (a decision-maker at a company you approved) has taken place. If that does not happen within 90 days, you never pay it.
+Included: a GDPR pack for each target country (checklist, legitimate-interest assessment, a contract that says who controls the data). Past client: a logistics company got 45 meetings in 2 months; we put you in touch with a past client in the closest niche.
+After the Sprint, optional: EUR 1,500 a month to keep it running, cancel with 30 days' notice.
