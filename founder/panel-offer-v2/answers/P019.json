@@ -1,0 +1,13 @@
+{
+  "id": "P019",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I already have a plan to push into a new country and right now my only pipeline there is the next trade fair. If the 15 sample companies are actually distributors and buyers I would want, putting EUR 1,500 at risk is cheaper and faster than hiring and training a junior SDR who doesn't speak the language.",
+  "objection": "My gut says Apollo plus a junior SDR would be cheaper. And in wholesale a 'meeting' often means someone polite who never orders, so I worry the 5 qualified meetings get counted in a way that suits you more than me.",
+  "would_change_my_mind": "If the 15 sample companies are generic names I could pull from a directory myself, or the past client in my niche won't get on a call with me, I walk.",
+  "price_too_cheap": 800,
+  "price_cheap": 2000,
+  "price_expensive": 4500,
+  "price_too_expensive": 7000
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P015",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I paid an agency before, they sent a nice list and nice reports, and not one real buyer came out of it. Our customers buy from people they know and met at a fair, so a cold email from a domain I've never heard of won't open that door. I might take the free call and look at the 15 companies, but I'm not putting EUR 1,500 down this month.",
+  "objection": "A 'qualified meeting' with a decision-maker who just took a polite call is not a buyer. The last agency also counted meetings, and none of them turned into orders. I don't believe strangers in a new country will take a cold message from a manufacturer they don't know seriously.",
+  "would_change_my_mind": "Talking directly to a past client who sells something like ours, a manufacturer or exporter rather than a logistics firm, and hearing that those meetings turned into actual orders, plus a 15-company list that includes names I'd already want and couldn't reach myself.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

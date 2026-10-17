@@ -1,0 +1,13 @@
+{
+  "id": "P020",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We already have a plan to go into a new country and one or two fairs a year won't fill that pipeline, so I need something like this. EUR 1,500 up front with the rest tied to five real meetings is a small bet next to one bad fair stand, and the free list of 15 companies lets me check them before I sign anything.",
+  "objection": "Do they actually understand industrial buyers in our niche? A logistics company getting 45 meetings tells me nothing about whether they can reach the right procurement or technical person at a manufacturer abroad. I also worry that cold outreach done badly will hurt our name in a market where we are new and reputation is everything.",
+  "would_change_my_mind": "If the 15 sample companies are generic or wrong for our niche, or the first message reads like spam in the local language, I walk away. Talking to a past client in a manufacturing or export niche close to ours would settle it the other way.",
+  "price_too_cheap": 800,
+  "price_cheap": 2000,
+  "price_expensive": 5000,
+  "price_too_expensive": 9000
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P011",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "The free 15-company sample is fair and I might take the call, but I cannot sign EUR 3,000 on my own and my partners will not approve cold emails going out under our name before we have even picked next year's country. The GDPR pack helps on paper, but it is still a Sofia agency sending messages that customers will read as coming from us.",
+  "objection": "If one of those messages lands badly or someone files a GDPR complaint, it is our reputation in a market where we have no name yet, and a checklist from the agency does not protect us. I need our own lawyer to look at it, not theirs.",
+  "would_change_my_mind": "Talking to the past client in a wholesale or distribution niche close to ours, plus our lawyer signing off on the GDPR pack, timed for when the board has confirmed the target country.",
+  "price_too_cheap": 800,
+  "price_cheap": 1800,
+  "price_expensive": 3500,
+  "price_too_expensive": 6000
+}

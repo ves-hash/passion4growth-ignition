@@ -1,0 +1,13 @@
+{
+  "id": "P012",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd take the free call and the 15-company list, but paying EUR 1,500 upfront to another outreach agency after the last one gave me slides and nothing is not happening this month. Also, I run an agency myself, so I know how easy it is to make a sample list look good.",
+  "objection": "The 1,500 upfront is real money for me and it pays for setup I can't check. The 'qualified meeting' could just be someone polite who takes a call and never buys, and one logistics case study doesn't tell me it works for a small agency.",
+  "would_change_my_mind": "Talking to a past client who runs an agency like mine and actually signed paying work from those meetings, or having the whole fee paid only per meeting with no upfront payment.",
+  "price_too_cheap": 500,
+  "price_cheap": 1200,
+  "price_expensive": 2500,
+  "price_too_expensive": 4000
+}
