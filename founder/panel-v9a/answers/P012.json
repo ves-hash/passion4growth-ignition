@@ -1,0 +1,13 @@
+{
+  "id": "P012",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "I'd happily take the free list of 15 companies and the local-language message, but then I'd run it myself with Apollo and a junior SDR. At EUR 300 a meeting, a Bulgarian junior on about EUR 1,200 a month only has to book four or five meetings to beat you.",
+  "objection": "EUR 300 per meeting adds up quickly, and I've already seen that the tools are cheap. What I'm really paying for is your targeting and copy, and the free step gives me most of that.",
+  "would_change_my_mind": "Seeing my own SDR fail to book qualified meetings in the new country within a couple of months, or proof from a manufacturer like us (not just a logistics client) that the meetings turned into quote requests.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 250,
+  "price_too_expensive": 400
+}

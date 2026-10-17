@@ -1,0 +1,13 @@
+{
+  "id": "P011",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "For once it says plainly what I get: 15 named companies, a message, then meetings I only pay for if they're real buyers. I have a new country to crack and no referrals there, and the free list costs me 30 minutes, so I'd take it and start the pilot only if the list is genuinely right.",
+  "objection": "I get three or four of these agency pitches a week, and 'a logistics client got 45 meetings in 2 months' with no name means nothing to me. And who decides a meeting was qualified when they say yes and I say no budget? I'll be fighting over EUR 300 invoices.",
+  "would_change_my_mind": "If the 15 companies are ones I already know, or are obviously wrong for us, I stop there. A named logistics client I can phone would make me sure.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 500,
+  "price_too_expensive": 900
+}

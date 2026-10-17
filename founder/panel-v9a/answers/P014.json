@@ -1,0 +1,13 @@
+{
+  "id": "P014",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have decided to enter the new market and referrals and fairs will not fill a pipeline there fast enough. The free 15-company sample costs me one call, and a pilot where the first 3 meetings are free and the cap is EUR 1,800 is within what I sign off myself, so I would start in Relationship mode and judge it on real meetings.",
+  "objection": "Our name is what we sell on. One clumsy or pushy message to a buyer we want, or a GDPR complaint in a market where nobody knows us yet, costs far more than EUR 1,800. And 45 meetings for a logistics client is one case, not proof that it works for manufacturers.",
+  "would_change_my_mind": "If the 15 sample companies are generic or the local-language message sounds like spam, I stop there. A reference I can call, from a manufacturer or exporter, would make me commit faster.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 450,
+  "price_too_expensive": 750
+}

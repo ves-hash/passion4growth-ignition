@@ -1,0 +1,13 @@
+{
+  "id": "P020",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I might take the free call and look at the 15 companies, because it costs me nothing, but I would not commit to a pilot this month. In my business a buyer signs because he knows me from the fair or through someone we both trust, and I do not believe a meeting from a stranger's outreach turns into an order, even if I sign the messages myself.",
+  "objection": "One logistics client with 45 meetings in two months tells me nothing about manufacturing or export buyers. A meeting is not an order. I would end up spending my time on calls with people who were polite but were never going to buy, and the 48-hour rule means I have to argue about every one of them.",
+  "would_change_my_mind": "If the free list of 15 companies included two or three I did not know and could see we should supply, and they could put me in touch with a manufacturer or exporter like us who closed real orders from meetings they booked.",
+  "price_too_cheap": 80,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "I got burned paying for slides before, but here I pay nothing up front, the first 3 meetings are free and a bad meeting costs me nothing, so the risk is theirs, not mine. I'll take the free 15-company list first, and if the targets look like people I'd actually want to sell to, I'll run the pilot, mostly to fill my stand at the next fair.",
+  "objection": "One logistics client with 45 meetings is one story, not proof. And at EUR 300 a meeting, a junior SDR with Apollo costs me about the same per month and stays in the company. I also worry the 'qualified' meetings will be people who take the call and never send a quote.",
+  "would_change_my_mind": "If the free list shows 15 companies I already know, or obviously wrong ones, I walk away. A reference call with that logistics client would make me sure.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

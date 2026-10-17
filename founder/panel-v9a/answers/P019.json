@@ -1,0 +1,13 @@
+{
+  "id": "P019",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to fill the volume gap and the maths is easy: the pilot is capped at EUR 1,800, the first 3 meetings are free, and one real distributor contract pays for it many times over. I'd do the free 15-company list first, and if it is sharp I'd sign the pilot in Relationship mode only, so nothing goes out under our name without my approval.",
+  "objection": "Our name and GDPR. One clumsy mass email to a German or Polish buyer we want long term could cost us more than the pilot. Also, the only proof is one logistics client, and we are a manufacturer selling to industrial buyers, which is a different, slower sale.",
+  "would_change_my_mind": "If the 15 sample companies are generic or the first message reads like spam, I walk away. To be sure, I'd want a manufacturing or export reference I can call, with meetings that turned into quotes.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 450,
+  "price_too_expensive": 700
+}

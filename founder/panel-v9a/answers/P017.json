@@ -1,0 +1,13 @@
+{
+  "id": "P017",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "The last agency took my money up front and gave me slides. Here I pay nothing until a real buyer is sitting in front of me, the first 3 are free and I can reject bad ones, so I will do the free list and, if those 15 companies are actually ones I would want, start the pilot.",
+  "objection": "Their only proof is a logistics client. Wholesale distribution is different: margins are thin, buyers are procurement people who get ten offers a week, and I doubt an agency from Sofia knows who really buys my product lines in a new country. Also, 'meetings' can mean polite calls that never turn into orders, and I will pay EUR 300 each for them.",
+  "would_change_my_mind": "If the 15 free target companies look generic or contain names I already know are wrong for us, I stop there and do not start the pilot.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

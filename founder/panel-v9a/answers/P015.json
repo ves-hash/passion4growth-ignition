@@ -1,0 +1,13 @@
+{
+  "id": "P015",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I might take the free list of 15 companies, it costs me a call, but I won't sign up for the pilot this month. In my industry the big orders come from people who know me, and I don't believe a message from an agency in Sofia, even signed with my name, turns into a buyer who actually orders.",
+  "objection": "Your proof is one logistics client. I'm a manufacturer. Getting a meeting is easy, getting a real order takes months and people, and my team has no time to chase meetings that come out of cold outreach. Three hours sounds nice on paper, but it never stays at three hours.",
+  "would_change_my_mind": "A manufacturer or exporter like us, ideally one I know or can call, telling me their meetings turned into actual quotes and orders in the new market.",
+  "price_too_cheap": 80,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}

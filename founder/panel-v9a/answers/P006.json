@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "I'd take the free 15 companies and the local-language message, then load them into Apollo or Lemlist and have my own people run it. Paying EUR 300 a meeting for something I've done myself feels like paying for setup I can copy.",
+  "objection": "Lists and outreach are something I can do myself for a few hundred a month in tools. And even with '3 hours total', my team is stretched after losing two customers, and I've watched agencies quietly hand the work back to us.",
+  "would_change_my_mind": "If the 15 free targets include buyers I genuinely could not have found myself, ideally with someone already booked for a trade fair I'm going to, I would run the pilot because the first 3 meetings cost nothing.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 250,
+  "price_too_expensive": 400
+}
