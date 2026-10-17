@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import { Briefcase, Cog, ExternalLink, MessageSquareReply, Sun } from 'lucide-react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { ArrowRight, Briefcase, Cog, ExternalLink, GraduationCap, MessageSquareReply, Sun } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { DEMO_REPLIES } from '@/data/platform-demo';
@@ -8,8 +8,11 @@ import ClientView from '@/components/platform/ClientView';
 import ClientsView from '@/components/platform/ClientsView';
 import RepliesView from '@/components/platform/RepliesView';
 import TodayView from '@/components/platform/TodayView';
+import OnboardingView from '@/components/platform/OnboardingView';
+import { PRACTICE_COUNT, PracticeTarget, onboardingMemory } from '@/components/platform/onboarding';
 
 const NAV = [
+  { id: 'start', label: 'Първи стъпки', icon: GraduationCap },
   { id: 'today', label: 'Днес', icon: Sun },
   { id: 'clients', label: 'Клиенти', icon: Briefcase },
   { id: 'replies', label: 'Отговори', icon: MessageSquareReply },
@@ -23,6 +26,20 @@ const Platform = () => {
   const clientId = params.get('client');
   const [resolved, setResolved] = useState<Set<string>>(new Set());
   const [handled, setHandled] = useState<Set<string>>(new Set());
+  const [step, setStepState] = useState(onboardingMemory.step);
+  const [practiced, setPracticed] = useState(onboardingMemory.practiced);
+  const navigate = useNavigate();
+  const setStep = (n: number) => {
+    onboardingMemory.step = n;
+    setStepState(n);
+  };
+  const practice = (id: string, to: PracticeTarget) => {
+    const next = new Set(practiced).add(id);
+    onboardingMemory.practiced = next;
+    setPracticed(next);
+    if ('path' in to) navigate(to.path);
+    else go(to.tab, 'client' in to ? to.client : undefined);
+  };
   const repliesLeft = DEMO_REPLIES.length - handled.size;
 
   const go = (next: Tab, client?: string) => {
@@ -46,7 +63,11 @@ const Platform = () => {
     };
   }, []);
 
-  const badge = (id: Tab) => (id === 'replies' && repliesLeft > 0 ? repliesLeft : null);
+  const badge = (id: Tab) => {
+    if (id === 'replies' && repliesLeft > 0) return repliesLeft;
+    if (id === 'start' && practiced.size < PRACTICE_COUNT) return `${practiced.size}/${PRACTICE_COUNT}`;
+    return null;
+  };
 
   return (
     <div className="min-h-screen bg-secondary/50 lg:flex">
@@ -113,6 +134,21 @@ const Platform = () => {
         </div>
 
         <main className="mx-auto max-w-6xl px-4 pb-28 pt-6 sm:px-8 sm:pt-10 lg:pb-16">
+          {tab === 'start' && <OnboardingView step={step} setStep={setStep} practiced={practiced} onPractice={practice} />}
+          {tab === 'today' && practiced.size < PRACTICE_COUNT && (
+            <button
+              type="button"
+              onClick={() => go('start')}
+              className="group mb-6 flex w-full items-center gap-3 rounded-2xl border border-accent/30 bg-accent/[0.07] p-4 text-left transition-colors hover:bg-accent/[0.12]"
+            >
+              <GraduationCap className="h-6 w-6 shrink-0 text-accent" />
+              <span className="min-w-0 flex-1">
+                <span className="block font-semibold">Нови сте в екипа?</span>
+                <span className="block text-sm text-muted-foreground">Пет кратки стъпки: как работи системата, кое решавате вие и четири упражнения.</span>
+              </span>
+              <ArrowRight className="h-5 w-5 shrink-0 text-accent transition-transform group-hover:translate-x-0.5" />
+            </button>
+          )}
           {tab === 'today' && (
             <TodayView
               resolved={resolved}
@@ -140,7 +176,7 @@ const Platform = () => {
       </div>
 
       {/* Mobile bottom nav */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-3 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
         {NAV.map((n) => {
           const Icon = n.icon;
           const on = tab === n.id;
