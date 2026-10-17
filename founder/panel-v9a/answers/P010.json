@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have already decided to go into the new market and my trade fair contacts will not fill that pipeline alone. Nothing up front, the first 3 meetings free and a EUR 1,800 cap means my worst case is a small loss, so I would take the free 15-company list and, if it looks right, start the pilot in relationship mode.",
+  "objection": "My name goes on these messages. If one goes out sounding like spam, or a buyer complains about how we got his data, that damages a reputation I built over 20 years. And I do not know this agency. The 45 meetings came from one logistics client I cannot check.",
+  "would_change_my_mind": "If the 15 companies in the free step are ones I already know, or the first message reads like a template, I walk away.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

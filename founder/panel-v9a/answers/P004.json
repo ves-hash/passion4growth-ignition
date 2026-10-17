@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "It reads better than the usual LinkedIn agency pitch and the free list of 15 companies costs me nothing but a call, so I might take that. But paying for the pilot needs my partner to sign off, and one logistics case study with 45 meetings won't get that done this month.",
+  "objection": "I get three or four of these pitches a week and they all promise meetings. I don't know you, I've seen one result from a logistics firm and none from a wholesaler like mine, and I'm afraid the 'qualified' meetings turn out to be tyre-kickers I spend my days arguing about inside a 48-hour window.",
+  "would_change_my_mind": "The free list of 15 companies actually naming buyers I don't already know in the target country, plus a reference I can phone at a distributor my size who signed real orders from your meetings.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I'll take the free 15-company list because it costs me 30 minutes, and if those companies are real I'll start the pilot, since nothing is paid up front and the first 3 meetings are free. That is the opposite of the last agency, which took my money and sent me slides. But I'm doing it because we have to replace volume, not because I trust you yet.",
+  "objection": "One logistics client with 45 meetings is a story, not proof. I've seen 'meetings' that were a junior guy from a company that will never switch forwarders. With EUR 300 a meeting, a junior SDR on Apollo for a couple of months costs me about the same, and I keep the person.",
+  "would_change_my_mind": "If the 15 companies in the free step are generic names I could have pulled myself, or the meeting definition we sign lets juniors with no say over freight count as 'qualified', I walk away.",
+  "price_too_cheap": 80,
+  "price_cheap": 150,
+  "price_expensive": 350,
+  "price_too_expensive": 550
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to replace lost volume and my two or three salespeople only farm existing accounts, so I need meetings from outside the network. The free 15-company list shows me whether they understand freight before I risk anything, and with 3 free meetings and a EUR 1,800 cap the downside is small next to one new lane contract.",
+  "objection": "Do they actually understand 3PL and forwarding, or will they book me calls with people who just want a cheaper rate quote and no switching intent? One logistics client with 45 meetings tells me nothing about how many turned into signed volume.",
+  "would_change_my_mind": "If the 15-company list in step 1 is generic, with companies that already have locked-in forwarders or are too small to move volume, I stop there and do not start the pilot.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

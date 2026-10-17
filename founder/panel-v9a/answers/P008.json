@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "My customers buy from me because they know me, from fairs and phone calls, not because of a message from some agency in Sofia. I might take the free call to see the 15 names, but I would not sign up for meetings this month; I would rather put Apollo and a junior on it myself and keep control.",
+  "objection": "A meeting with a stranger who got a nice LinkedIn message is not a relationship. At EUR 300 a meeting I am paying for a first coffee, and in wholesale most of those go nowhere. One logistics client with 45 meetings tells me nothing about my sector.",
+  "would_change_my_mind": "If the free list of 15 companies had real buyers I did not already know, and they booked me 3-4 meetings at my stand before the next fair, I would try the pilot.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 250,
+  "price_too_expensive": 400
+}
