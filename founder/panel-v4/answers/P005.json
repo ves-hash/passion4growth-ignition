@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd take the free call and look at the 15 companies, because that costs me nothing, but I'm not paying the EUR 500 yet. The last agency I hired also had a great case study and gave me slides, and '45 meetings in 2 months' sounds like the same kind of headline.",
+  "objection": "Who decides that a meeting is 'qualified'? A 20-minute call with a junior buyer who just wants a price list isn't worth EUR 450 to me. For EUR 3,600 plus the setup fee I could get Apollo and a junior SDR for a few months and keep the know-how in house.",
+  "would_change_my_mind": "The 15 targets are companies I didn't already know or couldn't have found myself in an afternoon, and the reference client in a niche close to mine tells me on the phone that their meetings turned into real quotes.",
+  "price_too_cheap": 100,
+  "price_cheap": 200,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

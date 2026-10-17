@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I might take the free call and look at the 15 companies, because that costs me nothing. But paying even EUR 500 to an agency from a LinkedIn pitch needs my partner's sign-off, and I would not get that this month on one '45 meetings' story from a logistics client.",
+  "objection": "I get three or four of these pitches a week. A meeting that 'took place' is not an order. I could pay EUR 3,600 for eight polite calls with buyers who never send a quote, and then I'd have to explain that to my partner.",
+  "would_change_my_mind": "A reference call with a wholesaler like us who actually got orders, not just meetings, plus a 15-company list good enough that my partner sees names we could never reach through our own network.",
+  "price_too_cheap": 100,
+  "price_cheap": 250,
+  "price_expensive": 450,
+  "price_too_expensive": 700
+}

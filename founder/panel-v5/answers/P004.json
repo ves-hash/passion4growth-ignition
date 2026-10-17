@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I might take the free list of 15 companies, since it costs me nothing but a call, but I would not put money into the pilot this month. My partner has to sign off on anything new, and right now I only have one line of proof from a logistics client, not from a wholesaler like us.",
+  "objection": "Every week three or four agencies pitch me on LinkedIn, and this one is also cold outreach, just in the local language. 45 meetings for one logistics client means nothing to me if they were low-level people. I don't want to spend my time on calls that go nowhere and then argue over whether each one counted.",
+  "would_change_my_mind": "If the free list of 15 companies turned out to be genuinely good, real buyers in the new market that I didn't already know, and I could speak to a distributor they had already worked with, I would take the one-page summary to my partner.",
+  "price_too_cheap": 100,
+  "price_cheap": 200,
+  "price_expensive": 400,
+  "price_too_expensive": 600
+}

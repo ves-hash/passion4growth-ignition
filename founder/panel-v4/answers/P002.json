@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd take the free call and the 15 companies, that costs me nothing, but I'm not paying the EUR 500 this month. I've paid agencies before for meetings that turned out to be students and tyre-kickers, and EUR 450 a meeting is a lot when I could put Apollo and a junior SDR on it myself.",
+  "objection": "Who decides what a 'qualified' meeting is once the invoice comes? A 'commercial lead' taking a polite call is not a freight buyer with volume, and 24 hours to reject is not enough time to find out the meeting was useless.",
+  "would_change_my_mind": "A real phone call with a past logistics or 3PL client who got shipments, not just meetings, out of it, and a free list where most of the 15 companies are ones I didn't already know.",
+  "price_too_cheap": 100,
+  "price_cheap": 200,
+  "price_expensive": 400,
+  "price_too_expensive": 650
+}

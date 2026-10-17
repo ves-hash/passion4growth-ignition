@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have already decided to go into the new country and I have no pipeline there, so trade fairs alone will take a year. The free 15-company list costs me one call, and if it holds up, paying per meeting that actually happens with a 48-hour opt-out is a risk I can carry.",
+  "objection": "This is cold outreach in my company's name. One clumsy email or a GDPR complaint in a market where nobody knows us yet could do more damage than the meetings are worth, and 45 meetings in 2 months for logistics doesn't prove anything for a wholesaler like me.",
+  "would_change_my_mind": "If the 15 companies and the first message in the local language look generic or wrong for my niche, I walk away at step 1.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 450,
+  "price_too_expensive": 700
+}

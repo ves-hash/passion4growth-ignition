@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "I'd take the free 15-company list first, and if those are companies I actually want and haven't already met at a fair, I'd put down the EUR 500. Paying only for meetings that happened, with 48 hours to reject the bad ones, is the first agency deal I've seen where I'm not paying for slides.",
+  "objection": "I've heard 'qualified meeting' before and got junior buyers who were just curious. And for EUR 3,500 in total I could almost pay a junior SDR with Apollo for a couple of months, so the meetings had better be with real decision-makers, not people who say yes to every call.",
+  "would_change_my_mind": "If the 15 free targets are generic names anyone could pull from a database, or the definition of 'qualified' gets watered down when we sit down to sign it, I'm out.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 450,
+  "price_too_expensive": 700
+}

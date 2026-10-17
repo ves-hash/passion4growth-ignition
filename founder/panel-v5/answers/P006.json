@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "I'd happily take the free list of 15 companies and the local-language message, but then I'd honestly try to run it myself through Lemlist and our own LinkedIn before paying EUR 350 a meeting. I've paid freelancers and agencies before and I still think this is cheaper done in-house.",
+  "objection": "EUR 350 a meeting adds up to EUR 3,500 for ten, and I've been burned by 'qualified' meetings that were really junior people being polite. And whatever you say about 3 hours, my team has no time to approve lists, read briefs and chase follow-ups on top of covering the customers who just cut orders.",
+  "would_change_my_mind": "If the free 15-company list contained buyers I genuinely didn't know and couldn't find myself, and you showed me a manufacturer or exporter like us (not just a logistics client) who turned those meetings into actual quote requests.",
+  "price_too_cheap": 80,
+  "price_cheap": 150,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have already decided to go into the new market and referrals and fairs won't fill the pipeline there in six months. The free 15-company list costs me nothing, and EUR 500 plus pay-per-meeting is a risk I can carry if the list looks like people I'd actually sell to.",
+  "objection": "If they spam half the market in my name, or a German or Romanian buyer gets annoyed and complains about GDPR, our reputation there is burned before we even start. I also doubt 'qualified' meetings: a buying manager taking a call to be polite is not a real buyer.",
+  "would_change_my_mind": "If the 15 sample companies are generic or wrong for our niche, or the reference client in a close niche turns out lukewarm, I walk away.",
+  "price_too_cheap": 100,
+  "price_cheap": 250,
+  "price_expensive": 600,
+  "price_too_expensive": 900
+}

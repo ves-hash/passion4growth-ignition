@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "My customers buy from me because they know me. A cold email from some domain I've never heard of isn't going to win me a distributor deal. I might take the free list of 15 companies to see what comes back, but I'm not putting EUR 500 down and then EUR 450 a meeting on strangers who don't know my business.",
+  "objection": "EUR 450 for one meeting is a lot when most of those calls will just be people being polite. For up to EUR 4,100 I could buy Apollo, hire a junior SDR and keep the contacts myself, and I still believe a handshake at a fair beats any system.",
+  "would_change_my_mind": "If the 15 companies on the free list were ones I'd actually want and hadn't already met at fairs, and if a wholesaler like me in my product category told me personally that these meetings turned into orders.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 350,
+  "price_too_expensive": 500
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "I'd happily take the free 15-company list, but honestly I'd then load those names into Lemlist and have my own people chase them. I've run Apollo and an SDR before, and paying EUR 450 a meeting feels like paying for something I can do in-house for less.",
+  "objection": "EUR 450 per meeting adds up, and my last tools and freelancer booked meetings with people who were never going to buy. 3 hours from my team sounds nice on paper, but once meetings start it is my salespeople's time that gets burned, not yours.",
+  "would_change_my_mind": "If the free list turned up buyers in the new market that my own Apollo searches never found, and the reference client in my niche told me their meetings actually turned into orders, not just calls.",
+  "price_too_cheap": 100,
+  "price_cheap": 200,
+  "price_expensive": 400,
+  "price_too_expensive": 650
+}

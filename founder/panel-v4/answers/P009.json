@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "I'd take the free 15-company list, sure, but EUR 500 plus up to EUR 3,600 for meetings is real money for a company our size, and my partner will say we could get Apollo and a junior SDR for less and keep the know-how in-house. Nothing gets signed off in the first month anyway.",
+  "objection": "EUR 450 a meeting feels steep when a meeting is not an order. In wholesale one meeting rarely turns into a contract, so I could pay EUR 4,100 and still have zero new customers, while a junior SDR would at least stay with us.",
+  "would_change_my_mind": "If the free list of 15 companies turned out to include buyers I really could not reach myself, and the reference client in distribution told me the meetings actually turned into orders, I could take that to my partner and run a smaller pilot of 3 to 4 meetings.",
+  "price_too_cheap": 100,
+  "price_cheap": 200,
+  "price_expensive": 350,
+  "price_too_expensive": 500
+}

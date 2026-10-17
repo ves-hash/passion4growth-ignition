@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I really do need a pipeline in the new country, and trade fairs alone won't get me there in six months. The free list of 15 companies costs me one call, and since they have no wholesale client yet my first 3 meetings are free, so I'd start the EUR 500 pilot if that list looks like people I actually want to sell to.",
+  "objection": "My name is on every message. If one email in a language I can't check comes across as spam, or a buyer asks where they got his data, I'm the one who has to answer for it. The only proof is one logistics client, and 45 meetings in 2 months sounds more like volume than quality.",
+  "would_change_my_mind": "If the 15 companies are generic, or the first message reads like the agency spam I already get, I walk away. A call with another owner they've worked with would settle it for me.",
+  "price_too_cheap": 80,
+  "price_cheap": 180,
+  "price_expensive": 450,
+  "price_too_expensive": 750
+}

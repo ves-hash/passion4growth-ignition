@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "My customers buy from me because they know me, they shake my hand at the fair and they call my mobile. I might take the free list of 15 companies to see what they find, but I would not pay EUR 350 a meeting for cold emails from some domain that is not even mine.",
+  "objection": "A meeting set up by strangers is not a relationship. In wholesale a buyer who agrees to a call with an agency is just curious, and for EUR 350 a meeting I could pay half a junior SDR's monthly salary and keep the contacts in my own house.",
+  "would_change_my_mind": "A wholesaler or distributor like me, someone I can call, telling me that those meetings turned into real orders, not just calls.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 250,
+  "price_too_expensive": 400
+}

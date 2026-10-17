@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to fill lost volume and my two account managers will never hunt new shippers abroad. EUR 500 plus 450 per meeting that actually happens is less than one trade fair stand, and one signed 3PL contract pays for all eight meetings many times over, but I only go to the pilot if the free list of 15 shows they know freight and not just 'logistics' as a keyword.",
+  "objection": "That '45 meetings in 2 months' sounds too good, and I've seen agencies count a junior forwarder asking for a rate as a meeting. I need to see that the people on the list really buy transport or warehousing, and that the reference client is actually a 3PL or forwarder like us.",
+  "would_change_my_mind": "If the 15 free targets are generic or wrong for our lanes, or they can't put me in touch with a real logistics client, I walk away.",
+  "price_too_cheap": 100,
+  "price_cheap": 250,
+  "price_expensive": 650,
+  "price_too_expensive": 1000
+}
