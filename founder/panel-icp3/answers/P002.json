@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "timing",
+  "reason": "We go into the new country next year, so I am not paying EUR 1,500 this month for meetings my team can't follow up yet. I would take the free sample of 15 companies, though, and use it to check whether they really understand our buyers.",
+  "objection": "Our buyers are engineers and procurement people who buy on specs and long relationships. I doubt cold emails from a Sofia agency get me real buying conversations rather than polite calls that look good on a report. A logistics company getting 45 meetings tells me nothing about manufacturing.",
+  "would_change_my_mind": "If the 15-company sample names buyers I recognise as the right ones, and I can talk to a past manufacturing or export client about meetings that turned into orders, I would book a start date for Q1.",
+  "price_too_cheap": 1000,
+  "price_cheap": 2000,
+  "price_expensive": 6000,
+  "price_too_expensive": 12000
+}

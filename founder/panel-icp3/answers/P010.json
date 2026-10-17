@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "The structure is fair, worst case it is about EUR 600 per meeting and the second half is contingent, but I am not paying EUR 1,500 on the strength of a '45 meetings' line with no cost per meeting or closed revenue behind it. I would take the free sample of 15 companies and decide after that, not this month.",
+  "objection": "Meetings are not contracts. My two or three salespeople are already busy with existing accounts, so someone still has to run those meetings and follow up quotes, and I have seen no proof that these meetings turn into shipments.",
+  "would_change_my_mind": "If the 15-company sample names firms I actually want and the reference logistics client tells me how many of their meetings became paying accounts, and in what time, I would sign.",
+  "price_too_cheap": 800,
+  "price_cheap": 1800,
+  "price_expensive": 3500,
+  "price_too_expensive": 5500
+}

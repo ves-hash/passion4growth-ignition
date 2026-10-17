@@ -1,0 +1,13 @@
+{
+  "id": "P017",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I would take the free 15-company sample, because it costs me nothing, but I would not pay the EUR 1,500 this month. The last agency also showed me nice lists and messages before it delivered nothing. And even if meetings come, my two or three salespeople are already busy with existing accounts, so I would have to make the case to the owner first.",
+  "objection": "A sample list and a '45 meetings in 2 months' story are easy to produce. What I have no proof of is whether these meetings turn into real buyers in our segment, and whether my team will have time to follow up the meetings without dropping our current customers.",
+  "would_change_my_mind": "If the sample names companies I don't already know, and they really fit, and the past client in a niche close to ours confirms on a call that the meetings were with real decision-makers who went on to order, I would put the EUR 1,500 forward to the owner.",
+  "price_too_cheap": 800,
+  "price_cheap": 2000,
+  "price_expensive": 4500,
+  "price_too_expensive": 7000
+}

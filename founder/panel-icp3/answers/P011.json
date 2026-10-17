@@ -1,0 +1,13 @@
+{
+  "id": "P011",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We already have the plan for the new market and nobody on my team has time to open it, so a free sample of 15 targets and only EUR 1,500 at risk is easy to say yes to. I would take the sample first, and if those 15 companies are the right ones I would sign.",
+  "objection": "Whether they really understand our niche. Plenty of agencies can pull a list off LinkedIn, but in our trade the buyer is often not the obvious title, and meetings with the wrong people waste my time even if they count as 'qualified'.",
+  "would_change_my_mind": "If the 15-company sample shows names that do not fit our niche, or the reference client turns out to be in a completely different trade, I walk away.",
+  "price_too_cheap": 800,
+  "price_cheap": 2000,
+  "price_expensive": 5000,
+  "price_too_expensive": 8000
+}

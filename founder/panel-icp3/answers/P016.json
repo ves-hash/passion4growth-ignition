@@ -1,0 +1,13 @@
+{
+  "id": "P016",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd take the free 15-company sample, it costs me nothing but a 30-minute call. But I'm not wiring EUR 1,500 this month. The last agency also had a nice case study and I still paid for slides, so I need to see their list beat what my own sales guy and the trade fair contacts already know.",
+  "objection": "The EUR 1,500 upfront is still my money going out before a single buyer has sat at my table. And '45 meetings in 2 months' sounds like the kind of number agencies always show. Meetings with whom, and did anyone actually order?",
+  "would_change_my_mind": "If the 15 sample companies are ones I don't already know and would really want, and the past client tells me on the phone, without them in the room, that the meetings turned into orders, I'd pay the first half.",
+  "price_too_cheap": 800,
+  "price_cheap": 2000,
+  "price_expensive": 4000,
+  "price_too_expensive": 6000
+}

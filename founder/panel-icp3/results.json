@@ -1,0 +1,161 @@
+{
+ "business": "Passion4Growth: New-Market Sprint for logistics, wholesale and manufacturing companies in CEE (meetings with buyers in a new country or segment), run on the P4G outreach skill pack",
+ "seed": 31,
+ "dealt": 20,
+ "answered": 20,
+ "skipped": [],
+ "buys": 4,
+ "passes": 16,
+ "buy_rate": 0.2,
+ "by_segment": [
+  [
+   "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+   7,
+   0.2857142857142857
+  ],
+  [
+   "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+   6,
+   0.16666666666666666
+  ],
+  [
+   "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+   7,
+   0.14285714285714285
+  ]
+ ],
+ "by_behaviour": [
+  [
+   "Growth-hungry, entering a new market",
+   3,
+   0.6666666666666666
+  ],
+  [
+   "Allergic to buzzwords",
+   2,
+   0.5
+  ],
+  [
+   "Numbers-first",
+   3,
+   0.3333333333333333
+  ],
+  [
+   "Relationship seller",
+   4,
+   0.0
+  ],
+  [
+   "Burned by an agency or consultant before",
+   4,
+   0.0
+  ],
+  [
+   "Slow committee decider",
+   2,
+   0.0
+  ],
+  [
+   "DIY tinkerer",
+   2,
+   0.0
+  ]
+ ],
+ "by_income": [
+  [
+   "$82,000 and up",
+   7,
+   0.42857142857142855
+  ],
+  [
+   "$65,000 to $82,000",
+   7,
+   0.14285714285714285
+  ],
+  [
+   "under $65,000",
+   6,
+   0.0
+  ]
+ ],
+ "why_not": [
+  [
+   "trust",
+   12,
+   [
+    "In freight, people give cargo to people they know and trust; a cold email from a warmed-up domain does not get me a shipper, my calls and the fairs do. I would maybe take the free 15-company sample out of curiosity, but I would not put EUR 1,500 down this month.",
+    "The split payment is clever and EUR 600 a meeting is fine on paper, but I paid an agency before and got nothing, so this month I would take the free 15-company sample and the 30-minute call, not sign. EUR 1,500 up front is still money I lose if the meetings are with people who never buy."
+   ],
+   [
+    "P003",
+    "P004"
+   ]
+  ],
+  [
+   "habit",
+   2,
+   [
+    "I'd probably take the free 15-company sample and then do the outreach myself with Apollo and Lemlist, which I already know how to run. EUR 3,000 for two months is real money for us when I think a junior SDR plus tools gets me most of the way there.",
+    "My buyers know me, they buy because I pick up the phone and shake hands at the fair. I might take the free 15-company sample out of curiosity, but I would not put EUR 1,500 down this month for cold emails from a Sofia agency."
+   ],
+   [
+    "P009",
+    "P018"
+   ]
+  ],
+  [
+   "timing",
+   1,
+   [
+    "We go into the new country next year, so I am not paying EUR 1,500 this month for meetings my team can't follow up yet. I would take the free sample of 15 companies, though, and use it to check whether they really understand our buyers."
+   ],
+   [
+    "P002"
+   ]
+  ],
+  [
+   "price",
+   1,
+   [
+    "I'd take the free 15-company sample, since it costs me nothing, but EUR 3,000 for what is basically Apollo plus Lemlist plus someone writing messages feels like a lot when I've run those tools myself. With two big customers cutting orders this quarter, I'm watching every euro before I hand it to an agency."
+   ],
+   [
+    "P014"
+   ]
+  ]
+ ],
+ "why_yes": [
+  [
+   "need",
+   4,
+   [
+    "Two big customers cut orders last quarter, so I need new buyers abroad and the trade fairs are not filling the gap. At EUR 3,000 for 5+ qualified meetings that is at most EUR 600 a meeting, less than one fair stand, and my real exposure is EUR 1,500 after I have already seen the 15-company sample.",
+    "We already have the plan for the new market and nobody on my team has time to open it, so a free sample of 15 targets and only EUR 1,500 at risk is easy to say yes to. I would take the sample first, and if those 15 companies are the right ones I would sign."
+   ],
+   [
+    "P001",
+    "P011"
+   ]
+  ]
+ ],
+ "flip": [
+  "If the 15-company sample names buyers I recognise as the right ones, and I can talk to a past manufacturing or export client about meetings that turned into orders, I would book a start date for Q1.",
+  "Talking directly to the past logistics client and hearing that those 45 meetings turned into signed freight contracts, not just calls, plus a sample list that names companies I don't already know.",
+  "If the 15-company sample names buyers I recognise as real targets I could not reach myself, and a past manufacturing or export client tells me on the phone how many of their meetings became orders.",
+  "If the 15-company sample has real buyers I have not already approached, with reasons that show they understand my product, and I can speak to a past client who is a wholesaler or distributor and got paying customers, not only meetings.",
+  "If the sample list has companies I actually recognise as good fits and couldn't reach myself, and the past client you put me in touch with is a manufacturer like us who tells me those meetings turned into orders, not just calls.",
+  "If the 15-company sample names buyers I actually want and don't already know, and a past client in wholesale or distribution tells me on the phone that those meetings turned into orders, I could take that to my partner and get a yes.",
+  "If the sample list had names I recognise as real shippers in my lane, and a logistics owner I can phone tells me the meetings turned into actual contracts and not just coffee chats.",
+  "Talking to the past logistics client and hearing that the meetings turned into actual contracts, not just calls, plus proof that the domains, compliance and local-language work are something my own team couldn't realistically set up.",
+  "If the 15-company sample names firms I actually want and the reference logistics client tells me how many of their meetings became paying accounts, and in what time, I would sign.",
+  "Talking on the phone with a past client who is a distributor like me, in a market I care about, who tells me the meetings turned into actual orders, not just calls.",
+  "If the 15-company sample has real buyers I don't already know, and the past client they connect me with is a wholesaler like me, not a logistics firm, and tells me straight that the meetings turned into orders.",
+  "If the 15-company sample shows targets and a first message I couldn't have put together myself in an afternoon, and the past logistics client tells me the meetings actually turned into contracts, I'd pay the first EUR 1,500.",
+  "The sample shows companies I have not already found myself and could actually sell to, and a 15-minute call with a past manufacturing or export client who tells me the meetings turned into real quotes or orders.",
+  "If the 15 sample companies are ones I don't already know and would really want, and the past client tells me on the phone, without them in the room, that the meetings turned into orders, I'd pay the first half.",
+  "If the sample names companies I don't already know, and they really fit, and the past client in a niche close to ours confirms on a call that the meetings were with real decision-makers who went on to order, I would put the EUR 1,500 forward to the owner.",
+  "Talking to a past client who is a distributor like me, not a logistics company, and hearing that the meetings actually became repeat orders."
+ ],
+ "purchases_first_month_per_buyer": 1.0,
+ "price_answers": 20
+}

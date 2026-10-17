@@ -1,0 +1,13 @@
+{
+  "id": "P018",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "My buyers know me, they buy because I pick up the phone and shake hands at the fair. I might take the free 15-company sample out of curiosity, but I would not put EUR 1,500 down this month for cold emails from a Sofia agency.",
+  "objection": "In wholesale nobody switches supplier because of a cold email; they switch because they trust a person. I doubt meetings from outreach turn into orders, and I do not want strangers writing to my market in my company's name.",
+  "would_change_my_mind": "Talking to a past client who is a distributor like me, not a logistics company, and hearing that the meetings actually became repeat orders.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

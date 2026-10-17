@@ -1,0 +1,13 @@
+{
+  "id": "P014",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "I'd take the free 15-company sample, since it costs me nothing, but EUR 3,000 for what is basically Apollo plus Lemlist plus someone writing messages feels like a lot when I've run those tools myself. With two big customers cutting orders this quarter, I'm watching every euro before I hand it to an agency.",
+  "objection": "Do they really know freight and 3PL buyers, or is this generic cold outreach with a logistics label on it? I've been burned before, by tools and by a freelancer who booked calls with people who were never going to switch forwarders.",
+  "would_change_my_mind": "If the 15-company sample shows targets and a first message I couldn't have put together myself in an afternoon, and the past logistics client tells me the meetings actually turned into contracts, I'd pay the first EUR 1,500.",
+  "price_too_cheap": 500,
+  "price_cheap": 1200,
+  "price_expensive": 2500,
+  "price_too_expensive": 4000
+}

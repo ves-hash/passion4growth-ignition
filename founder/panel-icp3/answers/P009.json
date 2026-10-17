@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "I'd probably take the free 15-company sample and then do the outreach myself with Apollo and Lemlist, which I already know how to run. EUR 3,000 for two months is real money for us when I think a junior SDR plus tools gets me most of the way there.",
+  "objection": "Once I see your target list and first message, what am I really paying you for that I can't copy with Apollo and a junior hire for less?",
+  "would_change_my_mind": "Talking to the past logistics client and hearing that the meetings turned into actual contracts, not just calls, plus proof that the domains, compliance and local-language work are something my own team couldn't realistically set up.",
+  "price_too_cheap": 500,
+  "price_cheap": 1200,
+  "price_expensive": 2500,
+  "price_too_expensive": 4000
+}

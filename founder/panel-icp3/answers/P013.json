@@ -1,0 +1,13 @@
+{
+  "id": "P013",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd maybe take the free list of 15 companies, it costs me nothing, but I'm not paying 1,500 upfront this month. The last agency also promised meetings and a nice report, and I got nothing for my money.",
+  "objection": "The 1,500 at the start is exactly the money I lost last time. 'Qualified meetings', 'warmed-up domains', it sounds like the same agency talk. And my two or three salespeople are busy with existing accounts, so who follows up the meetings if they do come?",
+  "would_change_my_mind": "If the 15-company sample has real buyers I don't already know, and the past client they connect me with is a wholesaler like me, not a logistics firm, and tells me straight that the meetings turned into orders.",
+  "price_too_cheap": 500,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}
