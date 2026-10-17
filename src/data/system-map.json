@@ -553,14 +553,16 @@
         "TAM",
         "named and office email shares",
         "domains and inboxes",
-        "prices"
+        "prices",
+        "operator cost and hours"
       ],
       "outputs": [
         "people per month",
         "time to cover the market",
         "monthly cost without human work",
         "first-month cost",
-        "cost per person reached"
+        "clients per operator",
+        "price to quote (managed / self-service)"
       ],
       "depends_on": [
         "outreach-deliverability",

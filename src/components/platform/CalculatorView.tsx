@@ -56,6 +56,25 @@ const AI_DEFAULTS = {
   hermes: 10,
 };
 
+// Operator and pricing. Hours per client are estimates from the human steps in the skills;
+// replace them with timed numbers from the first clients.
+type Mode = 'managed' | 'self';
+const MODE_DEFAULTS: Record<Mode, { hours: number; onboarding: number; margin: number; price: number }> = {
+  managed: { hours: 17, onboarding: 22, margin: 63, price: 2500 },
+  self: { hours: 4, onboarding: 5, margin: 55, price: 1350 },
+};
+const OP_DEFAULTS = {
+  mode: 'managed' as Mode,
+  operatorCost: 2500,
+  productiveHours: 120,
+  newClientsPerMonth: 1,
+  overhead: 15,
+  usdToEur: 0.92,
+  ...MODE_DEFAULTS.managed,
+};
+const roundUp50 = (n: number) => Math.ceil(n / 50) * 50;
+const eur = (n: number) => `€${fmt(n)}`;
+
 // Smartlead: every plan has unlimited email accounts; the limits are contacts and sends per month.
 const SMARTLEAD_TIERS = [
   { name: 'Basic', price: 39, sends: 6000, contacts: 2000 },
@@ -130,6 +149,8 @@ const CalculatorView = () => {
   const [showPrices, setShowPrices] = useState(false);
   const [salesNav, setSalesNav] = useState(false);
   const [ai, setAi] = useState(AI_DEFAULTS);
+  const [op, setOp] = useState(OP_DEFAULTS);
+  const setOpNum = (k: keyof typeof OP_DEFAULTS) => (n: number) => setOp({ ...op, [k]: n });
   const setAiNum = (k: keyof typeof AI_DEFAULTS) => (n: number) => setAi({ ...ai, [k]: n });
   const set = (k: keyof Inputs) => (n: number) => setV({ ...v, [k]: n });
   const setPrice = (k: keyof Prices) => (n: number) => setP({ ...p, [k]: n });
@@ -206,6 +227,22 @@ const CalculatorView = () => {
   const tamResearch = reachableCompanies * (ai.abShare / 100) * dossierUnit + reachableCompanies * tokenCost('haiku', 10, 1) * batchF;
   const oneTime = domainsYear;
   const firstMonth = monthly + domainsYear + warmupCost + Math.max(0, tamResearch - aiLines[0].cost - aiLines[1].cost);
+
+  // Operator capacity and price (EUR)
+  const opHourly = op.productiveHours > 0 ? op.operatorCost / op.productiveHours : 0;
+  const clientsPerOperator =
+    op.hours > 0 ? Math.max(0, Math.floor((op.productiveHours - op.newClientsPerMonth * op.onboarding) / op.hours)) : 0;
+  const clientsSteady = op.hours > 0 ? Math.floor(op.productiveHours / op.hours) : 0;
+  const machineEur = monthly * op.usdToEur;
+  const operatorEur = op.hours * opHourly;
+  const costEur = (machineEur + operatorEur) * (1 + op.overhead / 100);
+  const marginF = Math.min(0.95, Math.max(0, op.margin / 100));
+  const recommended = roundUp50(costEur / (1 - marginF));
+  const setupCostEur = (op.onboarding * opHourly + (firstMonth - monthly) * op.usdToEur) * (1 + op.overhead / 100);
+  const setupFee = roundUp50(setupCostEur / (1 - marginF));
+  const yourMargin = op.price > 0 ? 1 - costEur / op.price : 0;
+  const opRevenue = clientsPerOperator * op.price;
+  const opProfit = clientsPerOperator * (op.price - costEur);
   const reachedMonth = peopleThisMonth + linkedinMonth;
   const perPerson = reachedMonth > 0 ? monthly / reachedMonth : 0;
 
@@ -216,6 +253,8 @@ const CalculatorView = () => {
     v.liveDomains < 6 && 'Под минимума от 6 активни домейна.',
     v.spareDomains < v.liveDomains && 'Резервните домейни са по-малко от активните (правилото е 100% резерв).',
     smartleadUse > 1 && 'Обемът на всички клиенти надхвърля и най-големия план на Smartlead.',
+    op.price > 0 && op.price < costEur && 'Вашата цена е под себестойността.',
+    clientsPerOperator < 1 && 'Часовете на клиент не се побират в месеца на един оператор.',
     emailPeopleMonth > reachablePeople * 1.5 &&
       'Капацитетът е много над пазара: помислете за 2 инбокса на домейн или ползвайте излишъка за повторен контакт.',
   ].filter(Boolean) as string[];
@@ -233,6 +272,7 @@ const CalculatorView = () => {
             setV(DEFAULTS);
             setP(PRICES);
             setAi(AI_DEFAULTS);
+            setOp(OP_DEFAULTS);
             setSalesNav(false);
           }}
         >
@@ -411,6 +451,36 @@ const CalculatorView = () => {
               </div>
             </div>
           </section>
+
+          <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="font-bold">Оператор и цена</h2>
+            <div className="mt-4 space-y-4">
+              <div className="inline-flex rounded-lg bg-secondary p-0.5">
+                {(['managed', 'self'] as Mode[]).map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    aria-pressed={op.mode === m}
+                    onClick={() => setOp({ ...op, mode: m, ...MODE_DEFAULTS[m] })}
+                    className={cn('rounded-md px-3 py-1.5 text-sm font-medium', op.mode === m ? 'bg-background shadow-sm' : 'text-muted-foreground')}
+                  >
+                    {m === 'managed' ? 'С оператор' : 'Самообслужване'}
+                  </button>
+                ))}
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field id="op-cost" label="Разход за оператор на месец" hint="Заплата + осигуровки; сменете с реалния" value={op.operatorCost} onChange={setOpNum('operatorCost')} step={100} suffix="€" />
+                <Field id="op-prod" label="Продуктивни часове на месец" hint="~160 × 75%" value={op.productiveHours} onChange={setOpNum('productiveHours')} step={5} />
+                <Field id="op-hours" label="Часове на клиент на месец" hint="С оператор ~17, сам ~4; засечете реалните" value={op.hours} onChange={setOpNum('hours')} />
+                <Field id="op-onb" label="Часове за онбординг" hint="С оператор ~22, сам ~5" value={op.onboarding} onChange={setOpNum('onboarding')} />
+                <Field id="op-new" label="Нови клиенти на месец на оператор" value={op.newClientsPerMonth} onChange={setOpNum('newClientsPerMonth')} />
+                <Field id="op-over" label="Общи разходи" hint="Управление, продажби, счетоводство, Claude абонаменти" value={op.overhead} onChange={setOpNum('overhead')} suffix="%" />
+                <Field id="op-margin" label="Целеви брутен марж" hint="Агенция 60–70%" value={op.margin} onChange={setOpNum('margin')} suffix="%" />
+                <Field id="op-price" label="Вашата цена на месец" value={op.price} onChange={setOpNum('price')} step={50} suffix="€" />
+                <Field id="op-fx" label="Курс USD → EUR" hint="Сменете с текущия" value={op.usdToEur} onChange={setOpNum('usdToEur')} step={0.01} />
+              </div>
+            </div>
+          </section>
         </div>
 
         {/* Results */}
@@ -430,6 +500,39 @@ const CalculatorView = () => {
               }
             />
           </div>
+
+          <section className="rounded-2xl border-2 border-primary/30 bg-card p-5 shadow-sm">
+            <h2 className="font-bold">Цена за клиента · {op.mode === 'managed' ? 'с оператор' : 'самообслужване'}</h2>
+            <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+              <Stat strong label="Препоръчителна цена" value={`${eur(recommended)}/мес.`} sub={`при ${op.margin}% марж`} />
+              <Stat label="Такса при старта" value={eur(setupFee)} sub="онбординг, домейни, загряване" />
+              <Stat label="Себестойност" value={`${eur(costEur)}/мес.`} sub={`AI и инструменти ${eur(machineEur)} · оператор ${eur(operatorEur)}`} />
+              <Stat label="Клиенти на оператор" value={fmt(clientsPerOperator)} sub={`${fmt(clientsSteady)} без нови онбординги`} />
+            </div>
+            <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:grid-cols-4">
+              <div>
+                <dt className="text-muted-foreground">Марж при вашата цена</dt>
+                <dd className={cn('font-semibold tabular-nums', yourMargin < 0.5 ? 'text-amber-700' : 'text-emerald-700')}>
+                  {fmt(yourMargin * 100)}% при {eur(op.price)}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Долна граница (0% марж)</dt>
+                <dd className="font-semibold tabular-nums">{eur(costEur)}</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Приход на оператор</dt>
+                <dd className="font-semibold tabular-nums">{eur(opRevenue)}/мес.</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Брутна печалба на оператор</dt>
+                <dd className="font-semibold tabular-nums">{eur(opProfit)}/мес.</dd>
+              </div>
+            </dl>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Минимален срок 3 месеца: първият месец е за загряване и подготовка. Цената е за един пакет обем (тези домейни и LinkedIn профили); по-голям TAM е следващ пакет.
+            </p>
+          </section>
 
           {warnings.length > 0 && (
             <ul className="space-y-2">
