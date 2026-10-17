@@ -27,12 +27,20 @@ const PRICES = {
   inbox: 3,
   domainYear: 12,
   getsalesProfile: 95,
-  smartlead: 94,
+  salesNav: 119.99,
   aiArk: 49,
   verifyPerEmail: 0.0037,
   apifySerper: 22,
   twilio: 10,
 };
+
+// Smartlead: every plan has unlimited email accounts; the limits are contacts and sends per month.
+const SMARTLEAD_TIERS = [
+  { name: 'Basic', price: 39, sends: 6000, contacts: 2000 },
+  { name: 'Pro', price: 94, sends: 90000, contacts: 30000 },
+  { name: 'Unlimited Smart', price: 174, sends: 150000, contacts: Infinity },
+  { name: 'Unlimited Prime', price: 379, sends: 510000, contacts: Infinity },
+];
 
 const PROSPEO_TIERS = [
   { credits: 2000, price: 49, name: 'Starter' },
@@ -98,6 +106,7 @@ const CalculatorView = () => {
   const [v, setV] = useState<Inputs>(DEFAULTS);
   const [p, setP] = useState<Prices>(PRICES);
   const [showPrices, setShowPrices] = useState(false);
+  const [salesNav, setSalesNav] = useState(false);
   const set = (k: keyof Inputs) => (n: number) => setV({ ...v, [k]: n });
   const setPrice = (k: keyof Prices) => (n: number) => setP({ ...p, [k]: n });
 
@@ -129,13 +138,19 @@ const CalculatorView = () => {
   const prospeoCredits = namedThisMonth * 1 + namedThisMonth * (v.mobileShare / 100) * 10;
   const prospeoTier = PROSPEO_TIERS.find((t) => t.credits >= prospeoCredits) ?? PROSPEO_TIERS[PROSPEO_TIERS.length - 1];
   const share = Math.max(1, v.sharedClients);
+  const allSends = emailsMonth * share;
+  const allContacts = reachablePeople * share;
+  const smartlead =
+    SMARTLEAD_TIERS.find((t) => t.sends >= allSends && t.contacts >= allContacts) ?? SMARTLEAD_TIERS[SMARTLEAD_TIERS.length - 1];
+  const smartleadUse = Math.max(allSends / smartlead.sends, smartlead.contacts === Infinity ? 0 : allContacts / smartlead.contacts);
   const lines = [
     { label: `Инбокси (${totalInboxes}: ${liveInboxes} активни + ${totalInboxes - liveInboxes} резервни)`, tool: 'InboxKit, месечно (годишно $2.50); загряването е в Smartlead', cost: totalInboxes * p.inbox },
     { label: `Домейни (${v.liveDomains + v.spareDomains})`, tool: 'годишно, разделено на 12', cost: ((v.liveDomains + v.spareDomains) * p.domainYear) / 12 },
     { label: `LinkedIn изпращане (${v.linkedinProfiles} профил)`, tool: 'GetSales', cost: v.linkedinProfiles * p.getsalesProfile },
     { label: `Данни за ~${fmt(namedThisMonth)} души: ~${fmt(prospeoCredits)} кредита`, tool: `Prospeo ${prospeoTier.name}`, cost: prospeoTier.price },
     { label: `Проверка на ~${fmt(peopleThisMonth)} имейла`, tool: 'MillionVerifier', cost: peopleThisMonth * p.verifyPerEmail },
-    { label: `Имейл платформа, споделена между ${share} клиента`, tool: 'Smartlead Pro', cost: p.smartlead / share },
+    { label: `Имейл платформа, споделена между ${share} клиента`, tool: `Smartlead ${smartlead.name} ($${smartlead.price}), неограничени акаунти`, cost: smartlead.price / share },
+    ...(salesNav ? [{ label: `Sales Navigator (${v.linkedinProfiles} профил)`, tool: 'LinkedIn', cost: v.linkedinProfiles * p.salesNav }] : []),
     { label: `Търсене на фирми, споделено между ${share} клиента`, tool: 'AI Ark', cost: p.aiArk / share },
     { label: 'Списъци, Maps, сигнали', tool: 'Apify + Serper', cost: p.apifySerper },
     { label: 'WhatsApp, SMS, проверка на номера', tool: 'Twilio', cost: p.twilio },
@@ -151,6 +166,7 @@ const CalculatorView = () => {
     v.emailsPerInboxDay > 20 && v.emailsPerInboxDay <= 30 && 'Над 20 имейла на ден е позволено, но над нормата 15–20.',
     v.liveDomains < 6 && 'Под минимума от 6 активни домейна.',
     v.spareDomains < v.liveDomains && 'Резервните домейни са по-малко от активните (правилото е 100% резерв).',
+    smartleadUse > 1 && 'Обемът на всички клиенти надхвърля и най-големия план на Smartlead.',
     emailPeopleMonth > reachablePeople * 1.5 &&
       'Капацитетът е много над пазара: помислете за 2 инбокса на домейн или ползвайте излишъка за повторен контакт.',
   ].filter(Boolean) as string[];
@@ -280,7 +296,15 @@ const CalculatorView = () => {
                 />
                 <Field id="pr-domain" label="Домейн на година" value={p.domainYear} onChange={setPrice('domainYear')} suffix="$" />
                 <Field id="pr-gs" label="GetSales на профил" value={p.getsalesProfile} onChange={setPrice('getsalesProfile')} suffix="$" />
-                <Field id="pr-sl" label="Smartlead Pro" value={p.smartlead} onChange={setPrice('smartlead')} suffix="$" />
+                <Field
+                  id="pr-sn"
+                  label="Sales Navigator на профил"
+                  hint="Core: $119.99 месечно, ~$89.99 годишно"
+                  value={p.salesNav}
+                  onChange={setPrice('salesNav')}
+                  step={0.01}
+                  suffix="$"
+                />
                 <Field id="pr-ark" label="AI Ark" value={p.aiArk} onChange={setPrice('aiArk')} suffix="$" />
                 <Field id="pr-ver" label="Проверка на имейл" value={p.verifyPerEmail} onChange={setPrice('verifyPerEmail')} step={0.0005} suffix="$" />
                 <Field id="pr-apify" label="Apify + Serper на месец" value={p.apifySerper} onChange={setPrice('apifySerper')} suffix="$" />
@@ -329,6 +353,57 @@ const CalculatorView = () => {
               ))}
             </ul>
           )}
+
+          <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="font-bold">Изпращащи акаунти</h2>
+            <ul className="mt-3 divide-y divide-border text-sm">
+              <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2">
+                <span>
+                  <span className="font-medium">Имейл инбокси</span>
+                  <span className="block text-xs text-muted-foreground">
+                    {v.liveDomains + v.spareDomains} домейна × {v.inboxesPerDomain}; резервните само загряват
+                  </span>
+                </span>
+                <span className="tabular-nums">
+                  <strong>{fmt(liveInboxes)}</strong> активни + {fmt(totalInboxes - liveInboxes)} резервни
+                </span>
+              </li>
+              <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2">
+                <span>
+                  <span className="font-medium">Smartlead {smartlead.name}</span>
+                  <span className="block text-xs text-muted-foreground">
+                    Неограничени имейл акаунти; лимит {fmt(smartlead.sends)} имейла
+                    {smartlead.contacts === Infinity ? '' : ` и ${fmt(smartlead.contacts)} контакта`} на месец за всички {share} клиента
+                  </span>
+                </span>
+                <span className="tabular-nums">
+                  <strong>{fmt(Math.min(999, smartleadUse * 100))}%</strong> заето
+                </span>
+              </li>
+              <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2">
+                <span>
+                  <span className="font-medium">LinkedIn профили</span>
+                  <span className="block text-xs text-muted-foreground">
+                    Истински профил на клиента или основателя, одитиран (linkedin-profile-audit); GetSales на профил
+                  </span>
+                </span>
+                <span className="flex items-center gap-3">
+                  <label className="flex cursor-pointer items-center gap-1.5 text-xs">
+                    <input id="calc-salesnav" type="checkbox" checked={salesNav} onChange={(e) => setSalesNav(e.target.checked)} className="accent-primary" />
+                    Sales Navigator
+                  </label>
+                  <strong className="tabular-nums">{fmt(v.linkedinProfiles)}</strong>
+                </span>
+              </li>
+              <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2">
+                <span>
+                  <span className="font-medium">WhatsApp / SMS номер</span>
+                  <span className="block text-xs text-muted-foreground">Twilio; отделен номер, ако клиентът пише от свое име</span>
+                </span>
+                <strong className="tabular-nums">1</strong>
+              </li>
+            </ul>
+          </section>
 
           <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <h2 className="font-bold">Пазарът в адреси</h2>
