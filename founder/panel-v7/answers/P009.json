@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We are losing volume and the trade fairs are not filling the gap, and nothing is paid up front with a hard cap of EUR 900, so I can try it without a fight with my partner. I would take the free 15-company list first and only sign the pilot if those companies are ones I don't already know.",
+  "objection": "For EUR 300 a meeting I could pay a junior SDR on Apollo and keep the skill in-house. And the only proof is one logistics client; I sell wholesale, and I don't know if a stranger's cold email gets a buyer here to sit down with me.",
+  "would_change_my_mind": "If the 15 companies are names I already know or could find myself in an afternoon, I walk away and don't do the pilot.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

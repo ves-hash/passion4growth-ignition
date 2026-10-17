@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I already decided to go into the new market and I have no pipeline there, so a free target list and a pilot where the first 3 meetings cost nothing and I can't pay more than EUR 900 is low risk for me. I approve every first message, so I keep control over what goes out under our name.",
+  "objection": "The cold emails go out to buyers in a market where nobody knows us yet. If they come across as spam, or someone complains about GDPR, our first impression there is ruined and I can't undo it. One logistics client with 45 meetings doesn't prove it works for a wholesaler like us.",
+  "would_change_my_mind": "If the 15 sample companies are generic or the local-language message reads like spam, I would walk away after step 1.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}

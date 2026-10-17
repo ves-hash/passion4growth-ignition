@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "price",
+  "reason": "The free 15-company list costs me one call. Then the pilot is zero up front, the first 3 meetings are free and the most I can pay is EUR 900, which is less than one stand day at a trade fair, so I'd run it. One freight contract pays that back many times over, but I'll only continue past the pilot if the meetings turn into quote requests.",
+  "objection": "Do they really know freight and 3PL buyers, or will they book me with people who just want a cheaper rate per pallet? The 45-meetings claim has no name, no lane and no conversion to quotes, so I can't check it. And my 2-3 salespeople are busy with existing accounts, so who follows up?",
+  "would_change_my_mind": "If the 15 target companies in Step 1 are generic or wrong for our lanes, I walk away. A named logistics reference I can call, with meetings-to-quote numbers, would make me commit to continuing at EUR 300 straight away.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

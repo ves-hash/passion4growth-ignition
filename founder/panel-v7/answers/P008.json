@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "My buyers know me from the fair and from the phone, and I don't want strangers emailing them in my company's name from some other domain. I'd take the free list of 15 companies to see if they know my niche, but then I'd most likely buy Apollo, hire a junior and keep it under my own control.",
+  "objection": "Cold emails and LinkedIn messages from a system feel like spam, and in a small market one bad message ruins a relationship I took years to build. One logistics client with 45 meetings doesn't tell me anything about a wholesaler like me.",
+  "would_change_my_mind": "If the free list of 15 has companies I didn't already know and that really fit, and I can call another distributor my size in the region who used them and got real orders, not just meetings.",
+  "price_too_cheap": 50,
+  "price_cheap": 120,
+  "price_expensive": 300,
+  "price_too_expensive": 500
+}

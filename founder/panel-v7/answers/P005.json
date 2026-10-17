@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "I've paid for slides before, so the only reason I'd even take the call is that the 15 companies are free and I pay nothing until meetings happen. If the list shows they actually know freight buyers in the market we're entering, I'll run the pilot. If it looks like an Apollo export, I'm gone.",
+  "objection": "'45 meetings in 2 months' with no name means nothing to me. I've been told numbers like that before. And I don't trust who decides what a 'qualified' meeting is. I don't want an argument over whether some junior ops guy counts, and I don't want my company name burned on cold emails in a market where everyone knows everyone.",
+  "would_change_my_mind": "A logistics client I can actually phone who tells me the meetings turned into quote requests, not just calls.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

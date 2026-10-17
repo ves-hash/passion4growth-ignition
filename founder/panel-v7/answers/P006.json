@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "Two big customers cut orders last quarter and I have to fill that gap, so a free list of 15 targets and a pilot with nothing up front is hard to say no to. I'll take step 1, and if the list looks like companies I couldn't find myself with Apollo in an afternoon, I'll run the pilot.",
+  "objection": "I've done Apollo and Lemlist myself and I know how much of it is noise. My worry is that the 'qualified' meetings are polite curiosity calls, and that '3 hours of my team's time' turns into weeks of approving lists and messages that nobody here has time for.",
+  "would_change_my_mind": "If the 15 companies are generic names I could have pulled from a database myself, or the message reads like a template, I walk away before the pilot.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}

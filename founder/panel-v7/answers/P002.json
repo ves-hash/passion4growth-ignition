@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "price",
+  "reason": "I have been burned paying for slides before, but here I pay nothing up front, the first 3 meetings are free and I can strike out the bad ones, so the worst case is EUR 900 for 3 real buyer meetings. I will take the free 15-company list first and only start the pilot if the list shows they actually understand freight and 3PL buyers in that market.",
+  "objection": "One unnamed logistics client with 45 meetings is not proof. I worry the 'qualified' meetings will be junior people taking a polite call with no intention to switch forwarder, and I could buy Apollo and put a junior SDR on it for the same money and keep the know-how in house.",
+  "would_change_my_mind": "If the free list of 15 companies is generic, with companies I already know or that obviously do not buy our kind of service, I walk away and do not start the pilot.",
+  "price_too_cheap": 50,
+  "price_cheap": 150,
+  "price_expensive": 400,
+  "price_too_expensive": 700
+}
