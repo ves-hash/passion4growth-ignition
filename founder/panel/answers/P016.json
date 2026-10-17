@@ -1,0 +1,13 @@
+{
+  "id": "P016",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "We're a SaaS company, so we already have people who know how to run Apollo and LinkedIn. EUR 5,000 minimum for 'no number of meetings is guaranteed' is something my partner would kill in thirty seconds when we could buy the tools and do it ourselves.",
+  "objection": "You mostly work with wholesalers, exporters and logistics companies. Do you actually understand selling software into DACH, or will I be paying you to learn on my account? And you're pitching me cold, like the three other agencies that message me every week.",
+  "would_change_my_mind": "Two or three named case studies from SaaS or IT services companies selling into DACH, with real meeting numbers, plus some pay-per-meeting element so we don't carry all the risk for the first three months.",
+  "price_too_cheap": 400,
+  "price_cheap": 800,
+  "price_expensive": 1500,
+  "price_too_expensive": 2500
+}

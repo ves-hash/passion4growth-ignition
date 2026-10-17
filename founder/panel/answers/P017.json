@@ -1,0 +1,13 @@
+{
+  "id": "P017",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I already paid one agency that sent a nice report every week and no customers. EUR 5,000 for three months with no meetings promised and the first one maybe in two months is the same bet again, and for that money I could buy Apollo and have one of my people do it.",
+  "objection": "No guarantee and a 3-month lock-in. If nothing happens by week 8 I'm stuck paying for the third month, and I've heard 'the honest reason the numbers are missing' before.",
+  "would_change_my_mind": "A month-to-month start, or paying part per qualified meeting, plus two references from manufacturers or exporters like us I can call myself.",
+  "price_too_cheap": 300,
+  "price_cheap": 700,
+  "price_expensive": 1200,
+  "price_too_expensive": 1800
+}

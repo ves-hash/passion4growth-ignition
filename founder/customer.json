@@ -1,0 +1,38 @@
+{
+  "business": "Passion4Growth: done-for-you B2B cold outreach for CEE companies, run by the P4G outreach skill pack (24 skills, Claude + Hermes)",
+  "target": "Owners and commercial directors of B2B companies in Bulgaria and CEE (wholesale, manufacturing and export, logistics, B2B services, SaaS) with roughly EUR 1-50M revenue, who get most new customers from referrals and trade fairs",
+  "where": "Bulgaria, Romania, Greece and the wider CEE region",
+  "age": [32, 58],
+  "segments": [
+    {"name": "Owner of a wholesaler or distributor (EUR 2-10M revenue)", "share": 0.35, "income": [30000, 90000]},
+    {"name": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)", "share": 0.30, "income": [45000, 120000]},
+    {"name": "Founder of a logistics, 3PL or B2B services firm", "share": 0.20, "income": [35000, 100000]},
+    {"name": "Founder of a SaaS or IT services company selling into CEE and DACH", "share": 0.15, "income": [50000, 150000]}
+  ],
+  "behaviours": [
+    {"name": "Burned by an agency before", "share": 0.20, "how": "Paid a lead-gen or marketing agency that delivered little; now wants proof before paying."},
+    {"name": "Relationship seller", "share": 0.20, "how": "Wins business through referrals, fairs and personal calls; doubts cold messages work in the industry."},
+    {"name": "Numbers-first", "share": 0.15, "how": "Asks for cost per meeting and payback before anything else."},
+    {"name": "DIY tinkerer", "share": 0.15, "how": "Has tried Apollo, Lemlist or a freelancer in-house and thinks it can be done cheaper."},
+    {"name": "Growth-hungry, entering a new market", "share": 0.12, "how": "Has a concrete plan to enter a new country and needs meetings there fast."},
+    {"name": "Reputation and GDPR cautious", "share": 0.10, "how": "Worries that cold outreach makes the company look spammy or breaks the law."},
+    {"name": "Slow committee decider", "share": 0.08, "how": "Needs a partner or board to sign off on any new recurring spend."}
+  ],
+  "objections": [
+    "I paid an agency before and got zero meetings",
+    "EUR 1,500 a month for three months with no guaranteed meetings?",
+    "Cold email does not work in our industry; our buyers are relationship people",
+    "Will this hurt our reputation or get us into GDPR trouble?",
+    "My team has no time for approvals, gates and sending customer lists",
+    "We could just buy Apollo and do it ourselves",
+    "Do they actually understand our niche?"
+  ],
+  "habits": [
+    "you get three or four cold LinkedIn pitches a week from agencies",
+    "you exhibit at one or two trade fairs a year",
+    "your sales team is two or three people who mostly look after existing accounts",
+    "you approve every spend over EUR 1,000 yourself",
+    "you plan to enter a new country next year",
+    "last quarter two of your bigger customers cut their orders"
+  ]
+}

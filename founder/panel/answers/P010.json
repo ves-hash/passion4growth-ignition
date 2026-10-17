@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "You want EUR 5,000 out of me for three months and you can't tell me what a meeting costs or when it pays back, only that nothing is guaranteed. I'm entering a new country next year, so maybe then, but not on a promise of 'usually 30-60 days'.",
+  "objection": "We could just buy Apollo and have one of our sales people do it for a fraction of EUR 1,500 a month. I don't see what I get that justifies the gap, and with no meeting target I carry all the risk.",
+  "would_change_my_mind": "A cost per qualified meeting from real clients in wholesale, ideally in the country we're entering, plus part of the fee tied to meetings delivered or a way out after month one if there are none.",
+  "price_too_cheap": 400,
+  "price_cheap": 800,
+  "price_expensive": 1300,
+  "price_too_expensive": 2000
+}

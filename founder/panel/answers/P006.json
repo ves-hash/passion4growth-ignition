@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I already paid an agency that sent me nice reports and no customers. Locking in 6,500 euro over three months with no meetings promised and the first ones maybe in two months is the same bet again, and my people have no time to approve lists and profiles on top of their real work.",
+  "objection": "No guarantee, a three-month minimum, and I pay for the first two months mostly for warm-up and setup. If it doesn't work I've lost the money and my team's time, and I only find out at the end.",
+  "would_change_my_mind": "Pay per qualified meeting, or a one-month trial with no minimum and proof from a wholesaler like me in Bulgaria that got real orders, not just replies.",
+  "price_too_cheap": 300,
+  "price_cheap": 600,
+  "price_expensive": 1000,
+  "price_too_expensive": 1500
+}

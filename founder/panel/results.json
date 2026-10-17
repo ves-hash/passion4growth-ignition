@@ -1,0 +1,158 @@
+{
+ "business": "Passion4Growth: done-for-you B2B cold outreach for CEE companies, run by the P4G outreach skill pack (24 skills, Claude + Hermes)",
+ "seed": 17,
+ "dealt": 20,
+ "answered": 20,
+ "skipped": [],
+ "buys": 2,
+ "passes": 18,
+ "buy_rate": 0.1,
+ "by_segment": [
+  [
+   "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+   6,
+   0.16666666666666666
+  ],
+  [
+   "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+   7,
+   0.14285714285714285
+  ],
+  [
+   "Founder of a logistics, 3PL or B2B services firm",
+   4,
+   0.0
+  ],
+  [
+   "Founder of a SaaS or IT services company selling into CEE and DACH",
+   3,
+   0.0
+  ]
+ ],
+ "by_behaviour": [
+  [
+   "Growth-hungry, entering a new market",
+   2,
+   1.0
+  ],
+  [
+   "Numbers-first",
+   3,
+   0.0
+  ],
+  [
+   "Relationship seller",
+   4,
+   0.0
+  ],
+  [
+   "Reputation and GDPR cautious",
+   2,
+   0.0
+  ],
+  [
+   "DIY tinkerer",
+   3,
+   0.0
+  ],
+  [
+   "Burned by an agency before",
+   4,
+   0.0
+  ],
+  [
+   "Slow committee decider",
+   2,
+   0.0
+  ]
+ ],
+ "by_income": [
+  [
+   "$55,000 to $70,000",
+   7,
+   0.2857142857142857
+  ],
+  [
+   "$70,000 and up",
+   7,
+   0.0
+  ],
+  [
+   "under $55,000",
+   6,
+   0.0
+  ]
+ ],
+ "why_not": [
+  [
+   "trust",
+   15,
+   [
+    "That's EUR 5,000 committed before I know if I get a single meeting, and you tell me straight out nothing is guaranteed and the first meeting might take two months. I paid an agency before and got zero meetings, so without a cost per meeting and a payback figure I'm not signing.",
+    "My customers come from people who know me, from fairs and from calls I make myself. I don't believe a stranger sending cold emails in my name will bring a serious wholesale buyer, and EUR 5,000 for three months with no meetings promised is a lot of money for my size."
+   ],
+   [
+    "P001",
+    "P002"
+   ]
+  ],
+  [
+   "price",
+   2,
+   [
+    "EUR 5,000 minimum for three months with no meetings promised is what I'd pay a junior SDR plus Lemlist, and I've already seen I can scrape lists and send sequences myself for a fraction of that. Plus two weeks of profile approvals and handing over my customer list is exactly the homework my team doesn't have time for.",
+    "EUR 6,500 locked in for three months with no meetings guaranteed is a lot for a firm like mine. I've run Lemlist and a freelancer myself, and I think I can get most of this done in-house for a fraction of that."
+   ],
+   [
+    "P004",
+    "P020"
+   ]
+  ],
+  [
+   "habit",
+   1,
+   [
+    "We're a SaaS company, so we already have people who know how to run Apollo and LinkedIn. EUR 5,000 minimum for 'no number of meetings is guaranteed' is something my partner would kill in thirty seconds when we could buy the tools and do it ourselves."
+   ],
+   [
+    "P016"
+   ]
+  ]
+ ],
+ "why_yes": [
+  [
+   "need",
+   2,
+   [
+    "We have already decided on the new country and I need meetings there before the next trade fair, not after it. EUR 5,000 over three months costs less than one fair stand, so I would sign, but I would watch it closely and push hard in the weekly reports.",
+    "I have a real plan to open a new country and no local contacts there, and EUR 6,500 for three months is less than one trade-fair stand plus the travel. The local-language messages and the country's legal rules being checked are the parts I can't do myself, so I'd try it, but I'd go in skeptical."
+   ],
+   [
+    "P007",
+    "P009"
+   ]
+  ]
+ ],
+ "flip": [
+  "A month-one pilot with no 3-month minimum, or part of the fee tied to qualified meetings, plus two references from manufacturers or exporters my size who can show me their cost per meeting.",
+  "A wholesaler I know and trust telling me personally that it brought them real new accounts without any complaints, or paying mostly per meeting that actually happens instead of a fixed monthly fee.",
+  "Two or three logistics or 3PL firms like mine, ideally in the country I'm entering, that I could call myself and that got real meetings from this without complaints, plus a written legal opinion on GDPR for that country.",
+  "A one-country pilot for the market we're entering next year, priced per qualified meeting or with part of the fee refunded if no meetings come in 60 days, and with the approval steps cut down to one short call.",
+  "A wholesaler like mine, ideally someone I know or can call, telling me they got real orders from it, plus a short paid trial of one month without the 3-month lock-in.",
+  "Pay per qualified meeting, or a one-month trial with no minimum and proof from a wholesaler like me in Bulgaria that got real orders, not just replies.",
+  "Two or three wholesalers like us I can call myself, who tell me it brought real meetings in a new country without hurting their name, plus a written GDPR basis per country, timed for when we enter the new market.",
+  "A cost per qualified meeting from real clients in wholesale, ideally in the country we're entering, plus part of the fee tied to meetings delivered or a way out after month one if there are none.",
+  "References from two or three manufacturers or exporters my size with their actual cost per qualified meeting, plus a written GDPR basis (legitimate interest assessment) and a first month I can cancel if no meetings come.",
+  "A paid pilot of one month with no minimum, or part of the fee tied to qualified meetings held, plus two references from SaaS or IT services founders in CEE I can actually call.",
+  "Pay per qualified meeting, or a one-month paid pilot with no minimum, plus two or three references from SaaS or IT services companies selling into DACH that I can call myself.",
+  "A reference call with a manufacturer or exporter like us in the CEE region who has run it for six months, plus a written GDPR / legitimate-interest assessment and a contract saying who is the data controller and who is liable.",
+  "A month-to-month trial with no three-month lock-in, or part of the fee only paid per real meeting with a buyer who fits my profile.",
+  "Two or three named case studies from SaaS or IT services companies selling into DACH, with real meeting numbers, plus some pay-per-meeting element so we don't carry all the risk for the first three months.",
+  "A month-to-month start, or paying part per qualified meeting, plus two references from manufacturers or exporters like us I can call myself.",
+  "A reference call with a manufacturer or exporter like us who has run this with them for six months and still has a good name with their buyers, plus a written opinion on GDPR and the local rules from a real lawyer for the countries we sell into.",
+  "Proof from a logistics or 3PL firm like mine, ideally someone I can call, who got real meetings with shippers in the target country through them, plus a shorter paid trial without the 3-month lock-in.",
+  "Proof from a 3PL or logistics client in the region, with real meetings booked, plus a one-month paid pilot so I'm not tied in for three months."
+ ],
+ "purchases_first_month_per_buyer": 1.0,
+ "price_answers": 20
+}

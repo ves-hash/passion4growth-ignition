@@ -1,0 +1,13 @@
+{
+  "id": "P013",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I already paid one agency that sent a lot of activity reports and no real deals. EUR 6,500 locked in for three months, and you won't even promise one meeting. With my money that's too big a bet on something I don't believe works with my buyers.",
+  "objection": "Cold email does not work in our industry. My buyers are relationship people who buy from someone they met at a fair or were introduced to, and here I pay the full three months before I know whether it does anything.",
+  "would_change_my_mind": "Pay per qualified meeting, or a one-month paid pilot with no minimum, plus two or three references from SaaS or IT services companies selling into DACH that I can call myself.",
+  "price_too_cheap": 300,
+  "price_cheap": 700,
+  "price_expensive": 1200,
+  "price_too_expensive": 1800
+}

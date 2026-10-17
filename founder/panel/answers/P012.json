@@ -1,0 +1,13 @@
+{
+  "id": "P012",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I already paid an agency that sent me reports and no customers. EUR 5,000 locked in before I even see a first meeting, with no meetings guaranteed, is the same bet I lost last time, and my team has no time to sit through two weeks of approvals and dig out our lost-deal lists.",
+  "objection": "Three months minimum and 'no number of meetings is guaranteed' means I carry all the risk. By the time I know it doesn't work, I've spent five grand and my people's time.",
+  "would_change_my_mind": "A paid pilot of one month with no minimum, or part of the fee tied to qualified meetings held, plus two references from SaaS or IT services founders in CEE I can actually call.",
+  "price_too_cheap": 400,
+  "price_cheap": 800,
+  "price_expensive": 1500,
+  "price_too_expensive": 2500
+}

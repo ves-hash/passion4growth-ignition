@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "In logistics people buy from people they've shaken hands with at a fair or been referred to, and I won't let strangers in Sofia send cold emails in my company's name, even from separate domains. The new country isn't until next year, and EUR 5,000 with no meetings promised is a lot of money to bet that my name doesn't end up looking like spam.",
+  "objection": "Cold outreach makes us look cheap and desperate, and I'm not convinced that 'we check each country's rules' would hold up if a German prospect filed a GDPR complaint. My reputation is the business, and a separate domain doesn't stop people seeing our company name.",
+  "would_change_my_mind": "Two or three logistics or 3PL firms like mine, ideally in the country I'm entering, that I could call myself and that got real meetings from this without complaints, plus a written legal opinion on GDPR for that country.",
+  "price_too_cheap": 400,
+  "price_cheap": 700,
+  "price_expensive": 1200,
+  "price_too_expensive": 1800
+}

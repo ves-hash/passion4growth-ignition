@@ -1,0 +1,13 @@
+{
+  "id": "P015",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I already paid an agency once and got zero meetings, and now you want EUR 5,000 locked in over three months with no meetings promised. I can buy Apollo for a fraction of that and have one of my guys send the emails himself.",
+  "objection": "Nobody guarantees anything, so I pay EUR 1,500 a month whatever happens, and the first meetings might not even show up until the second month. It's the same story as the last agency, just told more honestly.",
+  "would_change_my_mind": "A month-to-month trial with no three-month lock-in, or part of the fee only paid per real meeting with a buyer who fits my profile.",
+  "price_too_cheap": 300,
+  "price_cheap": 600,
+  "price_expensive": 1000,
+  "price_too_expensive": 1500
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "My customers come from people who know me, from fairs and from calls I make myself. I don't believe a stranger sending cold emails in my name will bring a serious wholesale buyer, and EUR 5,000 for three months with no meetings promised is a lot of money for my size.",
+  "objection": "Our reputation in this trade took twenty years to build. If buyers start getting cold messages from us they will think we are desperate or spammers, and I don't want a GDPR complaint landing on my desk because of somebody else's list.",
+  "would_change_my_mind": "A wholesaler I know and trust telling me personally that it brought them real new accounts without any complaints, or paying mostly per meeting that actually happens instead of a fixed monthly fee.",
+  "price_too_cheap": 300,
+  "price_cheap": 600,
+  "price_expensive": 1000,
+  "price_too_expensive": 1500
+}

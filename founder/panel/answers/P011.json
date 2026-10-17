@@ -1,0 +1,13 @@
+{
+  "id": "P011",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "You want EUR 5,000 committed up front with no meetings guaranteed and nothing before day 30-60, so I cannot work out a cost per meeting or a payback. And cold emails going out to German and Greek buyers in our name is exactly what could cost us the reputation we built at trade fairs.",
+  "objection": "If a prospect complains or a data protection authority asks where you got their email, it is my company name on that message, not yours. Separate domains do not change that. Show me who carries the liability.",
+  "would_change_my_mind": "References from two or three manufacturers or exporters my size with their actual cost per qualified meeting, plus a written GDPR basis (legitimate interest assessment) and a first month I can cancel if no meetings come.",
+  "price_too_cheap": 400,
+  "price_cheap": 800,
+  "price_expensive": 1500,
+  "price_too_expensive": 2500
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P020",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "EUR 6,500 locked in for three months with no meetings guaranteed is a lot for a firm like mine. I've run Lemlist and a freelancer myself, and I think I can get most of this done in-house for a fraction of that.",
+  "objection": "Do they actually understand logistics and 3PL buyers, or is it the same templates with a different company name on top? Our deals come from trust and trade fairs, and a cold email from a domain I don't own won't get a shipper to move their freight.",
+  "would_change_my_mind": "Proof from a 3PL or logistics client in the region, with real meetings booked, plus a one-month paid pilot so I'm not tied in for three months.",
+  "price_too_cheap": 300,
+  "price_cheap": 600,
+  "price_expensive": 1000,
+  "price_too_expensive": 1500
+}
