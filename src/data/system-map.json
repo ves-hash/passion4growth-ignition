@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18d",
+  "version": "2026-10-18e",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -554,7 +554,8 @@
         "named and office email shares",
         "domains and inboxes",
         "prices",
-        "operator cost and hours"
+        "operator cost and hours",
+        "lead sources chosen for the client (share, fit rate, price)"
       ],
       "outputs": [
         "people per month",
@@ -562,11 +563,14 @@
         "monthly cost without human work",
         "first-month cost",
         "clients per operator",
-        "price to quote (managed / self-service)"
+        "price to quote (managed / self-service)",
+        "cost per fit company per source"
       ],
       "depends_on": [
         "outreach-deliverability",
-        "prospect-tiering"
+        "prospect-tiering",
+        "outreach-lead-sourcing",
+        "apify-actors"
       ],
       "parallel_with": [],
       "tools": [

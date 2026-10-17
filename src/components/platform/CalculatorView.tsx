@@ -28,11 +28,40 @@ const PRICES = {
   domainYear: 12,
   getsalesProfile: 95,
   salesNav: 119.99,
-  aiArk: 49,
   verifyPerEmail: 0.0037,
-  apifySerper: 22,
   twilio: 10,
+  // Lead-source processing (apify-actors, Starter tier), USD per 1,000 companies
+  apifyPlan: 19,
+  crawlPerK: 1,
+  serperPerK: 0.6,
+  contactPerK: 10,
+  signalsPerK: 6,
 };
+
+// Lead sources (outreach-lead-sourcing, apify-actors, prospect-source-finder). Each covers a share of the TAM;
+// fit = share of raw companies that pass the ICP check; perK = USD per 1,000 raw companies.
+interface LeadSource {
+  id: string;
+  name: string;
+  tool: string;
+  on: boolean;
+  share: number;
+  fit: number;
+  perK: number;
+  fixed: number;
+  sharedFixed: boolean;
+  apify: boolean;
+}
+const SOURCES: LeadSource[] = [
+  { id: 'aiark', name: 'AI Ark (търсене и look-alike)', tool: 'AI Ark $49, споделен', on: true, share: 40, fit: 60, perK: 0, fixed: 49, sharedFixed: true, apify: false },
+  { id: 'maps', name: 'Google Maps', tool: 'Apify compass/crawler-google-places: места $3 + контакти $2 + филтър $1 на 1 000', on: true, share: 30, fit: 30, perK: 6, fixed: 0, sharedFixed: false, apify: true },
+  { id: 'directories', name: 'Справочници и асоциации', tool: 'directory-browser-extractor (Playwright); само токени за извличане', on: true, share: 30, fit: 50, perK: 2, fixed: 0, sharedFixed: false, apify: false },
+  { id: 'europages', name: 'Europages', tool: 'Apify memo23/europages-scraper, $6 + $1 допълнителни данни', on: false, share: 20, fit: 50, perK: 7, fixed: 0, sharedFixed: false, apify: true },
+  { id: 'fairs', name: 'Изложители на панаири', tool: 'Apify skython/exhibitor-list-scraper', on: false, share: 10, fit: 50, perK: 4.5, fixed: 0, sharedFixed: false, apify: true },
+  { id: 'marketplaces', name: 'Маркетплейси (Allegro, eMAG)', tool: 'Apify memo23/allegro-scraper и др.; контактите се плащат отделно', on: false, share: 10, fit: 30, perK: 3, fixed: 0, sharedFixed: false, apify: true },
+  { id: 'registers', name: 'Търговски регистри (платен API)', tool: 'По държава; въведете цената на доставчика', on: false, share: 20, fit: 40, perK: 0, fixed: 0, sharedFixed: false, apify: false },
+];
+const SOURCE_OPTS = { overlap: 20, refresh: 10, signals: true, signalChecks: 2 };
 
 // Claude API, USD per 1M tokens (claude-api skill, 2026-10). Batch API halves token cost.
 const MODELS = {
@@ -150,6 +179,9 @@ const CalculatorView = () => {
   const [salesNav, setSalesNav] = useState(false);
   const [ai, setAi] = useState(AI_DEFAULTS);
   const [op, setOp] = useState(OP_DEFAULTS);
+  const [src, setSrc] = useState<LeadSource[]>(SOURCES);
+  const [sx, setSx] = useState(SOURCE_OPTS);
+  const setSource = (id: string, patch: Partial<LeadSource>) => setSrc(src.map((s) => (s.id === id ? { ...s, ...patch } : s)));
   const setOpNum = (k: keyof typeof OP_DEFAULTS) => (n: number) => setOp({ ...op, [k]: n });
   const setAiNum = (k: keyof typeof AI_DEFAULTS) => (n: number) => setAi({ ...ai, [k]: n });
   const set = (k: keyof Inputs) => (n: number) => setV({ ...v, [k]: n });
@@ -179,10 +211,44 @@ const CalculatorView = () => {
   const peopleThisMonth = Math.min(emailPeopleMonth, reachablePeople);
   const namedThisMonth = reachablePeople > 0 ? peopleThisMonth * ((namedCompanies * avg) / reachablePeople) : 0;
 
+  // Lead sources: fit companies per source → raw companies (fit rate, duplicates across sources) → cost.
+  // The whole TAM is built in the first month; every month after, `refresh`% new companies.
+  const share = Math.max(1, v.sharedClients);
+  const active = src.filter((s) => s.on);
+  const shareSum = active.reduce((a, s) => a + s.share, 0);
+  const dupF = 1 / Math.max(0.05, 1 - sx.overlap / 100);
+  const sources = active.map((s) => {
+    const fitCompanies = shareSum > 0 ? v.tamCompanies * (s.share / shareSum) : 0;
+    const raw = s.fit > 0 ? (fitCompanies / (s.fit / 100)) * dupF : 0;
+    const build = (raw * s.perK) / 1000;
+    return { ...s, fitCompanies, raw, build, fixedMonth: s.sharedFixed ? s.fixed / share : s.fixed };
+  });
+  const refreshF = Math.min(1, Math.max(0, sx.refresh / 100));
+  const rawTotal = sources.reduce((a, s) => a + s.raw, 0);
+  const processBuild = (rawTotal * (p.crawlPerK + p.serperPerK)) / 1000;
+  const contactBuild = (v.tamCompanies * (1 - v.namedShare / 100) * p.contactPerK) / 1000;
+  const sourcesBuild = sources.reduce((a, s) => a + s.build, 0) + processBuild + contactBuild;
+  const signalsMonth = sx.signals ? (v.tamCompanies * sx.signalChecks * p.signalsPerK) / 1000 : 0;
+  const apifyBuild = sources.reduce((a, s) => a + (s.apify ? s.build : 0), 0) + (rawTotal * p.crawlPerK) / 1000 + contactBuild;
+  const apifyUsageMonth = apifyBuild * refreshF + signalsMonth;
+  const apifyTopUp = Math.max(0, p.apifyPlan / share - apifyUsageMonth);
+  const sourceLines = [
+    ...sources.map((s) => ({
+      label: `${s.name}: ~${fmt(s.raw * refreshF)} нови фирми на месец`,
+      tool: s.tool,
+      cost: s.fixedMonth + s.build * refreshF,
+    })),
+    { label: `Текст от сайта и ключови думи за ~${fmt(rawTotal * refreshF)} фирми`, tool: 'Apify website-content-crawler + Serper', cost: processBuild * refreshF },
+    { label: 'Контакти от сайта на фирми без личен имейл', tool: 'Apify vdrmota/contact-info-scraper', cost: contactBuild * refreshF },
+    ...(sx.signals
+      ? [{ label: `Сигнали: ${sx.signalChecks} проверки на месец за ${fmt(v.tamCompanies)} фирми`, tool: 'Apify: обяви за работа, реклами', cost: signalsMonth }]
+      : []),
+    ...(apifyTopUp > 0 ? [{ label: 'Apify план: минимумът над използваното', tool: `Starter $${p.apifyPlan}, споделен между ${share} клиента`, cost: apifyTopUp }] : []),
+  ];
+
   // Costs
   const prospeoCredits = namedThisMonth * 1 + namedThisMonth * (v.mobileShare / 100) * 10;
   const prospeoTier = PROSPEO_TIERS.find((t) => t.credits >= prospeoCredits) ?? PROSPEO_TIERS[PROSPEO_TIERS.length - 1];
-  const share = Math.max(1, v.sharedClients);
   const allSends = emailsMonth * share;
   const allContacts = reachablePeople * share;
   const smartlead =
@@ -196,8 +262,7 @@ const CalculatorView = () => {
     { label: `Проверка на ~${fmt(peopleThisMonth)} имейла`, tool: 'MillionVerifier', cost: peopleThisMonth * p.verifyPerEmail },
     { label: `Имейл платформа, споделена между ${share} клиента`, tool: `Smartlead ${smartlead.name} ($${smartlead.price}), неограничени акаунти`, cost: smartlead.price / share },
     ...(salesNav ? [{ label: `Sales Navigator (${v.linkedinProfiles} профил)`, tool: 'LinkedIn', cost: v.linkedinProfiles * p.salesNav }] : []),
-    { label: `Търсене на фирми, споделено между ${share} клиента`, tool: 'AI Ark', cost: p.aiArk / share },
-    { label: 'Списъци, Maps, сигнали', tool: 'Apify + Serper', cost: p.apifySerper },
+    ...sourceLines,
     { label: 'WhatsApp, SMS, проверка на номера', tool: 'Twilio', cost: p.twilio },
   ];
   const tools = lines.reduce((s, l) => s + l.cost, 0);
@@ -208,7 +273,7 @@ const CalculatorView = () => {
   const companiesMonth = reachablePeople > 0 ? reachableCompanies * (peopleThisMonth / reachablePeople) : 0;
   const dossierUnit = tokenCost(ai.model, ai.dossierInK, ai.dossierOutK) * batchF + ai.searches * ai.searchPrice;
   const aiLines = [
-    { label: `Проверка на ~${fmt(companiesMonth)} сайта за ICP`, tool: `${MODELS.haiku.name}, ~10k токена`, cost: companiesMonth * tokenCost('haiku', 10, 1) * batchF },
+    { label: `ICP проверка на ~${fmt(rawTotal * refreshF)} нови фирми от източниците`, tool: `${MODELS.haiku.name}, ~10k токена`, cost: rawTotal * refreshF * tokenCost('haiku', 10, 1) * batchF },
     {
       label: `Досиета и Entry Plan за ~${fmt(companiesMonth * (ai.abShare / 100))} A/B фирми`,
       tool: `${MODELS[ai.model].name}, ${ai.dossierInK}k / ${ai.dossierOutK}k токена + ${ai.searches} търсения${ai.batch ? ', Batch' : ''}`,
@@ -221,12 +286,14 @@ const CalculatorView = () => {
   const aiTotal = aiLines.reduce((s, l) => s + l.cost, 0);
   const monthly = tools + aiTotal + ai.hermes;
 
-  // First month: domains for the year, warm-up weeks with no sending, research of the whole TAM at once
+  // First month: domains for the year, warm-up weeks with no sending, the whole TAM built and researched at once
   const domainsYear = (v.liveDomains + v.spareDomains) * p.domainYear;
   const warmupCost = totalInboxes * p.inbox * 0.75;
-  const tamResearch = reachableCompanies * (ai.abShare / 100) * dossierUnit + reachableCompanies * tokenCost('haiku', 10, 1) * batchF;
+  const tamResearch = reachableCompanies * (ai.abShare / 100) * dossierUnit + rawTotal * tokenCost('haiku', 10, 1) * batchF;
+  const researchExtra = Math.max(0, tamResearch - aiLines[0].cost - aiLines[1].cost);
+  const sourcesExtra = sourcesBuild * (1 - refreshF);
   const oneTime = domainsYear;
-  const firstMonth = monthly + domainsYear + warmupCost + Math.max(0, tamResearch - aiLines[0].cost - aiLines[1].cost);
+  const firstMonth = monthly + domainsYear + warmupCost + researchExtra + sourcesExtra;
 
   // Operator capacity and price (EUR)
   const opHourly = op.productiveHours > 0 ? op.operatorCost / op.productiveHours : 0;
@@ -255,6 +322,8 @@ const CalculatorView = () => {
     smartleadUse > 1 && 'Обемът на всички клиенти надхвърля и най-големия план на Smartlead.',
     op.price > 0 && op.price < costEur && 'Вашата цена е под себестойността.',
     clientsPerOperator < 1 && 'Часовете на клиент не се побират в месеца на един оператор.',
+    active.length === 0 && 'Няма включен източник на лийдове.',
+    active.length > 0 && shareSum !== 100 && `Дяловете на източниците са ${fmt(shareSum)}%; калкулаторът ги приравнява към 100%.`,
     emailPeopleMonth > reachablePeople * 1.5 &&
       'Капацитетът е много над пазара: помислете за 2 инбокса на домейн или ползвайте излишъка за повторен контакт.',
   ].filter(Boolean) as string[];
@@ -274,13 +343,15 @@ const CalculatorView = () => {
             setAi(AI_DEFAULTS);
             setOp(OP_DEFAULTS);
             setSalesNav(false);
+            setSrc(SOURCES);
+            setSx(SOURCE_OPTS);
           }}
         >
           <RotateCcw /> По подразбиране
         </Button>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
         {/* Inputs */}
         <div className="space-y-5">
           <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
@@ -308,6 +379,59 @@ const CalculatorView = () => {
                 step={5}
                 suffix="%"
               />
+            </div>
+          </section>
+
+          <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="font-bold">Лийд източници</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Кой дял от TAM идва от всеки източник и какъв дял от суровите фирми минава ICP проверката. Сменете с измереното на първия списък.
+            </p>
+            <ul className="mt-4 space-y-3">
+              {src.map((s) => (
+                <li key={s.id} className={cn('rounded-xl border p-3', s.on ? 'border-border' : 'border-dashed border-border/70')}>
+                  <label className="flex cursor-pointer items-start gap-2">
+                    <input
+                      id={`src-${s.id}`}
+                      type="checkbox"
+                      checked={s.on}
+                      onChange={(e) => setSource(s.id, { on: e.target.checked })}
+                      className="mt-1 accent-primary"
+                    />
+                    <span className="min-w-0">
+                      <span className={cn('block text-sm font-medium', !s.on && 'text-muted-foreground')}>{s.name}</span>
+                      <span className="block text-xs text-muted-foreground">{s.tool}</span>
+                    </span>
+                  </label>
+                  {s.on && (
+                    <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                      <Field id={`src-${s.id}-share`} label="Дял от TAM" value={s.share} onChange={(n) => setSource(s.id, { share: n })} step={5} suffix="%" />
+                      <Field id={`src-${s.id}-fit`} label="Минават ICP" value={s.fit} onChange={(n) => setSource(s.id, { fit: n })} step={5} suffix="%" />
+                      <Field id={`src-${s.id}-perk`} label="На 1 000 фирми" value={s.perK} onChange={(n) => setSource(s.id, { perK: n })} step={0.5} suffix="$" />
+                      {(s.fixed > 0 || s.id === 'registers') && (
+                        <Field
+                          id={`src-${s.id}-fixed`}
+                          label={s.sharedFixed ? 'План на месец (делим)' : 'Абонамент на месец'}
+                          value={s.fixed}
+                          onChange={(n) => setSource(s.id, { fixed: n })}
+                          suffix="$"
+                        />
+                      )}
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <Field id="src-overlap" label="Дубли между източниците" hint="Махат се при сливането (lead-data-hygiene)" value={sx.overlap} onChange={(n) => setSx({ ...sx, overlap: n })} step={5} suffix="%" />
+              <Field id="src-refresh" label="Нови фирми на месец" hint="Дял от TAM след първия месец" value={sx.refresh} onChange={(n) => setSx({ ...sx, refresh: n })} suffix="%" />
+              <label className="flex cursor-pointer items-center gap-2 text-sm">
+                <input id="src-signals" type="checkbox" checked={sx.signals} onChange={(e) => setSx({ ...sx, signals: e.target.checked })} className="accent-primary" />
+                Следене на сигнали (обяви, реклами)
+              </label>
+              {sx.signals && (
+                <Field id="src-checks" label="Проверки на месец" value={sx.signalChecks} onChange={(n) => setSx({ ...sx, signalChecks: n })} />
+              )}
             </div>
           </section>
 
@@ -356,7 +480,7 @@ const CalculatorView = () => {
               <Field
                 id="calc-shared"
                 label="Клиенти на общите инструменти"
-                hint="Smartlead и AI Ark се делят"
+                hint="Smartlead, AI Ark и Apify се делят"
                 value={v.sharedClients}
                 onChange={set('sharedClients')}
                 min={1}
@@ -396,9 +520,12 @@ const CalculatorView = () => {
                   step={0.01}
                   suffix="$"
                 />
-                <Field id="pr-ark" label="AI Ark" value={p.aiArk} onChange={setPrice('aiArk')} suffix="$" />
                 <Field id="pr-ver" label="Проверка на имейл" value={p.verifyPerEmail} onChange={setPrice('verifyPerEmail')} step={0.0005} suffix="$" />
-                <Field id="pr-apify" label="Apify + Serper на месец" value={p.apifySerper} onChange={setPrice('apifySerper')} suffix="$" />
+                <Field id="pr-apify" label="Apify план на месец" hint="Starter $19; включва толкова използване" value={p.apifyPlan} onChange={setPrice('apifyPlan')} suffix="$" />
+                <Field id="pr-crawl" label="Текст от сайт, на 1 000 фирми" hint="~5 страници × $0.2 на 1 000" value={p.crawlPerK} onChange={setPrice('crawlPerK')} step={0.1} suffix="$" />
+                <Field id="pr-serper" label="Serper, на 1 000 фирми" hint="~2 търсения × $0.30 на 1 000" value={p.serperPerK} onChange={setPrice('serperPerK')} step={0.1} suffix="$" />
+                <Field id="pr-contact" label="Контакти от сайт, на 1 000 фирми" hint="~5 страници × $2 на 1 000" value={p.contactPerK} onChange={setPrice('contactPerK')} suffix="$" />
+                <Field id="pr-signals" label="Сигнали, на 1 000 проверки" hint="Обяви $1 + реклами $5" value={p.signalsPerK} onChange={setPrice('signalsPerK')} suffix="$" />
                 <Field id="pr-tw" label="Twilio на месец" value={p.twilio} onChange={setPrice('twilio')} suffix="$" />
                 <Field
                   id="pr-mob"
@@ -544,6 +671,44 @@ const CalculatorView = () => {
               ))}
             </ul>
           )}
+
+          <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="font-bold">Откъде идва TAM</h2>
+            <div className="mt-3 overflow-x-auto">
+              <table className="w-full min-w-[480px] text-sm">
+                <thead>
+                  <tr className="text-left text-xs text-muted-foreground">
+                    <th className="py-1.5 pr-3 font-medium">Източник</th>
+                    <th className="py-1.5 pr-3 text-right font-medium">Сурови</th>
+                    <th className="py-1.5 pr-3 text-right font-medium">Годни</th>
+                    <th className="py-1.5 pr-3 text-right font-medium">Изграждане</th>
+                    <th className="py-1.5 text-right font-medium">На годна фирма</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {sources.map((s) => (
+                    <tr key={s.id}>
+                      <td className="py-2 pr-3">{s.name}</td>
+                      <td className="py-2 pr-3 text-right tabular-nums">{fmt(s.raw)}</td>
+                      <td className="py-2 pr-3 text-right tabular-nums">{fmt(s.fitCompanies)}</td>
+                      <td className="py-2 pr-3 text-right tabular-nums">{usd(s.build, 2)}</td>
+                      <td className="py-2 text-right tabular-nums">{s.fitCompanies > 0 ? usd(s.build / s.fitCompanies, 3) : '—'}</td>
+                    </tr>
+                  ))}
+                  <tr className="font-semibold">
+                    <td className="py-2 pr-3">Общо, с обработка и контакти</td>
+                    <td className="py-2 pr-3 text-right tabular-nums">{fmt(rawTotal)}</td>
+                    <td className="py-2 pr-3 text-right tabular-nums">{fmt(v.tamCompanies)}</td>
+                    <td className="py-2 pr-3 text-right tabular-nums">{usd(sourcesBuild, 2)}</td>
+                    <td className="py-2 text-right tabular-nums">{v.tamCompanies > 0 ? usd(sourcesBuild / v.tamCompanies, 3) : '—'}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Изграждането на целия TAM влиза в първия месец; след това всеки месец ~{fmt(sx.refresh)}% нови фирми. Фиксираните планове (AI Ark, Apify) са в разходите на месец. Нов източник се добавя след тест в prospect-source-finder (цена на използваем ред).
+            </p>
+          </section>
 
           <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <h2 className="font-bold">Изпращащи акаунти</h2>
@@ -709,7 +874,8 @@ const CalculatorView = () => {
                 <li className="flex justify-between gap-3"><span>Месечната сума</span><span className="tabular-nums">{usd(monthly)}</span></li>
                 <li className="flex justify-between gap-3"><span>Домейни за година ({v.liveDomains + v.spareDomains})</span><span className="tabular-nums">{usd(oneTime)}</span></li>
                 <li className="flex justify-between gap-3"><span>Загряване: ~3 седмици инбокси без изпращане</span><span className="tabular-nums">{usd(warmupCost)}</span></li>
-                <li className="flex justify-between gap-3"><span>Проучване на целия TAM наведнъж (над месечното)</span><span className="tabular-nums">{usd(Math.max(0, tamResearch - aiLines[0].cost - aiLines[1].cost))}</span></li>
+                <li className="flex justify-between gap-3"><span>Изграждане на TAM от източниците (над месечното)</span><span className="tabular-nums">{usd(sourcesExtra)}</span></li>
+                <li className="flex justify-between gap-3"><span>Проучване на целия TAM наведнъж (над месечното)</span><span className="tabular-nums">{usd(researchExtra)}</span></li>
               </ul>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
