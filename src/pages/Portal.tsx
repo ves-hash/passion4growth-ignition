@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { CalendarCheck, Check, CheckCircle2, Circle, Clock, Upload } from 'lucide-react';
+import { ArrowRight, CalendarCheck, Rocket, Check, CheckCircle2, Circle, Clock, Upload } from 'lucide-react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import ClientOnboarding from '@/components/portal/ClientOnboarding';
 import { CLIENT_STAGES, DEMO_CLIENTS, PORTAL, PortalAction } from '@/data/platform-demo';
 
 const ActionCard = ({ action, done, onDone }: { action: PortalAction; done: boolean; onDone: (msg: string) => void }) => {
@@ -76,6 +77,8 @@ const Portal = () => {
   const client = DEMO_CLIENTS.find((c) => c.id === params.get('client')) ?? DEMO_CLIENTS[2];
   const data = PORTAL[client.id];
   const [done, setDone] = useState<Set<string>>(new Set());
+  const onboarding = params.get('start') === '1';
+  const isNew = client.phase === 'day0' || client.phase === 'gate1';
   const stageAt = CLIENT_STAGES.findIndex((s) => s.phases.includes(client.phase));
   const open = data.actions.filter((a) => !done.has(a.id)).length;
 
@@ -124,7 +127,26 @@ const Portal = () => {
         </div>
       </header>
 
+      {onboarding ? (
+        <main className="mx-auto max-w-4xl px-4 pb-20 pt-8 sm:px-6 sm:pt-12">
+          <ClientOnboarding client={client} onClose={() => setParams({ client: client.id })} />
+        </main>
+      ) : (
       <main className="mx-auto max-w-4xl space-y-8 px-4 pb-20 pt-8 sm:px-6 sm:pt-12">
+        {isNew && (
+          <button
+            type="button"
+            onClick={() => setParams({ client: client.id, start: '1' })}
+            className="group flex w-full items-center gap-4 rounded-2xl bg-gradient-to-br from-primary to-accent p-5 text-left text-white shadow-soft transition-transform hover:-translate-y-0.5"
+          >
+            <Rocket className="h-8 w-8 shrink-0" />
+            <span className="min-w-0 flex-1">
+              <span className="block text-lg font-bold">Първи стъпки: 10 минути, за да започнем</span>
+              <span className="block text-sm text-white/85">Проверете профила, качете клиентите и отказите, отговорете на няколко въпроса.</span>
+            </span>
+            <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
+          </button>
+        )}
         <section>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Седмичен отчет · {data.period}</p>
           <h1 className="mt-2 text-3xl font-bold leading-tight sm:text-4xl">{CLIENT_STAGES[stageAt].name}</h1>
@@ -242,6 +264,7 @@ const Portal = () => {
           </ul>
         </section>
       </main>
+      )}
     </div>
   );
 };
