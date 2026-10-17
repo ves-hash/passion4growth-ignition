@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-17b",
+  "version": "2026-10-18",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -595,7 +595,8 @@
       ],
       "tools": [
         "Twilio Lookup",
-        "WhatsApp/Viber/SMS provider (TBD)"
+        "Twilio (WhatsApp, SMS)",
+        "Viber partner (later)"
       ],
       "human_step": null
     },
@@ -754,13 +755,18 @@
       "status": "proposed"
     },
     {
-      "name": "Email verifier",
-      "purpose": "Bouncer или MillionVerifier",
+      "name": "Twilio WhatsApp + SMS",
+      "purpose": "follow-up след отговор; проспектът пише пръв",
+      "status": "proposed"
+    },
+    {
+      "name": "Viber",
+      "purpose": "follow-up след отговор, по-късно",
       "status": "undecided"
     },
     {
-      "name": "WhatsApp/Viber/SMS",
-      "purpose": "follow-up след отговор",
+      "name": "Email verifier",
+      "purpose": "Bouncer или MillionVerifier",
       "status": "undecided"
     },
     {
@@ -777,7 +783,7 @@
   "policies": [
     "Студен имейл във всички държави; риск Low BG/SK/SI/HU, Medium RO/HR/CZ/GR, High PL/DE/AT",
     "Студени обаждания по правилата на държавата (не PL/AT; DE само с документиран интерес)",
-    "WhatsApp/Viber само след отговор по имейл или LinkedIn, без въпрос за съгласие",
+    "WhatsApp/Viber само след отговор по имейл или LinkedIn; проспектът пише пръв по линк (wa.me / Viber), ние не пишем първи",
     "15-20 имейла на инбокс на ден (макс 30), 2-3 инбокса на домейн, 2-3 седмици загряване",
     "Без заобикаляне на Cloudflare, без proxy rotation, без LinkedIn cookie актьори"
   ]
