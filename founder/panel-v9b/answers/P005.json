@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd take the free call and the 15 companies, since that costs me nothing, but I'm not paying EUR 1,600 off a pitch. The last agency also had a nice guarantee and a case study, and I got slides, so I'd rather put that money toward Apollo and a junior who sits in my office.",
+  "objection": "One case study with 45 meetings and no name. Then 'qualified' turns into a fight about whether some guy at a fair was a real buyer, and getting a refund back from an agency on day 90 is never as easy as the brochure says.",
+  "would_change_my_mind": "If the 15 free targets include companies I didn't already know and would actually want, and I can talk to that logistics client myself, I'd sign the pilot.",
+  "price_too_cheap": 500,
+  "price_cheap": 1000,
+  "price_expensive": 2500,
+  "price_too_expensive": 4000
+}

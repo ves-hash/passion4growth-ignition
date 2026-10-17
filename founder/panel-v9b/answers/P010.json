@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I really do have to build a pipeline in the new country, and trade fairs and my contacts won't get me there fast enough. A free list of 15 companies and EUR 1,600 with money back is a small bet next to one new distributor account, so I'd do the free step and, if the list is good, the pilot in relationship mode.",
+  "objection": "My name in this industry took 20 years to build. If some agency spams buyers in the new market under my company's name, or I get a GDPR complaint, the damage costs far more than EUR 1,600. And one logistics client with 45 meetings is not proof for a wholesaler like me.",
+  "would_change_my_mind": "If the 15 companies in the free step are ones I already know, or are clearly wrong for my product, or the sample first message sounds like spam, I walk away.",
+  "price_too_cheap": 400,
+  "price_cheap": 1000,
+  "price_expensive": 2500,
+  "price_too_expensive": 4500
+}

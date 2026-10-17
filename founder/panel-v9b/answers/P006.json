@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "I would happily take the free 15 companies and the local-language first message, but then I would put them into Lemlist and have my own person chase them. I've done Apollo and a freelancer before, and paying EUR 1,600 now and then EUR 300 a meeting for something I think we can run ourselves is a hard sell to me.",
+  "objection": "My team has no time for this, and I don't believe 'about 3 hours in total' once you add approving 50 companies one by one, signing every message and marking bad meetings within 48 hours. And one logistics client getting 45 meetings tells me nothing about buyers for a manufacturer like us.",
+  "would_change_my_mind": "If the free list of 15 includes companies I didn't know and couldn't have found myself in Apollo, plus a named reference from a manufacturer or exporter of our size who got real quote requests, not just meetings.",
+  "price_too_cheap": 400,
+  "price_cheap": 1000,
+  "price_expensive": 2500,
+  "price_too_expensive": 4500
+}

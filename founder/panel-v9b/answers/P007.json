@@ -1,0 +1,13 @@
+{
+  "id": "P007",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to replace lost volume and my team of three only looks after existing accounts, so I need new meetings from somewhere. EUR 1,600 for at least 5 meetings is about EUR 320 each with the money back if they fail, so the downside is small. I would do the free 15-company list first, and I would only sign the pilot in Relationship mode where I approve every company and every message.",
+  "objection": "Our name is all we have in freight. One sloppy cold email to a shipper, or a GDPR complaint, costs me more than EUR 1,600. And 'a logistics client got 45 meetings' with no name and no reference I can call is not proof to me yet.",
+  "would_change_my_mind": "If the 15 sample companies are generic or wrong for our lanes, or they will not give me a named reference I can call, I walk away.",
+  "price_too_cheap": 500,
+  "price_cheap": 1000,
+  "price_expensive": 2500,
+  "price_too_expensive": 4000
+}

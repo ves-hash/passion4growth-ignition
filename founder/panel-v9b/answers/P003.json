@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "EUR 1,600 for at least 5 qualified meetings is about EUR 320 each, and one new freight account pays that back many times over, with my money back if they don't deliver. I'd only sign the pilot after the free 15-company list shows they actually know which shippers and forwarders in that market move volume like ours.",
+  "objection": "Do they really understand freight and 3PL, or will I get meetings with people who 'have a need' but are locked into contracts with their current forwarder? One logistics client with 45 meetings is a single case, and meetings are not quotes. My two salespeople are already busy with existing accounts, so who follows up?",
+  "would_change_my_mind": "If the free list of 15 companies is generic or wrong for our lanes and services, I walk away. If they show two or three logistics references I can call and say how many meetings turned into quote requests, I'd sign the same week.",
+  "price_too_cheap": 500,
+  "price_cheap": 1000,
+  "price_expensive": 2500,
+  "price_too_expensive": 4000
+}
