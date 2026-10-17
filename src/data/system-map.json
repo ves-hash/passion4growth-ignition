@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18",
+  "version": "2026-10-18b",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -541,6 +541,41 @@
       "parallel_with": [],
       "tools": [],
       "human_step": null
+    },
+    {
+      "id": "outreach-cost-capacity",
+      "file": "skills/outreach-cost-capacity/SKILL.md",
+      "status": "proposed",
+      "owner": "claude",
+      "phase": "all",
+      "lane": "evaluation",
+      "inputs": [
+        "TAM",
+        "named and office email shares",
+        "domains and inboxes",
+        "prices"
+      ],
+      "outputs": [
+        "people per month",
+        "time to cover the market",
+        "monthly cost without human work",
+        "first-month cost",
+        "cost per person reached"
+      ],
+      "depends_on": [
+        "outreach-deliverability",
+        "prospect-tiering"
+      ],
+      "parallel_with": [],
+      "tools": [
+        "InboxKit",
+        "Smartlead",
+        "GetSales",
+        "Prospeo",
+        "Twilio",
+        "Claude API"
+      ],
+      "human_step": "approve price and purchases before quoting the client"
     },
     {
       "id": "prospect-tiering",

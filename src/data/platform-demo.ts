@@ -25,6 +25,7 @@ export const TASK_LABELS: Record<string, string> = {
   'cold-offer-writing': 'Оферти за тест',
   'outreach-infrastructure-channels': 'Канали и проследяване',
   'outreach-evaluation': 'Оценка на списъка и резултатите',
+  'outreach-cost-capacity': 'Цена и капацитет на клиент',
   'prospect-tiering': 'Приоритети P1–P3 и канал',
   'phone-channel-pipeline': 'Телефони и месинджъри',
   'outreach-sequence-copywriting': 'Секвенции по канали',
