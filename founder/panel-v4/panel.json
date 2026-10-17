@@ -1,0 +1,94 @@
+{
+ "n": 20,
+ "seed": 41,
+ "customer": {
+  "business": "Passion4Growth: New-Market Sprint for logistics, wholesale and manufacturing companies in CEE (meetings with buyers in a new country or segment), run on the P4G outreach skill pack",
+  "target": "Owners, CEOs and commercial directors of logistics/3PL, wholesale/distribution and manufacturing/export companies in Bulgaria and CEE (EUR 2-50M revenue) who have a live trigger: they have decided to enter a new country or segment in the next 6 months, or must replace lost volume after customers cut orders. Until now their new business came from referrals, trade fairs and the owner's network",
+  "where": "Bulgaria, Romania, Greece and the wider CEE region",
+  "age": [
+   30,
+   58
+  ],
+  "segments": [
+   {
+    "name": "Owner of a wholesaler or distributor (EUR 2-10M revenue)",
+    "share": 0.35,
+    "income": [
+     30000,
+     90000
+    ]
+   },
+   {
+    "name": "Commercial director at a manufacturer or exporter (EUR 10-50M revenue)",
+    "share": 0.35,
+    "income": [
+     45000,
+     120000
+    ]
+   },
+   {
+    "name": "Founder or commercial director of a logistics, 3PL or freight forwarding firm",
+    "share": 0.3,
+    "income": [
+     35000,
+     100000
+    ]
+   }
+  ],
+  "behaviours": [
+   {
+    "name": "Burned by an agency or consultant before",
+    "share": 0.2,
+    "how": "Paid for strategy or lead generation that delivered slides or nothing; now wants proof before paying."
+   },
+   {
+    "name": "Relationship seller",
+    "share": 0.2,
+    "how": "Wins business through referrals, fairs and personal calls; doubts a system can replace that."
+   },
+   {
+    "name": "Numbers-first",
+    "share": 0.15,
+    "how": "Asks for cost per meeting, payback and what exactly is delivered before anything else."
+   },
+   {
+    "name": "DIY tinkerer",
+    "share": 0.12,
+    "how": "Has tried Apollo, Lemlist, a freelancer or an in-house SDR and thinks it can be done cheaper."
+   },
+   {
+    "name": "Growth-hungry, entering a new market",
+    "share": 0.13,
+    "how": "Has a concrete plan to grow into a new country or segment and needs a pipeline there."
+   },
+   {
+    "name": "Allergic to buzzwords",
+    "share": 0.1,
+    "how": "Ignores anything that sounds like consulting jargon; wants plain words about what happens."
+   },
+   {
+    "name": "Slow committee decider",
+    "share": 0.1,
+    "how": "Needs a partner or board to sign off on any new spend."
+   }
+  ],
+  "objections": [
+   "Revenue architecture sounds like a consulting buzzword; what do I actually get?",
+   "I need clients, not another strategy deck",
+   "I paid an agency before and got nothing",
+   "We could buy Apollo and hire a junior SDR for less",
+   "Cold outreach could hurt our name or bring GDPR trouble",
+   "My team has no time to work on this with you",
+   "Do they understand our niche?"
+  ],
+  "habits": [
+   "you have decided to enter a new country in the next 6 months",
+   "last quarter two of your bigger customers cut their orders",
+   "you exhibit at one or two trade fairs a year",
+   "your sales team is two or three people who mostly look after existing accounts",
+   "you approve every spend over EUR 1,000 yourself",
+   "you get three or four cold LinkedIn pitches a week from agencies"
+  ]
+ },
+ "pitch": "Passion4Growth (Sofia) works only with logistics, wholesale and manufacturing companies in CEE that are entering a new country or need to replace lost volume: we get you meetings with buyers there, beyond referrals and trade fairs.\nStep 1, free: after one 30-minute call, within 5 working days we show you 15 real target companies in your niche and market, why each one fits, and the first message we would send them in the local language. If it does not look right, you walk away.\nStep 2, the 90-day New-Market Pilot: EUR 500 to start (domains, inboxes, data). After that you pay only EUR 450 per qualified meeting that has taken place, at most 8 meetings (EUR 3,600 maximum). No meetings, nothing more to pay. Cancel any time.\nQualified means: a decision-maker (owner, buying, logistics or commercial lead) at a company you approved, in a call or visit about buying from you. We sign this definition together, and you can reject a meeting within 24 hours.\nWhat we do: targeting, offer and outreach by email from separate warmed-up domains, LinkedIn and phone, in the local language, with each country's legal rules checked and a GDPR pack (checklist, legitimate-interest assessment, a contract that says who controls the data). You approve the target list and every first message; a person approves every reply. Before each meeting you get a one-page brief; after it we send the follow-ups until you have a quote request or a clear no. Your time: about 3 hours in total, plus the meetings.\nProof: a logistics client got 45 meetings in 2 months, and we put you in touch with a past client in the closest niche; if we have none in yours, we tell you before you pay anything."
+}
