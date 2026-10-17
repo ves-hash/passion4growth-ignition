@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "The free sample of 15 companies costs me nothing, and if it looks right, EUR 1,500 up front with the rest only after 5 real meetings is a bounded bet. Worst case is EUR 600 a meeting with a decision-maker, which is still cheaper than my trade fair stand, and the logistics client with 45 meetings is the case I care about.",
+  "objection": "Meetings are not clients. In logistics a decision-maker taking a call does not mean they move freight to us, and I have no idea how many of those 45 meetings turned into contracts. I also want to know who decides what counts as 'qualified' if the person turns out to be just curious.",
+  "would_change_my_mind": "If the past logistics client tells me the meetings were tyre-kickers who never signed, or if the 15 sample companies are names I already know or the wrong size, I walk away.",
+  "price_too_cheap": 800,
+  "price_cheap": 1800,
+  "price_expensive": 4500,
+  "price_too_expensive": 7000
+}

@@ -1,0 +1,5 @@
+Passion4Growth (Sofia) builds revenue architecture for B2B companies in CEE: the system that brings you new customers beyond referrals and fairs.
+Weeks 1-6, Revenue Architecture Sprint: we study your website, current customers and lost deals; you approve the ideal-customer profile, who to avoid and the target accounts; we sharpen your positioning and offer for that buyer, rebuild the founder's LinkedIn profile, and set up the outreach engine (separate warmed-up domains, local-language email, LinkedIn and phone, each country's legal rules checked) plus a simple CRM and weekly KPIs. The first campaign goes live inside the sprint.
+After that, optional Run & Optimise: we keep the engine running, a person approves every reply, and you get a weekly report with meetings, replies and the honest reason when numbers are missing.
+First meetings usually come in 30-60 days; no number of meetings is guaranteed. Past clients: a logistics company got 45 meetings in 2 months; a complex B2B niche gets about 20 qualified leads a month.
+Price: Sprint EUR 3,500 one-off. Run & Optimise EUR 1,800 a month, cancel with 30 days' notice.

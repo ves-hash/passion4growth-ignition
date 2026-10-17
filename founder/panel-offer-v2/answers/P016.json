@@ -1,0 +1,13 @@
+{
+  "id": "P016",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I paid an agency before and got nothing, so EUR 1,500 up front still feels like a bet. I might take the free 15-company list, but my partner would have to sign off and that won't happen this month on the strength of one call.",
+  "objection": "The '45 meetings in 2 months' sounds like every agency pitch I've heard. Meetings are easy to count. Meetings with people who actually move freight with us are not, and I can't tell from this which one they mean.",
+  "would_change_my_mind": "A real conversation with that past logistics client about how many of those meetings turned into contracts, plus a free 15-company list good enough that I could show it to my partner.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

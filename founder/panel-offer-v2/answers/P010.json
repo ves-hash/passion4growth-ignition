@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "timing",
+  "reason": "The numbers are fair: worst case EUR 3,000 for 5 qualified meetings is EUR 600 a meeting, and if they miss I only lose EUR 1,500. But the new country is next year, so I would take the free 15 companies now and not pay anything this month.",
+  "objection": "My team has no time for this, and I do not believe 3 hours in total. Also 'qualified meeting' with a decision-maker is not a deal, and a logistics case with 45 meetings tells me nothing about a wholesaler selling into a new market.",
+  "would_change_my_mind": "If the 15 sample companies are real buyers I do not already know, and the past client in my niche tells me the meetings turned into orders, I would start the Sprint in Q1, timed to the market entry.",
+  "price_too_cheap": 800,
+  "price_cheap": 2000,
+  "price_expensive": 4500,
+  "price_too_expensive": 7000
+}

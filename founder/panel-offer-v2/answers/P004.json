@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd take the free 15-company sample, it costs me nothing but a call. But EUR 1,500 upfront so a Sofia agency I don't know can email prospects under my company's name? Not this month. My deals come from people who know me.",
+  "objection": "A cold email to the wrong German CTO, or one that sounds generic, damages a name I spent years building. A GDPR pack is paperwork. It doesn't stop someone complaining about us to a regulator or on LinkedIn.",
+  "would_change_my_mind": "A call with the past client from the closest niche, ideally an IT services or SaaS company selling into DACH, who tells me plainly that the outreach sounded like them and caused no complaints.",
+  "price_too_cheap": 800,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}

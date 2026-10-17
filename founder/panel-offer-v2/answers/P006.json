@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd probably take the free call and look at the 15 companies, since that costs me nothing, but I'm not putting EUR 1,500 down this month. A list of 15 names and a nice first message is exactly the kind of slide-ware I paid for last time, and the only proof is a logistics client, not a SaaS company selling to IT buyers in DACH.",
+  "objection": "Getting a list and a message right is easy. Getting a German IT director to take a meeting with a Bulgarian SaaS company is hard, and nothing here shows you've done that for anyone like me. 'Qualified meeting' could also turn into five polite calls that go nowhere, and I'd still owe the second half.",
+  "would_change_my_mind": "Talking to a past SaaS or IT services client who got real DACH meetings that turned into pipeline, plus a sample list good enough that I don't already know half the names on it.",
+  "price_too_cheap": 800,
+  "price_cheap": 1800,
+  "price_expensive": 3500,
+  "price_too_expensive": 6000
+}

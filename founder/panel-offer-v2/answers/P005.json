@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I might take the free 30-minute call and look at the 15 companies, but I would not pay. In my business buyers sign with people they've met at a fair or been introduced to, and I don't believe a cold email in their language from a domain they've never heard of gets a serious buyer into a meeting.",
+  "objection": "Even if you book meetings, someone from my side has to show up and follow them up, and my two or three people are already busy with existing accounts. I'd be paying for meetings with people who agreed to a call to be polite, not real buyers, and 3 hours of my time on paper always turns out to be more.",
+  "would_change_my_mind": "Talking to a past client who is a manufacturer or exporter like us, not a logistics company, who tells me the meetings turned into real orders, plus 15 sample companies that are better than the ones my own team would have picked.",
+  "price_too_cheap": 500,
+  "price_cheap": 1500,
+  "price_expensive": 3000,
+  "price_too_expensive": 5000
+}
