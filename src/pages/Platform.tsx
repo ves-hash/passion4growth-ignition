@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { ArrowRight, Briefcase, Cog, ExternalLink, GraduationCap, MessageSquareReply, Sun } from 'lucide-react';
+import { ArrowRight, Briefcase, Calculator, Cog, ExternalLink, GraduationCap, MessageSquareReply, Sun } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { DEMO_REPLIES } from '@/data/platform-demo';
 import ClientView from '@/components/platform/ClientView';
 import NewClientWizard from '@/components/platform/NewClientWizard';
+import CalculatorView from '@/components/platform/CalculatorView';
 import ClientsView from '@/components/platform/ClientsView';
 import RepliesView from '@/components/platform/RepliesView';
 import TodayView from '@/components/platform/TodayView';
@@ -17,6 +18,7 @@ const NAV = [
   { id: 'today', label: 'Днес', icon: Sun },
   { id: 'clients', label: 'Клиенти', icon: Briefcase },
   { id: 'replies', label: 'Отговори', icon: MessageSquareReply },
+  { id: 'calc', label: 'Калкулатор', icon: Calculator },
 ] as const;
 
 type Tab = (typeof NAV)[number]['id'];
@@ -165,6 +167,7 @@ const Platform = () => {
           {tab === 'clients' && !clientId && <ClientsView onOpenClient={(id) => go('clients', id)} onNewClient={() => go('clients', 'new')} />}
           {tab === 'clients' && clientId === 'new' && <NewClientWizard onCancel={() => go('clients')} onDone={(id) => go('clients', id)} />}
           {tab === 'clients' && clientId && clientId !== 'new' && <ClientView key={clientId} clientId={clientId} onBack={() => go('clients')} />}
+          {tab === 'calc' && <CalculatorView />}
           {tab === 'replies' && (
             <RepliesView
               handled={handled}
@@ -178,7 +181,7 @@ const Platform = () => {
       </div>
 
       {/* Mobile bottom nav */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
         {NAV.map((n) => {
           const Icon = n.icon;
           const on = tab === n.id;
