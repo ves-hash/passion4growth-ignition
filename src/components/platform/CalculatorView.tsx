@@ -34,6 +34,28 @@ const PRICES = {
   twilio: 10,
 };
 
+// Claude API, USD per 1M tokens (claude-api skill, 2026-10). Batch API halves token cost.
+const MODELS = {
+  opus: { name: 'Opus 5.5', input: 4, output: 20 },
+  sonnet: { name: 'Sonnet 5.5', input: 2, output: 10 },
+  haiku: { name: 'Haiku 5.5', input: 0.1, output: 0.5 },
+} as const;
+type ModelKey = keyof typeof MODELS;
+const tokenCost = (m: ModelKey, inK: number, outK: number) => (inK * MODELS[m].input + outK * MODELS[m].output) / 1000;
+
+const AI_DEFAULTS = {
+  model: 'sonnet' as ModelKey,
+  batch: true,
+  abShare: 40,
+  dossierInK: 60,
+  dossierOutK: 5,
+  searches: 10,
+  searchPrice: 0.01,
+  replyRate: 3,
+  reportsMonthly: 15,
+  hermes: 10,
+};
+
 // Smartlead: every plan has unlimited email accounts; the limits are contacts and sends per month.
 const SMARTLEAD_TIERS = [
   { name: 'Basic', price: 39, sends: 6000, contacts: 2000 },
@@ -107,6 +129,8 @@ const CalculatorView = () => {
   const [p, setP] = useState<Prices>(PRICES);
   const [showPrices, setShowPrices] = useState(false);
   const [salesNav, setSalesNav] = useState(false);
+  const [ai, setAi] = useState(AI_DEFAULTS);
+  const setAiNum = (k: keyof typeof AI_DEFAULTS) => (n: number) => setAi({ ...ai, [k]: n });
   const set = (k: keyof Inputs) => (n: number) => setV({ ...v, [k]: n });
   const setPrice = (k: keyof Prices) => (n: number) => setP({ ...p, [k]: n });
 
@@ -155,8 +179,33 @@ const CalculatorView = () => {
     { label: 'Списъци, Maps, сигнали', tool: 'Apify + Serper', cost: p.apifySerper },
     { label: 'WhatsApp, SMS, проверка на номера', tool: 'Twilio', cost: p.twilio },
   ];
-  const monthly = lines.reduce((s, l) => s + l.cost, 0);
-  const oneTime = (v.liveDomains + v.spareDomains) * p.domainYear;
+  const tools = lines.reduce((s, l) => s + l.cost, 0);
+
+  // AI (Claude API) and Hermes
+  const batchF = ai.batch ? 0.5 : 1;
+  const reachableCompanies = namedCompanies + officeCompanies;
+  const companiesMonth = reachablePeople > 0 ? reachableCompanies * (peopleThisMonth / reachablePeople) : 0;
+  const dossierUnit = tokenCost(ai.model, ai.dossierInK, ai.dossierOutK) * batchF + ai.searches * ai.searchPrice;
+  const aiLines = [
+    { label: `Проверка на ~${fmt(companiesMonth)} сайта за ICP`, tool: `${MODELS.haiku.name}, ~10k токена`, cost: companiesMonth * tokenCost('haiku', 10, 1) * batchF },
+    {
+      label: `Досиета и Entry Plan за ~${fmt(companiesMonth * (ai.abShare / 100))} A/B фирми`,
+      tool: `${MODELS[ai.model].name}, ${ai.dossierInK}k / ${ai.dossierOutK}k токена + ${ai.searches} търсения${ai.batch ? ', Batch' : ''}`,
+      cost: companiesMonth * (ai.abShare / 100) * dossierUnit,
+    },
+    { label: `Персонализация за ~${fmt(peopleThisMonth)} души`, tool: `${MODELS.sonnet.name}, ~5k / 1k токена${ai.batch ? ', Batch' : ''}`, cost: peopleThisMonth * tokenCost('sonnet', 5, 1) * batchF },
+    { label: `Отговори: ~${fmt(peopleThisMonth * (ai.replyRate / 100))} класификации и чернови`, tool: MODELS.sonnet.name, cost: peopleThisMonth * (ai.replyRate / 100) * tokenCost('sonnet', 10, 1) },
+    { label: 'Бриф, оферти, седмични отчети', tool: MODELS.opus.name, cost: ai.reportsMonthly },
+  ];
+  const aiTotal = aiLines.reduce((s, l) => s + l.cost, 0);
+  const monthly = tools + aiTotal + ai.hermes;
+
+  // First month: domains for the year, warm-up weeks with no sending, research of the whole TAM at once
+  const domainsYear = (v.liveDomains + v.spareDomains) * p.domainYear;
+  const warmupCost = totalInboxes * p.inbox * 0.75;
+  const tamResearch = reachableCompanies * (ai.abShare / 100) * dossierUnit + reachableCompanies * tokenCost('haiku', 10, 1) * batchF;
+  const oneTime = domainsYear;
+  const firstMonth = monthly + domainsYear + warmupCost + Math.max(0, tamResearch - aiLines[0].cost - aiLines[1].cost);
   const reachedMonth = peopleThisMonth + linkedinMonth;
   const perPerson = reachedMonth > 0 ? monthly / reachedMonth : 0;
 
@@ -183,6 +232,8 @@ const CalculatorView = () => {
           onClick={() => {
             setV(DEFAULTS);
             setP(PRICES);
+            setAi(AI_DEFAULTS);
+            setSalesNav(false);
           }}
         >
           <RotateCcw /> По подразбиране
@@ -323,12 +374,49 @@ const CalculatorView = () => {
               </div>
             )}
           </section>
+
+          <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="font-bold">AI (Claude) и Hermes</h2>
+            <div className="mt-4 space-y-4">
+              <div>
+                <p className="text-sm font-medium">Модел за досиетата</p>
+                <div className="mt-1.5 inline-flex flex-wrap rounded-lg bg-secondary p-0.5">
+                  {(Object.keys(MODELS) as ModelKey[]).map((m) => (
+                    <button
+                      key={m}
+                      type="button"
+                      aria-pressed={ai.model === m}
+                      onClick={() => setAi({ ...ai, model: m })}
+                      className={cn('rounded-md px-3 py-1.5 text-sm font-medium', ai.model === m ? 'bg-background shadow-sm' : 'text-muted-foreground')}
+                    >
+                      {MODELS[m].name}
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  ${MODELS[ai.model].input} / ${MODELS[ai.model].output} за 1M входящи / изходящи токена
+                </p>
+              </div>
+              <label className="flex cursor-pointer items-center gap-2 text-sm">
+                <input id="calc-batch" type="checkbox" checked={ai.batch} onChange={(e) => setAi({ ...ai, batch: e.target.checked })} className="accent-primary" />
+                Batch API (−50% на токените; резултатът идва до 24 часа)
+              </label>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field id="ai-ab" label="Дял A/B фирми" hint="Само те получават пълно досие" value={ai.abShare} onChange={setAiNum('abShare')} step={5} suffix="%" />
+                <Field id="ai-search" label="Търсения на досие" hint="~$10 за 1 000 търсения" value={ai.searches} onChange={setAiNum('searches')} />
+                <Field id="ai-in" label="Входящи токени на досие" value={ai.dossierInK} onChange={setAiNum('dossierInK')} step={5} suffix="k" />
+                <Field id="ai-out" label="Изходящи токени на досие" value={ai.dossierOutK} onChange={setAiNum('dossierOutK')} suffix="k" />
+                <Field id="ai-reply" label="Дял отговори" value={ai.replyRate} onChange={setAiNum('replyRate')} step={0.5} suffix="%" />
+                <Field id="ai-hermes" label="Hermes сървър на клиент" hint="Допускане; сменете с реалната цена" value={ai.hermes} onChange={setAiNum('hermes')} suffix="$" />
+              </div>
+            </div>
+          </section>
         </div>
 
         {/* Results */}
         <div className="space-y-5">
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-            <Stat strong label="Цена на месец" value={usd(monthly)} sub={`еднократно ${usd(oneTime)} за домейни`} />
+            <Stat strong label="Цена на месец без човешки труд" value={usd(monthly)} sub={`първи месец ~${usd(firstMonth)}`} />
             <Stat label="Нови хора на месец" value={fmt(reachedMonth)} sub={`${fmt(peopleThisMonth)} имейл${peopleThisMonth < emailPeopleMonth ? ' (целият пазар)' : ''} · ${fmt(linkedinMonth)} LinkedIn`}
             />
             <Stat label="Цена на достигнат човек" value={usd(perPerson, 2)} />
@@ -474,7 +562,8 @@ const CalculatorView = () => {
 
           <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <h2 className="font-bold">Разходи на месец</h2>
-            <ul className="mt-3 divide-y divide-border">
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Инструменти · {usd(tools)}</p>
+            <ul className="mt-1 divide-y divide-border">
               {lines.map((l) => (
                 <li key={l.label} className="flex items-start justify-between gap-3 py-2 text-sm">
                   <span className="min-w-0">
@@ -484,13 +573,44 @@ const CalculatorView = () => {
                   <span className="shrink-0 font-medium tabular-nums">{usd(l.cost)}</span>
                 </li>
               ))}
+            </ul>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">AI (Claude API) · {usd(aiTotal)}</p>
+            <ul className="mt-1 divide-y divide-border">
+              {aiLines.map((l) => (
+                <li key={l.label} className="flex items-start justify-between gap-3 py-2 text-sm">
+                  <span className="min-w-0">
+                    <span className="block">{l.label}</span>
+                    <span className="block text-xs text-muted-foreground">{l.tool}</span>
+                  </span>
+                  <span className="shrink-0 font-medium tabular-nums">{usd(l.cost)}</span>
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-2 divide-y divide-border border-t border-border">
+              <li className="flex items-start justify-between gap-3 py-2 text-sm">
+                <span>
+                  Hermes сървър
+                  <span className="block text-xs text-muted-foreground">дял на клиент (допускане)</span>
+                </span>
+                <span className="shrink-0 font-medium tabular-nums">{usd(ai.hermes)}</span>
+              </li>
               <li className="flex items-center justify-between gap-3 pt-3 text-base font-bold">
-                <span>Общо</span>
+                <span>Общо без човешки труд</span>
                 <span className="tabular-nums">{usd(monthly)}</span>
               </li>
             </ul>
+
+            <div className="mt-5 rounded-xl bg-secondary/70 p-4">
+              <p className="text-sm font-semibold">Първи месец: ~{usd(firstMonth)}</p>
+              <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+                <li className="flex justify-between gap-3"><span>Месечната сума</span><span className="tabular-nums">{usd(monthly)}</span></li>
+                <li className="flex justify-between gap-3"><span>Домейни за година ({v.liveDomains + v.spareDomains})</span><span className="tabular-nums">{usd(oneTime)}</span></li>
+                <li className="flex justify-between gap-3"><span>Загряване: ~3 седмици инбокси без изпращане</span><span className="tabular-nums">{usd(warmupCost)}</span></li>
+                <li className="flex justify-between gap-3"><span>Проучване на целия TAM наведнъж (над месечното)</span><span className="tabular-nums">{usd(Math.max(0, tamResearch - aiLines[0].cost - aiLines[1].cost))}</span></li>
+              </ul>
+            </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              Не са включени: времето на екипа, Claude и Hermes, Sales Navigator, Viber (~$197 на изпращач), SMS изпращач с име ($220). През 2–3-те седмици загряване инбоксите се плащат, без да изпращат.
+              Не са включени: времето на екипа, абонаментите на екипа за Claude (на човек), Viber (~$197 на изпращач), SMS изпращач с име ($220). AI сумите са прогноза: сменете токените и модела с реалните от Anthropic Console.
             </p>
           </section>
         </div>
