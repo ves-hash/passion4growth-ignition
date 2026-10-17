@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have decided to go into a new country and my network won't get me there, so I need a pipeline. The free list of 15 companies costs me nothing to look at, and if it's good I'd start the pilot in relationship mode, where I approve every company and every message and nothing goes out as mass email.",
+  "objection": "Our name. If some agency spams buyers in a market where nobody knows us yet, we lose them before we start, and I don't want a GDPR complaint landing on my desk. I also get three or four of these pitches a week, and one logistics client with 45 meetings isn't much proof for a wholesaler like me.",
+  "would_change_my_mind": "If the 15 companies are the obvious names I could find myself, or the first message reads like a template, I walk away. If a wholesaler or distributor I can call, not a logistics firm, tells me the meetings were real buyers, I'd sign without thinking about it.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}

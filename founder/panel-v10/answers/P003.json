@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to replace lost volume, and my two salespeople only farm existing accounts, so I need new meetings from somewhere. The free list of 15 targets costs me one call, and paying 350 only for a real decision-maker, capped at 2,800, is a lot less than one lost freight contract is worth, so I'd do the free step and probably start the pilot.",
+  "objection": "Do they really know freight and 3PL buyers, or just generic B2B? 'A logistics client got 45 meetings' with no name, no lane, no country, and no word on how many became quotes tells me nothing. I care about cost per signed contract, not cost per meeting, and a shipper's 'logistics lead' who takes a call to compare rates is not a buyer.",
+  "would_change_my_mind": "A reference I can phone at that logistics client, with how many of the 45 meetings turned into quote requests and contracts. If the 15 free targets look like companies I already know or wrong for our lanes, I walk.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 450,
+  "price_too_expensive": 750
+}

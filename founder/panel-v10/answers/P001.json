@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have decided on the new market and my trade fair contacts will not fill that pipeline, so I need this. The free 15-company list costs me only a call. If the list is good, I would start the pilot in relationship mode, where I approve every message and nothing goes out as mass email under our name.",
+  "objection": "Our name in a market where nobody knows us yet. One bad message, or one GDPR complaint, and the distributors there will remember us for the wrong reason. Also, a single logistics case is thin proof for wholesale, and I get these agency pitches every week.",
+  "would_change_my_mind": "If the 15 sample companies are generic or wrong for our niche, or if the first message reads like a template, I walk away and do not start the pilot.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 450,
+  "price_too_expensive": 700
+}

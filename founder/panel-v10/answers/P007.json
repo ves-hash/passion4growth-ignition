@@ -1,0 +1,13 @@
+{
+  "id": "P007",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We have to replace lost volume and my team of three only looks after existing accounts, so a pilot with nothing up front, three free meetings and a hard cap of EUR 2,800 is a risk I can put numbers on. One new freight account pays that back many times over, so I would take the free 15-company list and go into the pilot in relationship mode only.",
+  "objection": "Our name. If messages go out that sound like spam, or a shipper complains about GDPR, that costs me more than any meeting is worth. One client with 45 meetings in 2 months is also only one case, and I don't know how many of those meetings turned into quotes.",
+  "would_change_my_mind": "If the 15 target companies are generic or the first message reads like a template, I stop before the pilot.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 450,
+  "price_too_expensive": 700
+}

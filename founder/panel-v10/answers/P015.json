@@ -1,0 +1,13 @@
+{
+  "id": "P015",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "I'd probably take the free call and look at the 15 companies, because that costs me nothing. But my buyers know me personally, and I won't let an agency in Sofia send messages with my name on them until I've seen that it works for a manufacturer like us, not just a logistics firm.",
+  "objection": "A message signed by me that sounds wrong to the buyer damages a relationship that took me years to build. And three hours sounds fine on paper, but my team is always busy and I'm the one who ends up checking every message.",
+  "would_change_my_mind": "If the free list of 15 has companies I didn't already know and would really want, and they let me talk to a manufacturing or export client who got real quote requests through the Relationship mode, I'd start the pilot before our next trade fair.",
+  "price_too_cheap": 80,
+  "price_cheap": 200,
+  "price_expensive": 450,
+  "price_too_expensive": 700
+}

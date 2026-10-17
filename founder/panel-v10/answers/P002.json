@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "price",
+  "reason": "I paid a consultant once for slides and got nothing, so the only reason I'd go ahead is that I pay nothing up front and only pay for meetings that happen. I'd take the free 15-company list first, and only start the pilot in relationship mode if those companies are ones I don't already know from the fairs.",
+  "objection": "45 meetings in 2 months sounds like mass email to me, and I don't believe the meetings will be real buyers with real freight. I'm also worried I'll spend my days arguing about which meetings count as qualified. At EUR 350 a meeting, a junior SDR with Apollo could cost me the same for a month.",
+  "would_change_my_mind": "If the 15 free target companies were ones I already know or obviously wrong for my lanes, I would walk away. To hold me past the pilot: talking directly to that logistics client about how many of the 45 meetings turned into actual quotes or contracts.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 350,
+  "price_too_expensive": 600
+}

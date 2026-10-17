@@ -1,0 +1,13 @@
+{
+  "id": "P013",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "We are going into a new country in the next six months and I have no network there, so a free list of 15 targets and a pilot where I pay nothing up front is cheap to try. I would take the free step, and I would only start the pilot in relationship mode, where I approve every company and every message.",
+  "objection": "My business runs on my name and my handshake. If a stranger writes messages signed by me and a buyer finds out it was an agency, or the meeting is with someone who just wanted to be polite, I have burned a contact in a market where I have none. Honestly, Apollo and a junior SDR might cost me about the same.",
+  "would_change_my_mind": "If the 15 companies in the free list are ones I already know or could find myself in an afternoon, or if the local-language message reads like a template, I walk away.",
+  "price_too_cheap": 60,
+  "price_cheap": 180,
+  "price_expensive": 450,
+  "price_too_expensive": 800
+}

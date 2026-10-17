@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "timing",
+  "reason": "I'd probably take the free 15-company list and the one-pager to my partner, but nothing new gets signed here in a month. We'd argue first about whether Apollo and a junior SDR would do the same thing for less and stay in-house.",
+  "objection": "EUR 350 a meeting adds up to what I pay a junior for a month, and when the pilot ends I'm renting meetings with no team of my own. Plus 45 meetings for a logistics client is one case, not proof it works for a wholesaler like us.",
+  "would_change_my_mind": "The free list naming 3-4 buyers we genuinely want and can't reach ourselves, plus a reference from a CEE wholesaler my partner can call.",
+  "price_too_cheap": 80,
+  "price_cheap": 150,
+  "price_expensive": 350,
+  "price_too_expensive": 600
+}

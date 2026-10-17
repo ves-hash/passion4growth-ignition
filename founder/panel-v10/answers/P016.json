@@ -1,0 +1,13 @@
+{
+  "id": "P016",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "I need clients, and this is the first one of these that says plainly what I get: 15 named companies for free, then I only pay for meetings that happen, with the first 3 free. If the 15 companies are rubbish I walk away and lose 30 minutes.",
+  "objection": "I've had agencies promise meetings before and then argue that a junior procurement clerk counts as a decision-maker. And 45 meetings in 2 months from one client, with no name, sounds like a sales line. At EUR 350 each, 8 bad meetings is real money for a company my size.",
+  "would_change_my_mind": "If the 15 free companies are ones I already know or ones that would never buy freight services from us, I stop there.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 350,
+  "price_too_expensive": 600
+}

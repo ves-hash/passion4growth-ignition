@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "My customers buy from me because they know me, from the fair, from a call, from someone who vouched for me. I might take the free list of 15 companies to see if they know my niche, but I would not sign a pilot from an agency in Sofia I have never met when I could put Apollo and a junior on it for less.",
+  "objection": "A message written by outsiders, even signed with my name, is not a relationship. If a buyer finds out it was an agency, I lose face, and 350 euro for one meeting is a lot when one good referral costs me nothing.",
+  "would_change_my_mind": "A wholesaler like me, not a logistics firm, who I can call and who tells me the meetings turned into real orders.",
+  "price_too_cheap": 60,
+  "price_cheap": 150,
+  "price_expensive": 280,
+  "price_too_expensive": 450
+}
