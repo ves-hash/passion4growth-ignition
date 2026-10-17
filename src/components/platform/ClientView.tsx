@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, Circle, Cog, Diamond, ExternalLink } from 'lucide-react';
 import { Switch } from '@/components/ui/switch';
 import { cn } from '@/lib/utils';
@@ -22,21 +23,20 @@ const ClientView = ({ clientId, onBack }: ClientViewProps) => {
   const always = tasksFor(client).filter((t) => t.skill.phase === 'all');
   const lanes = Array.from(new Set(tasks.map((t) => t.skill.lane)));
   const rel = (phaseIndex.get(picked) ?? 0) - (phaseIndex.get(client.phase) ?? 0);
-  const openSkill = (id: string) => window.open(`/system?skill=${id}`, '_blank');
+  const navigate = useNavigate();
+  const openSkill = (id: string) => navigate(`/system?skill=${id}`);
 
   return (
     <div className="space-y-6">
       <button type="button" onClick={onBack} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
         <ArrowLeft className="h-4 w-4" /> Всички клиенти
       </button>
-      <a
-        href={`/portal?client=${client.id}`}
-        target="_blank"
-        rel="noreferrer"
+      <Link
+        to={`/portal?client=${client.id}`}
         className="float-right inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
       >
         Виж като клиента <ExternalLink className="h-3.5 w-3.5" />
-      </a>
+      </Link>
 
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>

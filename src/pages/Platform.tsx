@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Briefcase, Cog, ExternalLink, MessageSquareReply, Sun } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
@@ -52,10 +52,10 @@ const Platform = () => {
     <div className="min-h-screen bg-secondary/50 lg:flex">
       {/* Sidebar */}
       <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col bg-muted p-4 text-white lg:flex">
-        <a href="/platform" className="flex items-center gap-2 px-2 py-1">
+        <Link to="/platform" className="flex items-center gap-2 px-2 py-1">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent text-sm font-bold">P4G</span>
           <span className="font-bold">Платформа</span>
-        </a>
+        </Link>
         <nav className="mt-8 space-y-1">
           {NAV.map((n) => {
             const Icon = n.icon;
@@ -78,14 +78,14 @@ const Platform = () => {
           })}
         </nav>
         <div className="mt-auto space-y-3">
-          <a
-            href="/system"
+          <Link
+            to="/system"
             className="flex items-center gap-3 rounded-lg border border-white/10 px-3 py-2.5 text-sm text-white/65 transition-colors hover:text-white"
           >
             <Cog className="h-4 w-4" />
             Под капака: скилове
             <ExternalLink className="ml-auto h-3.5 w-3.5" />
-          </a>
+          </Link>
           <div className="flex items-center gap-3 px-2">
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold">В</span>
             <div className="text-sm">
@@ -103,9 +103,9 @@ const Platform = () => {
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent text-xs font-bold text-white">P4G</span>
             <span className="font-bold">Платформа</span>
           </span>
-          <a href="/system" className="flex items-center gap-1 text-xs text-muted-foreground">
+          <Link to="/system" className="flex items-center gap-1 text-xs text-muted-foreground">
             <Cog className="h-4 w-4" /> Скилове
-          </a>
+          </Link>
         </header>
 
         <div className="bg-accent/10 px-4 py-1.5 text-center text-xs text-accent sm:px-8">

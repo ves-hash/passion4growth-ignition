@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, CircleDashed, Columns2, Diamond, GitBranch, ScrollText, Spline, UserRound, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import DetailSheet from '@/components/system/DetailSheet';
@@ -63,16 +63,16 @@ const SystemMap = () => {
     <div className="min-h-screen bg-gradient-to-b from-secondary/60 to-background">
       <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <div className="mx-auto flex h-14 max-w-[1800px] items-center justify-between gap-3 px-4 sm:px-6">
-          <a href="/" className="flex min-w-0 items-center gap-2">
+          <Link to="/" className="flex min-w-0 items-center gap-2">
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent text-sm font-bold text-white">
               P4G
             </span>
             <span className="truncate font-bold">Outreach система</span>
-          </a>
-          <a href="/" className="flex shrink-0 items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground">
+          </Link>
+          <Link to="/" className="flex shrink-0 items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground">
             <ArrowLeft className="h-4 w-4" />
             <span className="hidden sm:inline">Към сайта</span>
-          </a>
+          </Link>
         </div>
       </header>
 
