@@ -22,8 +22,17 @@ const DEFAULTS = {
   mobileShare: 5,
 };
 
+// Inbox providers: Zapmail (Google Workspace) and sending.ac (Azure, pre-warmed). Domains on Dynadot.
+type InboxProvider = 'zapmail' | 'sendingac';
+const PROVIDER_DEFAULTS: Record<InboxProvider, { inboxesPerDomain: number; emailsPerInboxDay: number }> = {
+  zapmail: { inboxesPerDomain: 3, emailsPerInboxDay: 20 },
+  sendingac: { inboxesPerDomain: 50, emailsPerInboxDay: 2 },
+};
+
 const PRICES = {
-  inbox: 3,
+  zapmailInbox: 3.25,
+  sendingacInbox: 0.44,
+  sendingacMin: 199,
   domainYear: 12,
   getsalesProfile: 95,
   salesNav: 119.99,
@@ -181,6 +190,8 @@ const CalculatorView = () => {
   const [ai, setAi] = useState(AI_DEFAULTS);
   const [op, setOp] = useState(OP_DEFAULTS);
   const [src, setSrc] = useState<LeadSource[]>(SOURCES);
+  const [provider, setProvider] = useState<InboxProvider>('zapmail');
+  const azure = provider === 'sendingac';
   const [sx, setSx] = useState(SOURCE_OPTS);
   const setSource = (id: string, patch: Partial<LeadSource>) => setSrc(src.map((s) => (s.id === id ? { ...s, ...patch } : s)));
   const setOpNum = (k: keyof typeof OP_DEFAULTS) => (n: number) => setOp({ ...op, [k]: n });
@@ -256,9 +267,16 @@ const CalculatorView = () => {
   const smartlead =
     SMARTLEAD_TIERS.find((t) => t.sends >= allSends && t.contacts >= allContacts) ?? SMARTLEAD_TIERS[SMARTLEAD_TIERS.length - 1];
   const smartleadUse = Math.max(allSends / smartlead.sends, smartlead.contacts === Infinity ? 0 : allContacts / smartlead.contacts);
+  const inboxCost = azure ? Math.max(totalInboxes * p.sendingacInbox, p.sendingacMin / share) : totalInboxes * p.zapmailInbox;
   const lines = [
-    { label: `Инбокси (${totalInboxes}: ${liveInboxes} активни + ${totalInboxes - liveInboxes} резервни)`, tool: 'InboxKit, месечно (годишно $2.50); загряването е в Smartlead', cost: totalInboxes * p.inbox },
-    { label: `Домейни (${v.liveDomains + v.spareDomains})`, tool: 'годишно, разделено на 12', cost: ((v.liveDomains + v.spareDomains) * p.domainYear) / 12 },
+    {
+      label: `Инбокси (${totalInboxes}: ${liveInboxes} активни + ${totalInboxes - liveInboxes} резервни)`,
+      tool: azure
+        ? `sending.ac (Azure), предварително загрети; минимум ~${fmt(p.sendingacMin)} $ на месец, делим между ${share} клиента`
+        : 'Zapmail (Google Workspace); загряването е в Smartlead',
+      cost: inboxCost,
+    },
+    { label: `Домейни (${v.liveDomains + v.spareDomains})`, tool: 'Dynadot, годишно, разделено на 12', cost: ((v.liveDomains + v.spareDomains) * p.domainYear) / 12 },
     { label: `LinkedIn изпращане (${v.linkedinProfiles} профил)`, tool: 'GetSales', cost: v.linkedinProfiles * p.getsalesProfile },
     { label: `Данни за ~${fmt(namedThisMonth)} души: ~${fmt(prospeoCredits)} кредита`, tool: `Prospeo ${prospeoTier.name}`, cost: prospeoTier.price },
     { label: `Проверка на ~${fmt(peopleThisMonth)} имейла`, tool: 'MillionVerifier', cost: peopleThisMonth * p.verifyPerEmail },
@@ -290,7 +308,8 @@ const CalculatorView = () => {
 
   // First month: domains for the year, warm-up weeks with no sending, the whole TAM built and researched at once
   const domainsYear = (v.liveDomains + v.spareDomains) * p.domainYear;
-  const warmupCost = totalInboxes * p.inbox * 0.75;
+  // Zapmail inboxes warm up ~3 weeks in Smartlead before sending; sending.ac inboxes arrive pre-warmed.
+  const warmupCost = azure ? 0 : totalInboxes * p.zapmailInbox * 0.75;
   const tamResearch = reachableCompanies * (ai.abShare / 100) * dossierUnit + uniqueTotal * tokenCost('haiku', 10, 1) * batchF;
   const researchExtra = Math.max(0, tamResearch - aiLines[0].cost - aiLines[1].cost);
   const sourcesExtra = sourcesBuild * (1 - refreshF);
@@ -316,9 +335,11 @@ const CalculatorView = () => {
   const perPerson = reachedMonth > 0 ? monthly / reachedMonth : 0;
 
   const warnings = [
-    v.inboxesPerDomain > 3 && 'Над 3 инбокса на домейн (Google / Microsoft) нарушава правилото в outreach-deliverability.',
-    v.emailsPerInboxDay > 30 && 'Над 30 имейла на инбокс на ден е над абсолютния максимум.',
-    v.emailsPerInboxDay > 20 && v.emailsPerInboxDay <= 30 && 'Над 20 имейла на ден е позволено, но над нормата 15–20.',
+    !azure && v.inboxesPerDomain > 3 && 'Над 3 инбокса на домейн при Zapmail (Google) нарушава правилото в outreach-deliverability.',
+    !azure && v.emailsPerInboxDay > 30 && 'Над 30 имейла на инбокс на ден е над абсолютния максимум.',
+    !azure && v.emailsPerInboxDay > 20 && v.emailsPerInboxDay <= 30 && 'Над 20 имейла на ден е позволено, но над нормата 15–20.',
+    azure && v.inboxesPerDomain > 50 && 'Над 50 инбокса на домейн при sending.ac е над лимита на P4G за Azure.',
+    azure && v.inboxesPerDomain * v.emailsPerInboxDay > 100 && 'Над ~100 имейла на домейн на ден при Azure (2 на инбокс).',
     v.liveDomains < 6 && 'Под минимума от 6 активни домейна.',
     v.spareDomains < v.liveDomains && 'Резервните домейни са по-малко от активните (правилото е 100% резерв).',
     smartleadUse > 1 && 'Обемът на всички клиенти надхвърля и най-големия план на Smartlead.',
@@ -327,7 +348,7 @@ const CalculatorView = () => {
     active.length === 0 && 'Няма включен източник на лийдове.',
     active.length > 0 && tamCompanies < 1 && 'Нито една фирма не минава ICP проверката: проверете процентите.',
     emailPeopleMonth > reachablePeople * 1.5 &&
-      'Капацитетът е много над пазара: помислете за 2 инбокса на домейн или ползвайте излишъка за повторен контакт.',
+      `Капацитетът е много над пазара: ${azure ? 'намалете инбоксите на домейн' : 'помислете за 2 инбокса на домейн'} или ползвайте излишъка за повторен контакт.`,
   ].filter(Boolean) as string[];
 
   return (
@@ -346,6 +367,7 @@ const CalculatorView = () => {
             setOp(OP_DEFAULTS);
             setSalesNav(false);
             setSrc(SOURCES);
+            setProvider('zapmail');
             setSx(SOURCE_OPTS);
           }}
         >
@@ -444,30 +466,58 @@ const CalculatorView = () => {
               <Field id="calc-steps" label="Имейли в секвенцията" value={v.sequenceSteps} onChange={set('sequenceSteps')} min={1} />
               <Field id="calc-live" label="Активни домейни" hint="Минимум 6" value={v.liveDomains} onChange={set('liveDomains')} min={1} />
               <Field id="calc-spare" label="Резервни домейни" hint="Колкото активните" value={v.spareDomains} onChange={set('spareDomains')} />
-              <div>
-                <p className="text-sm font-medium">Инбокси на домейн</p>
-                <div className="mt-1.5 inline-flex rounded-lg bg-secondary p-0.5">
-                  {[2, 3].map((n) => (
+              <div className="sm:col-span-2">
+                <p className="text-sm font-medium">Доставчик на инбокси</p>
+                <div className="mt-1.5 inline-flex flex-wrap rounded-lg bg-secondary p-0.5">
+                  {(['zapmail', 'sendingac'] as InboxProvider[]).map((pr) => (
                     <button
-                      key={n}
+                      key={pr}
                       type="button"
-                      aria-pressed={v.inboxesPerDomain === n}
-                      onClick={() => set('inboxesPerDomain')(n)}
-                      className={cn(
-                        'rounded-md px-5 py-1.5 text-sm font-medium',
-                        v.inboxesPerDomain === n ? 'bg-background shadow-sm' : 'text-muted-foreground'
-                      )}
+                      aria-pressed={provider === pr}
+                      onClick={() => {
+                        setProvider(pr);
+                        setV({ ...v, ...PROVIDER_DEFAULTS[pr] });
+                      }}
+                      className={cn('rounded-md px-3 py-1.5 text-sm font-medium', provider === pr ? 'bg-background shadow-sm' : 'text-muted-foreground')}
                     >
-                      {n}
+                      {pr === 'zapmail' ? 'Zapmail (Google)' : 'sending.ac (Azure)'}
                     </button>
                   ))}
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">Google / Microsoft: максимум 2–3</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {azure
+                    ? 'Предварително загрети; до 50 инбокса на домейн, 2 имейла на инбокс на ден (~100 на домейн). Домейните са от Dynadot.'
+                    : 'До 2–3 инбокса на домейн, 15–20 имейла на инбокс на ден; загряване 2–3 седмици в Smartlead. Домейните са от Dynadot.'}
+                </p>
               </div>
+              {azure ? (
+                <Field id="calc-ipd" label="Инбокси на домейн" hint="Лимит на P4G: 50" value={v.inboxesPerDomain} onChange={set('inboxesPerDomain')} step={5} min={1} />
+              ) : (
+                <div>
+                  <p className="text-sm font-medium">Инбокси на домейн</p>
+                  <div className="mt-1.5 inline-flex rounded-lg bg-secondary p-0.5">
+                    {[2, 3].map((n) => (
+                      <button
+                        key={n}
+                        type="button"
+                        aria-pressed={v.inboxesPerDomain === n}
+                        onClick={() => set('inboxesPerDomain')(n)}
+                        className={cn(
+                          'rounded-md px-5 py-1.5 text-sm font-medium',
+                          v.inboxesPerDomain === n ? 'bg-background shadow-sm' : 'text-muted-foreground'
+                        )}
+                      >
+                        {n}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">Google: максимум 2–3</p>
+                </div>
+              )}
               <Field
                 id="calc-epd"
                 label="Имейли на инбокс на ден"
-                hint="Норма 15–20, максимум 30"
+                hint={azure ? 'Azure: 2 на инбокс' : 'Норма 15–20, максимум 30'}
                 value={v.emailsPerInboxDay}
                 onChange={set('emailsPerInboxDay')}
               />
@@ -505,15 +555,32 @@ const CalculatorView = () => {
             {showPrices && (
               <div className="grid gap-4 border-t border-border p-5 sm:grid-cols-2">
                 <Field
-                  id="pr-inbox"
-                  label="Инбокс на месец"
-                  hint="InboxKit $3 месечно, $2.50 годишно; Zapmail ~$3.25–3.90"
-                  value={p.inbox}
-                  onChange={setPrice('inbox')}
-                  step={0.1}
+                  id="pr-zap"
+                  label="Zapmail инбокс на месец"
+                  hint="~$3–3.90 по планове; проверете цената след първата година"
+                  value={p.zapmailInbox}
+                  onChange={setPrice('zapmailInbox')}
+                  step={0.05}
                   suffix="$"
                 />
-                <Field id="pr-domain" label="Домейн на година" value={p.domainYear} onChange={setPrice('domainYear')} suffix="$" />
+                <Field
+                  id="pr-sac"
+                  label="sending.ac инбокс на месец"
+                  hint="~$0.44–0.50 по ревюта; потвърдете"
+                  value={p.sendingacInbox}
+                  onChange={setPrice('sendingacInbox')}
+                  step={0.01}
+                  suffix="$"
+                />
+                <Field
+                  id="pr-sacmin"
+                  label="sending.ac минимум на месец"
+                  hint="~450 инбокса ≈ $199; делим между клиентите"
+                  value={p.sendingacMin}
+                  onChange={setPrice('sendingacMin')}
+                  suffix="$"
+                />
+                <Field id="pr-domain" label="Домейн на година (Dynadot)" hint=".com ~$10–12; проверете подновяването" value={p.domainYear} onChange={setPrice('domainYear')} suffix="$" />
                 <Field id="pr-gs" label="GetSales на профил" value={p.getsalesProfile} onChange={setPrice('getsalesProfile')} suffix="$" />
                 <Field
                   id="pr-sn"
@@ -740,7 +807,7 @@ const CalculatorView = () => {
                 <span>
                   <span className="font-medium">Имейл инбокси</span>
                   <span className="block text-xs text-muted-foreground">
-                    {v.liveDomains + v.spareDomains} домейна × {v.inboxesPerDomain}; резервните само загряват
+                    {v.liveDomains + v.spareDomains} домейна от Dynadot × {v.inboxesPerDomain} в {azure ? 'sending.ac (Azure)' : 'Zapmail (Google)'}; резервните само загряват
                   </span>
                 </span>
                 <span className="tabular-nums">
@@ -896,7 +963,7 @@ const CalculatorView = () => {
               <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
                 <li className="flex justify-between gap-3"><span>Месечната сума</span><span className="tabular-nums">{usd(monthly)}</span></li>
                 <li className="flex justify-between gap-3"><span>Домейни за година ({v.liveDomains + v.spareDomains})</span><span className="tabular-nums">{usd(oneTime)}</span></li>
-                <li className="flex justify-between gap-3"><span>Загряване: ~3 седмици инбокси без изпращане</span><span className="tabular-nums">{usd(warmupCost)}</span></li>
+                <li className="flex justify-between gap-3"><span>{azure ? 'Загряване: няма, инбоксите са предварително загрети' : 'Загряване: ~3 седмици инбокси без изпращане'}</span><span className="tabular-nums">{usd(warmupCost)}</span></li>
                 <li className="flex justify-between gap-3"><span>Събиране на целия TAM от източниците (над месечното)</span><span className="tabular-nums">{usd(sourcesExtra)}</span></li>
                 <li className="flex justify-between gap-3"><span>Проучване на целия TAM наведнъж (над месечното)</span><span className="tabular-nums">{usd(researchExtra)}</span></li>
               </ul>

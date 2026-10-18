@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18f",
+  "version": "2026-10-18g",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -173,8 +173,10 @@
         "client-niche-brief"
       ],
       "tools": [
-        "Zapmail",
-        "Smartlead"
+        "Smartlead",
+        "Zapmail (Google)",
+        "sending.ac (Azure)",
+        "Dynadot"
       ],
       "human_step": "buy domains"
     },
@@ -293,7 +295,10 @@
       "outputs": [
         "TAM",
         "companies and people",
-        "snowball rounds until < 3% new fits (convergence curve)"
+        "snowball rounds until < 3% new fits (convergence curve)",
+        "seed fingerprint and coverage gap",
+        "filter scorecard",
+        "register coverage %"
       ],
       "depends_on": [
         "outreach-icp-onboarding"
@@ -579,12 +584,14 @@
       ],
       "parallel_with": [],
       "tools": [
-        "InboxKit",
         "Smartlead",
         "GetSales",
         "Prospeo",
         "Twilio",
-        "Claude API"
+        "Claude API",
+        "Zapmail (Google)",
+        "sending.ac (Azure)",
+        "Dynadot"
       ],
       "human_step": "approve price and purchases before quoting the client"
     },
@@ -813,7 +820,17 @@
     },
     {
       "name": "Zapmail",
-      "purpose": "домейни и инбокси",
+      "purpose": "Google инбокси",
+      "status": "confirmed"
+    },
+    {
+      "name": "sending.ac",
+      "purpose": "Azure инбокси, предварително загрети",
+      "status": "confirmed"
+    },
+    {
+      "name": "Dynadot",
+      "purpose": "домейни",
       "status": "confirmed"
     },
     {
