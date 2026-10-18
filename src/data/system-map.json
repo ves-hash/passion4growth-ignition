@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18g",
+  "version": "2026-10-18h",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -435,7 +435,7 @@
       ],
       "parallel_with": [],
       "tools": [
-        "email verifier (TBD)",
+        "MillionVerifier",
         "catch-all verifier (TBD)"
       ],
       "human_step": null
@@ -859,9 +859,9 @@
       "status": "undecided"
     },
     {
-      "name": "Email verifier",
-      "purpose": "Bouncer или MillionVerifier",
-      "status": "undecided"
+      "name": "MillionVerifier",
+      "purpose": "проверка на всеки имейл преди качване",
+      "status": "confirmed"
     },
     {
       "name": "Catch-all verifier",

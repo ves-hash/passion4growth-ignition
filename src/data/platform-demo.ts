@@ -63,7 +63,7 @@ export const DEMO_CLIENTS: DemoClient[] = [
     lead: 'Вес',
     phase: 'phase1',
     overrides: {
-      'lead-data-hygiene': { status: 'blocked', note: 'Няма избран email verifier' },
+      'lead-data-hygiene': { status: 'blocked', note: 'Няма избран catch-all верификатор; 86 catch-all адреса чакат' },
       'prospect-source-finder': { status: 'waiting', note: 'Одобри покупка на инструмент' },
       'account-intelligence': { status: 'waiting', note: '12 Entry Plan за A акаунти' },
       'cold-offer-writing': { status: 'waiting', note: 'Клиентът избира оферти' },
