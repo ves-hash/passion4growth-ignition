@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18h",
+  "version": "2026-10-18i",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -764,6 +764,40 @@
         "Calendars"
       ],
       "human_step": "approve every positive reply draft; read hostile replies and data requests"
+    },
+    {
+      "id": "outreach-learning-loop",
+      "file": "skills/outreach-learning-loop/SKILL.md",
+      "status": "proposed",
+      "owner": "hermes+claude",
+      "phase": "loop",
+      "lane": "evaluation",
+      "inputs": [
+        "tagged sends and outcomes",
+        "reply labels and objections",
+        "meeting and deal feedback from clients"
+      ],
+      "outputs": [
+        "weekly analysis per client and across clients",
+        "pattern library",
+        "3 ranked proposals per client",
+        "rule updates for the skills"
+      ],
+      "depends_on": [
+        "outreach-evaluation",
+        "reply-handling",
+        "outreach-report-internal"
+      ],
+      "parallel_with": [
+        "outreach-report-client"
+      ],
+      "tools": [
+        "Smartlead",
+        "GetSales",
+        "CRM / Hermes Control",
+        "Telegram"
+      ],
+      "human_step": "approve proposals and rule changes before anything changes in a live campaign"
     }
   ],
   "missing_skills": [
