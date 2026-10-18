@@ -1,0 +1,923 @@
+{
+  "version": "2026-10-18i",
+  "system": "P4G Cold Outreach System",
+  "owners": {
+    "claude": "дизайн и изграждане с човек",
+    "hermes": "постоянна работа и изпращане",
+    "claude+hermes": "правила в Claude, изпълнение в Hermes"
+  },
+  "phases": [
+    {
+      "id": "day0",
+      "name": "Ден 0",
+      "parallel_lanes": [
+        "brief",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "gate1",
+      "name": "Гейт 1",
+      "gate": true,
+      "criteria": "клиентът изпраща клиенти и откази (A1, A2), одобрява ICP (C1)"
+    },
+    {
+      "id": "phase1",
+      "name": "Фаза 1: списъци, оферти, инфраструктура",
+      "parallel_lanes": [
+        "lists",
+        "offers",
+        "infrastructure",
+        "data"
+      ]
+    },
+    {
+      "id": "gate2",
+      "name": "Гейт 2",
+      "gate": true,
+      "criteria": "одобрени фирми, персони, оферти, език (C2-C6); scorecard A или B; compliance чеклист"
+    },
+    {
+      "id": "phase2",
+      "name": "Фаза 2: персонализация, копи, tiering",
+      "parallel_lanes": [
+        "copy",
+        "data"
+      ]
+    },
+    {
+      "id": "launch",
+      "name": "Старт",
+      "note": "LinkedIn и телефон първи, имейл след загряване"
+    },
+    {
+      "id": "replies",
+      "name": "Отговори",
+      "note": "Hermes: класифицира → чернова → одобрение в Telegram → изпращане → WhatsApp/Viber → среща"
+    },
+    {
+      "id": "loop",
+      "name": "Цикъл",
+      "note": "дневни/седмични отчети, понеделник deliverability, петък ретро, re-engagement 30/60/90/100"
+    }
+  ],
+  "skills": [
+    {
+      "id": "cold-outreach-system",
+      "file": "skills/cold-outreach-system/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "all",
+      "lane": "orchestration",
+      "inputs": [
+        "new client",
+        "campaign without replies"
+      ],
+      "outputs": [
+        "phase plan",
+        "skill map",
+        "diagnosis"
+      ],
+      "depends_on": [],
+      "parallel_with": [],
+      "tools": [],
+      "human_step": null
+    },
+    {
+      "id": "p4g-outreach-architecture",
+      "file": "skills/p4g-outreach-architecture/SKILL.md",
+      "status": "saved",
+      "owner": "claude+hermes",
+      "phase": "all",
+      "lane": "orchestration",
+      "inputs": [
+        "question where a step runs"
+      ],
+      "outputs": [
+        "owner per step",
+        "integration map",
+        "canonical data model"
+      ],
+      "depends_on": [],
+      "parallel_with": [],
+      "tools": [
+        "Hermes Control",
+        "CRM"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "outreach-compliance-cee",
+      "file": "skills/outreach-compliance-cee/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "all",
+      "lane": "guardrail",
+      "inputs": [
+        "countries",
+        "channels",
+        "copy"
+      ],
+      "outputs": [
+        "risk tier",
+        "first-message elements",
+        "checklist"
+      ],
+      "depends_on": [],
+      "parallel_with": [],
+      "tools": [],
+      "human_step": "Gate 2 check"
+    },
+    {
+      "id": "client-niche-brief",
+      "file": "skills/client-niche-brief/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "day0",
+      "lane": "brief",
+      "inputs": [
+        "client website URL"
+      ],
+      "outputs": [
+        "Niche & ICP Brief",
+        "niche language",
+        "Client Request"
+      ],
+      "depends_on": [],
+      "parallel_with": [
+        "outreach-deliverability"
+      ],
+      "tools": [
+        "web"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "outreach-deliverability",
+      "file": "skills/outreach-deliverability/SKILL.md",
+      "status": "saved",
+      "owner": "claude+hermes",
+      "phase": "day0",
+      "lane": "infrastructure",
+      "inputs": [
+        "domains",
+        "inboxes"
+      ],
+      "outputs": [
+        "setup",
+        "domain status",
+        "incident actions"
+      ],
+      "depends_on": [],
+      "parallel_with": [
+        "client-niche-brief"
+      ],
+      "tools": [
+        "Smartlead",
+        "Zapmail (Google)",
+        "sending.ac (Azure)",
+        "Dynadot"
+      ],
+      "human_step": "buy domains"
+    },
+    {
+      "id": "outreach-icp-onboarding",
+      "file": "skills/outreach-icp-onboarding/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "gate1",
+      "lane": "approval",
+      "inputs": [
+        "Niche & ICP Brief",
+        "client answers A/B/C"
+      ],
+      "outputs": [
+        "approved ICP/anti-ICP",
+        "Do Not Contact list",
+        "calibration set"
+      ],
+      "depends_on": [
+        "client-niche-brief"
+      ],
+      "parallel_with": [],
+      "tools": [],
+      "human_step": "client approves ICP (Gate 1) and approval set (Gate 2)"
+    },
+    {
+      "id": "google-search-discovery",
+      "file": "skills/google-search-discovery/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "ICP",
+        "country",
+        "language"
+      ],
+      "outputs": [
+        "source lists (associations, fairs, PDFs)"
+      ],
+      "depends_on": [
+        "outreach-icp-onboarding"
+      ],
+      "parallel_with": [
+        "cold-offer-writing",
+        "outreach-infrastructure-channels"
+      ],
+      "tools": [
+        "Serper",
+        "web"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "directory-browser-extractor",
+      "file": "skills/directory-browser-extractor/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "directory URL"
+      ],
+      "outputs": [
+        "directory profile",
+        "all companies"
+      ],
+      "depends_on": [
+        "google-search-discovery"
+      ],
+      "parallel_with": [
+        "google-maps-sourcing"
+      ],
+      "tools": [
+        "Claude Code browser"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "google-maps-sourcing",
+      "file": "skills/google-maps-sourcing/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "terms",
+        "cities"
+      ],
+      "outputs": [
+        "deduped company CSV",
+        "qualification"
+      ],
+      "depends_on": [
+        "outreach-icp-onboarding"
+      ],
+      "parallel_with": [
+        "directory-browser-extractor"
+      ],
+      "tools": [
+        "Apify"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "outreach-lead-sourcing",
+      "file": "skills/outreach-lead-sourcing/SKILL.md",
+      "status": "saved",
+      "owner": "claude+hermes",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "approved ICP"
+      ],
+      "outputs": [
+        "TAM",
+        "companies and people",
+        "snowball rounds until < 3% new fits (convergence curve)",
+        "seed fingerprint and coverage gap",
+        "filter scorecard",
+        "register coverage %"
+      ],
+      "depends_on": [
+        "outreach-icp-onboarding"
+      ],
+      "parallel_with": [
+        "google-maps-sourcing",
+        "directory-browser-extractor"
+      ],
+      "tools": [
+        "AI Ark",
+        "Prospeo",
+        "Apify",
+        "Serper",
+        "Claude Haiku 5.5 (judge)"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "directory-website-verifier",
+      "file": "skills/directory-website-verifier/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "company websites"
+      ],
+      "outputs": [
+        "ICP verdict with evidence"
+      ],
+      "depends_on": [
+        "outreach-lead-sourcing"
+      ],
+      "parallel_with": [
+        "website-keyword-check"
+      ],
+      "tools": [
+        "web",
+        "Apify"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "website-keyword-check",
+      "file": "skills/website-keyword-check/SKILL.md",
+      "status": "saved",
+      "owner": "claude+hermes",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "list",
+        "keyword"
+      ],
+      "outputs": [
+        "filter",
+        "personalization line"
+      ],
+      "depends_on": [
+        "outreach-lead-sourcing"
+      ],
+      "parallel_with": [
+        "directory-website-verifier"
+      ],
+      "tools": [
+        "Serper"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "apify-actors",
+      "file": "skills/apify-actors/SKILL.md",
+      "status": "saved",
+      "owner": "claude+hermes",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "sourcing or signal task"
+      ],
+      "outputs": [
+        "chosen actor",
+        "test result",
+        "actor registry"
+      ],
+      "depends_on": [],
+      "parallel_with": [],
+      "tools": [
+        "Apify"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "prospect-source-finder",
+      "file": "skills/prospect-source-finder/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "phase1",
+      "lane": "lists",
+      "inputs": [
+        "too few relevant prospects"
+      ],
+      "outputs": [
+        "gap diagnosis",
+        "new sources",
+        "approval packet"
+      ],
+      "depends_on": [
+        "outreach-lead-sourcing"
+      ],
+      "parallel_with": [],
+      "tools": [
+        "web"
+      ],
+      "human_step": "approve tool purchase"
+    },
+    {
+      "id": "lead-data-hygiene",
+      "file": "skills/lead-data-hygiene/SKILL.md",
+      "status": "saved",
+      "owner": "hermes",
+      "phase": "phase1",
+      "lane": "data",
+      "inputs": [
+        "raw data from all sources"
+      ],
+      "outputs": [
+        "clean companies and people",
+        "validated emails"
+      ],
+      "depends_on": [
+        "outreach-lead-sourcing",
+        "google-maps-sourcing",
+        "directory-browser-extractor",
+        "directory-website-verifier"
+      ],
+      "parallel_with": [],
+      "tools": [
+        "MillionVerifier",
+        "catch-all verifier (TBD)"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "account-intelligence",
+      "file": "skills/account-intelligence/SKILL.md",
+      "status": "saved",
+      "owner": "claude+hermes",
+      "phase": "phase1to2",
+      "lane": "data",
+      "inputs": [
+        "clean companies"
+      ],
+      "outputs": [
+        "dossier",
+        "Fit/Timing/Prospect Fit",
+        "label A/B/M/R/CTX",
+        "Entry Plan",
+        "personalization lines"
+      ],
+      "depends_on": [
+        "lead-data-hygiene"
+      ],
+      "parallel_with": [],
+      "tools": [
+        "web",
+        "Prospeo",
+        "AI Ark",
+        "Apify"
+      ],
+      "human_step": "review every A Entry Plan",
+      "parallel_note": "parallel agents, one company per agent, batches of 10-20",
+      "rules": [
+        "label = Company Fit only; Timing sets P1/P2",
+        "agent brief verbatim + automatic check before merge",
+        "named_lookup required for A before office email"
+      ]
+    },
+    {
+      "id": "cold-offer-writing",
+      "file": "skills/cold-offer-writing/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "phase1",
+      "lane": "offers",
+      "inputs": [
+        "brief",
+        "proof"
+      ],
+      "outputs": [
+        "5-6 offers",
+        "offer x list campaigns"
+      ],
+      "depends_on": [
+        "outreach-icp-onboarding"
+      ],
+      "parallel_with": [
+        "google-search-discovery",
+        "outreach-lead-sourcing"
+      ],
+      "tools": [],
+      "human_step": "client picks offers (Gate 2)"
+    },
+    {
+      "id": "outreach-infrastructure-channels",
+      "file": "skills/outreach-infrastructure-channels/SKILL.md",
+      "status": "saved",
+      "owner": "claude+hermes",
+      "phase": "phase1",
+      "lane": "infrastructure",
+      "inputs": [
+        "channel policy"
+      ],
+      "outputs": [
+        "channel order",
+        "LinkedIn profile",
+        "tracking",
+        "appointment agent"
+      ],
+      "depends_on": [
+        "outreach-deliverability"
+      ],
+      "parallel_with": [
+        "cold-offer-writing",
+        "outreach-lead-sourcing"
+      ],
+      "tools": [
+        "GetSales",
+        "Smartlead",
+        "calendars"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "outreach-evaluation",
+      "file": "skills/outreach-evaluation/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "gate2_and_loop",
+      "lane": "evaluation",
+      "inputs": [
+        "list",
+        "stats",
+        "replies"
+      ],
+      "outputs": [
+        "list scorecard A/B",
+        "benchmarks",
+        "experiments"
+      ],
+      "depends_on": [],
+      "parallel_with": [],
+      "tools": [],
+      "human_step": null
+    },
+    {
+      "id": "outreach-cost-capacity",
+      "file": "skills/outreach-cost-capacity/SKILL.md",
+      "status": "proposed",
+      "owner": "claude",
+      "phase": "all",
+      "lane": "evaluation",
+      "inputs": [
+        "TAM",
+        "named and office email shares",
+        "domains and inboxes",
+        "prices",
+        "operator cost and hours",
+        "lead sources chosen for the client (share, fit rate, price)"
+      ],
+      "outputs": [
+        "people per month",
+        "time to cover the market",
+        "monthly cost without human work",
+        "first-month cost",
+        "clients per operator",
+        "price to quote (managed / self-service)",
+        "cost per fit company per source"
+      ],
+      "depends_on": [
+        "outreach-deliverability",
+        "prospect-tiering",
+        "outreach-lead-sourcing",
+        "apify-actors"
+      ],
+      "parallel_with": [],
+      "tools": [
+        "Smartlead",
+        "GetSales",
+        "Prospeo",
+        "Twilio",
+        "Claude API",
+        "Zapmail (Google)",
+        "sending.ac (Azure)",
+        "Dynadot"
+      ],
+      "human_step": "approve price and purchases before quoting the client"
+    },
+    {
+      "id": "prospect-tiering",
+      "file": "skills/prospect-tiering/SKILL.md",
+      "status": "saved",
+      "owner": "hermes",
+      "phase": "phase2",
+      "lane": "data",
+      "inputs": [
+        "scored people and contacts"
+      ],
+      "outputs": [
+        "P1/P2/P3/Hold x C1-C6",
+        "channel play"
+      ],
+      "depends_on": [
+        "account-intelligence",
+        "outreach-icp-onboarding"
+      ],
+      "parallel_with": [
+        "outreach-sequence-copywriting",
+        "phone-channel-pipeline"
+      ],
+      "tools": [],
+      "human_step": null,
+      "rules": [
+        "P1-P3 need label A/B; M -> Hold",
+        "office email for A only after named_lookup = not_found"
+      ]
+    },
+    {
+      "id": "phone-channel-pipeline",
+      "file": "skills/phone-channel-pipeline/SKILL.md",
+      "status": "saved",
+      "owner": "hermes",
+      "phase": "phase2_and_replies",
+      "lane": "data",
+      "inputs": [
+        "numbers from all sources"
+      ],
+      "outputs": [
+        "E.164",
+        "line type",
+        "SMS/WhatsApp/Viber flags",
+        "call list"
+      ],
+      "depends_on": [
+        "lead-data-hygiene"
+      ],
+      "parallel_with": [
+        "prospect-tiering"
+      ],
+      "tools": [
+        "Twilio Lookup",
+        "Twilio (WhatsApp, SMS)",
+        "Viber partner (later)"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "outreach-sequence-copywriting",
+      "file": "skills/outreach-sequence-copywriting/SKILL.md",
+      "status": "saved",
+      "owner": "claude",
+      "phase": "phase2",
+      "lane": "copy",
+      "inputs": [
+        "approved offer",
+        "Entry Plan",
+        "lines"
+      ],
+      "outputs": [
+        "sequences per channel",
+        "QA"
+      ],
+      "depends_on": [
+        "cold-offer-writing",
+        "account-intelligence",
+        "outreach-compliance-cee"
+      ],
+      "parallel_with": [
+        "prospect-tiering"
+      ],
+      "tools": [
+        "anti-ai-audit"
+      ],
+      "human_step": "approve copy"
+    },
+    {
+      "id": "outreach-report-internal",
+      "file": "skills/outreach-report-internal/SKILL.md",
+      "status": "saved",
+      "owner": "hermes+claude",
+      "phase": "loop",
+      "lane": "reports",
+      "inputs": [
+        "Smartlead",
+        "GetSales",
+        "CRM"
+      ],
+      "outputs": [
+        "daily and weekly report",
+        "diagnosis ladder"
+      ],
+      "depends_on": [
+        "outreach-evaluation"
+      ],
+      "parallel_with": [],
+      "tools": [
+        "Telegram"
+      ],
+      "human_step": null
+    },
+    {
+      "id": "outreach-report-client",
+      "file": "skills/outreach-report-client/SKILL.md",
+      "status": "saved",
+      "owner": "hermes+claude",
+      "phase": "loop",
+      "lane": "reports",
+      "inputs": [
+        "internal report"
+      ],
+      "outputs": [
+        "client report"
+      ],
+      "depends_on": [
+        "outreach-report-internal"
+      ],
+      "parallel_with": [],
+      "tools": [],
+      "human_step": null
+    },
+    {
+      "id": "reply-handling",
+      "file": "skills/reply-handling/SKILL.md",
+      "status": "proposed",
+      "owner": "hermes+claude",
+      "phase": "replies",
+      "lane": "copy",
+      "inputs": [
+        "replies from Smartlead, GetSales, Twilio",
+        "account record and Entry Plan",
+        "approved offer and proof"
+      ],
+      "outputs": [
+        "label per reply",
+        "stops and suppression",
+        "reply draft",
+        "Telegram approval card",
+        "follow-up timers",
+        "meeting handoff to the client"
+      ],
+      "depends_on": [
+        "outreach-evaluation",
+        "outreach-sequence-copywriting",
+        "prospect-tiering",
+        "outreach-compliance-cee"
+      ],
+      "parallel_with": [
+        "phone-channel-pipeline"
+      ],
+      "tools": [
+        "Smartlead",
+        "GetSales",
+        "Twilio (WhatsApp, SMS)",
+        "Telegram",
+        "Calendars"
+      ],
+      "human_step": "approve every positive reply draft; read hostile replies and data requests"
+    },
+    {
+      "id": "outreach-learning-loop",
+      "file": "skills/outreach-learning-loop/SKILL.md",
+      "status": "proposed",
+      "owner": "hermes+claude",
+      "phase": "loop",
+      "lane": "evaluation",
+      "inputs": [
+        "tagged sends and outcomes",
+        "reply labels and objections",
+        "meeting and deal feedback from clients"
+      ],
+      "outputs": [
+        "weekly analysis per client and across clients",
+        "pattern library",
+        "3 ranked proposals per client",
+        "rule updates for the skills"
+      ],
+      "depends_on": [
+        "outreach-evaluation",
+        "reply-handling",
+        "outreach-report-internal"
+      ],
+      "parallel_with": [
+        "outreach-report-client"
+      ],
+      "tools": [
+        "Smartlead",
+        "GetSales",
+        "CRM / Hermes Control",
+        "Telegram"
+      ],
+      "human_step": "approve proposals and rule changes before anything changes in a live campaign"
+    }
+  ],
+  "missing_skills": [
+    {
+      "id": "hermes-integration-spec",
+      "owner": "hermes",
+      "phase": "all",
+      "priority": "high",
+      "why": "wrapper-и, env, smoke tests, cron"
+    },
+    {
+      "id": "signal-monitoring",
+      "owner": "hermes",
+      "phase": "loop",
+      "priority": "medium",
+      "why": "няма P1 сигнали от публични източници"
+    },
+    {
+      "id": "event-outreach",
+      "owner": "claude+hermes",
+      "phase": "phase1",
+      "priority": "medium",
+      "why": "оферта O2 преди/след изложение"
+    }
+  ],
+  "existing_user_skills": [
+    "anti-ai-audit",
+    "cold-email-engine",
+    "cee-presence-check",
+    "linkedin-profile-audit",
+    "b2b-contract-p4g",
+    "yespo-prospect-scoring"
+  ],
+  "integrations": [
+    {
+      "name": "AI Ark",
+      "purpose": "фирми и look-alikes",
+      "status": "confirmed"
+    },
+    {
+      "name": "Prospeo",
+      "purpose": "хора, имейли, мобилни",
+      "status": "confirmed"
+    },
+    {
+      "name": "Smartlead",
+      "purpose": "имейл",
+      "status": "confirmed"
+    },
+    {
+      "name": "GetSales",
+      "purpose": "LinkedIn",
+      "status": "confirmed"
+    },
+    {
+      "name": "Zapmail",
+      "purpose": "Google инбокси",
+      "status": "confirmed"
+    },
+    {
+      "name": "sending.ac",
+      "purpose": "Azure инбокси, предварително загрети",
+      "status": "confirmed"
+    },
+    {
+      "name": "Dynadot",
+      "purpose": "домейни",
+      "status": "confirmed"
+    },
+    {
+      "name": "Apify",
+      "purpose": "Maps, сайтове, сигнали",
+      "status": "recommended"
+    },
+    {
+      "name": "Serper",
+      "purpose": "Google site:",
+      "status": "recommended"
+    },
+    {
+      "name": "Twilio Lookup",
+      "purpose": "тип линия",
+      "status": "proposed"
+    },
+    {
+      "name": "Twilio WhatsApp + SMS",
+      "purpose": "follow-up след отговор; проспектът пише пръв",
+      "status": "proposed"
+    },
+    {
+      "name": "Viber",
+      "purpose": "follow-up след отговор, по-късно",
+      "status": "undecided"
+    },
+    {
+      "name": "MillionVerifier",
+      "purpose": "проверка на всеки имейл преди качване",
+      "status": "confirmed"
+    },
+    {
+      "name": "Catch-all verifier",
+      "purpose": "catch-all имейли; невалидните отиват към LinkedIn",
+      "status": "undecided"
+    },
+    {
+      "name": "CRM / Hermes Control",
+      "purpose": "единствена истина",
+      "status": "in_hermes"
+    },
+    {
+      "name": "Telegram",
+      "purpose": "одобрения и отчети",
+      "status": "in_hermes"
+    }
+  ],
+  "policies": [
+    "Студен имейл във всички държави; риск Low BG/SK/SI/HU, Medium RO/HR/CZ/GR, High PL/DE/AT",
+    "Студени обаждания по правилата на държавата (не PL/AT; DE само с документиран интерес)",
+    "WhatsApp/Viber само след отговор по имейл или LinkedIn; проспектът пише пръв по линк (wa.me / Viber), ние не пишем първи",
+    "15-20 имейла на инбокс на ден (макс 30), 2-3 инбокса на домейн, 2-3 седмици загряване",
+    "Без заобикаляне на Cloudflare, без proxy rotation, без LinkedIn cookie актьори"
+  ]
+}
