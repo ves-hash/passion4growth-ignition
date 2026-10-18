@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18e",
+  "version": "2026-10-18f",
   "system": "P4G Cold Outreach System",
   "owners": {
     "claude": "дизайн и изграждане с човек",
@@ -292,7 +292,8 @@
       ],
       "outputs": [
         "TAM",
-        "companies and people"
+        "companies and people",
+        "snowball rounds until < 3% new fits (convergence curve)"
       ],
       "depends_on": [
         "outreach-icp-onboarding"
@@ -303,7 +304,10 @@
       ],
       "tools": [
         "AI Ark",
-        "Prospeo"
+        "Prospeo",
+        "Apify",
+        "Serper",
+        "Claude Haiku 5.5 (judge)"
       ],
       "human_step": null
     },
@@ -426,7 +430,8 @@
       ],
       "parallel_with": [],
       "tools": [
-        "email verifier (TBD)"
+        "email verifier (TBD)",
+        "catch-all verifier (TBD)"
       ],
       "human_step": null
     },
@@ -839,6 +844,11 @@
     {
       "name": "Email verifier",
       "purpose": "Bouncer или MillionVerifier",
+      "status": "undecided"
+    },
+    {
+      "name": "Catch-all verifier",
+      "purpose": "catch-all имейли; невалидните отиват към LinkedIn",
       "status": "undecided"
     },
     {
